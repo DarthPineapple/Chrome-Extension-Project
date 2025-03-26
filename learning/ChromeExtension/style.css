@@ -1,0 +1,14 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 20px;
+    background-color: #303030;
+}
+h1 {
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+}
+p {
+    font-family:cursive;
+    color: aquamarine;
+    font-size: 10px;
+}

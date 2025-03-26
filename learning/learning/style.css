@@ -1,0 +1,20 @@
+p{
+    color:greenyellow;
+    font-size: 20px;
+}
+a{
+    color:red;
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: green;
+    text-align: center;
+}
+#div2{
+    font-size:55px;
+}
+#div2 a{
+    font-size:10px;
+}
+.div1{
+    background-color: black;
+}

@@ -1,0 +1,35 @@
+import openai as OpenAI
+
+# Initialize the OpenAI API client
+
+
+def act_as(system_prompt, user_prompt):
+    completion = openai.chat.completion.create(
+        model="gpt-3.5-turbo",
+        temperature=0.8,
+        max_tokens=2000,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ]
+    )
+
+    assistant_response = completion.choices[0].message.content
+
+    return assistant_response
+
+
+response = act_as(
+    system_prompt='act as a skeptic that is well-versed in computer science, whatever I tell you provide a skeptical '
+                  'and detailed response.',
+    user_prompt='there is a concern that AI will take over the world')
+
+print('Computer Science')
+print(response)
+response = act_as(
+    system_prompt='act as a 11 years-old, whatever I tell you provide a skeptical response from a nine year old '
+                  'perspective',
+    user_prompt='there is a concern that AI will take over the world')
+
+print('*' * 20, '11 years-old', '*' * 20)
+print(response)

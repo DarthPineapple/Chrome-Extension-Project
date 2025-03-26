@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Extension Turorial",
+    "version": "1.0",
+    "description": "This is a browser extension tutorial",
+    "permissions": ["storage"],
+    "background":{
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "options_ui":{
+        "page":"options.html"
+    },
+    "icons":{
+        "16": "square(1).jpg",
+        "48": "square(2).jpg",
+        "128": "square(3).jpg"
+    }
+}
