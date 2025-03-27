@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "FocusShield AI",
     "version": "1.0.0",
-    "description": "",
+    "description": "Description",
     "permissions": [],
     "background": {
         "service_worker": "background.js"
@@ -13,8 +13,9 @@
                 "<all_urls>"
             ],
             "js": [
-                "content.js"
-            ]
+                "contentScript.js"
+            ],
+            "run_at": "document_start"
         }
     ],
     "action": {

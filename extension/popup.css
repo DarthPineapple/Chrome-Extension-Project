@@ -1,9 +1,17 @@
 html {
     width: 200px;
     height: 300px;
+    padding: 0;
     background-color: #202022;
   }
-
+.popup{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 100px;
+}
 h3{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
