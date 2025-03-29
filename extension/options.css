@@ -1,8 +1,49 @@
-html {
-    height: 255;
-    width: 255;
-    background-color: black;
+body{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
 }
-p {
-    color: aqua;
+
+.sidebar{
+    width: 250;
+    height: 100vh;
+    background-color: lightpink;
+    position: fixed;
+}
+
+.nav-link{
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container{
+    margin-left: 260px;
+}
+
+.list-group-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blocking-preset-expanded{
+    display: none;
+    max-height: 0;
+    transition: maxheight 0.3s ease-in-out;
+    overflow: hidden;
+    background-color: lightpink;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.blocking-preset-expanded.active{
+    display:block;
+    max-height: 300px;
 }

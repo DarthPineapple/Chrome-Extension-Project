@@ -3,6 +3,7 @@
     "name": "FocusShield AI",
     "version": "1.0.0",
     "description": "Description",
+    "options_page": "options.html",
     "permissions": [],
     "background": {
         "service_worker": "background.js"
