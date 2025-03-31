@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Password</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="barrier.css">
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100 bg-light">
+    <div class="container text-center">
+        <img src="128.png" alt="FocusShield AI Icon" class="mb-3 rounded-circle shadow-sm" width="80">
+        <div id="password-section" class="card shadow p-4 rounded">
+            <h2 class="mb-3 text-primary fw-bold">Enter Password</h2>
+            <p class="text-muted">Enter your password to continue</p>
+
+            <div class="input-group my-3">
+                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                <input type="password" class="form-control" id="password-field" placeholder="Password">
+            </div>
+
+            <!-- Incorrect Password Message -->
+            <p id="password-error" class="text-danger d-none">Incorrect Password</p>
+
+            <!--Forgot Password-->
+            <p class="text-primary small cursor-pointer" id="forgot-password">Forgot Password</p>
+
+            <!--Submit button-->
+            <button class="btn btn-primary w-100" id="submit-password-button">Submit</button>
+
+        </div>
+
+        <div id="set-password-section" class="card shadow p-4 rounded mt-4 d-none">
+            <h2 class="mb-3 text-success fw-bold">First Time Setup</h2>
+            <p class="text-muted">Set up a password to secure access</p>
+
+            <div class="input-group my-3">
+                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                <input type="password" class="form-control" id="set-password-field" placeholder="Password">
+            </div>
+            <div class="input-group my-2">
+                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                <input type="password" class="form-control" id="confirm-password-field" placeholder="Confirm Password">
+            </div>
+
+            <button class="btn btn-primary w-100" id="set-password-button">Set Password</button>
+        </div>
+    </div>
+    <script src="barrier.js"></script>
+    
+</body>
+</html>
