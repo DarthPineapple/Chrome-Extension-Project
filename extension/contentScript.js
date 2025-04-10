@@ -1,5 +1,5 @@
 const seenImages = new Set();
-const seennText = new Set();
+const seenText = new Set();
 
 const imageUrls = new Set();
 
@@ -35,7 +35,7 @@ newImageLinks.forEach((src) => seenImages.add(src));
 const backgroundImages = Array.from(document.querySelectorAll("*"));
 
 backgroundImages.forEach((element) => {
-    const backGroundImage = window.getComputedStyle(element).backgroundImage;
+    const backgroundImage = window.getComputedStyle(element).backgroundImage;
     if (backgroundImage && backgroundImage != "none"){
         try{
             url = backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1];
@@ -150,7 +150,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     if(message.action === "removeImage" && message.imageLink){
         const images = document.querySelectorAll(`img[data-original-src="${message.imageLink}"]`);
         images.forEach((image) => {
-            image,src = "";
+            image.src = "";
             image.alt = "";
             if(image.srcset === "" && image.dataset.originalSrcset){
                 image.srcset = "";

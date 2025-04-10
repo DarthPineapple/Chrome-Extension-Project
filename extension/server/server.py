@@ -13,7 +13,7 @@ app = Flask(__name__)
 def index():
     return "Welcome to Child Safety AI Engine"
 
-@app.route('api/predict/image', methods = ['POST'])
+@app.route('/api/predict/image', methods = ['POST'])
 def fetch_predict_image():
     # Checks if image is sent over server
     if not "image" in request.files:
@@ -36,7 +36,7 @@ def fetch_predict_image():
     except Exception as e:
         return jsonify({"error": f"Failed to process image:{str(e)}"}), 500
 
-@app.route('api/predict/text', methods = ['POST'])
+@app.route('/api/predict/text', methods = ['POST'])
 def fetch_predict_text():
     #check to see if text was sent over
     if not "text" in request.form:
