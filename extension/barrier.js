@@ -62,12 +62,21 @@ function submitPassword(){
     })
 }
 
+function match(password){
+    return password.includes(/[A-Z]/) && password.includes(/[\.\,\?\/\\\'\;\:\=\+\-\_\!\@\#\$\%\^\&\*\*\(\)]/) && password.includes(/[\d]/);
+}
+
 function setPassword(){
     const password = document.getElementById("set-password-field").value;
     const confirmPassword = document.getElementById("confirm-password-field").value;
     if(password && password === confirmPassword){
+        if(match(password)){
         chrome.storage.local.set({password});
         showSection("password");
+        }
+        else{
+            alert("Password must include special characters and numbers");
+        }
     }
     else{
         alert(password ? "Passwords do not match": "Passwords cannot be empty");
