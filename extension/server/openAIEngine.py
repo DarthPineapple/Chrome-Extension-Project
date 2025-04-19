@@ -8,14 +8,10 @@ import base64
 #with open('/Users/skychen/Documents/openAIproject/learning/webScraper/flask_server.py', 'r') as file:
 #key = json.load(file)
 
+with open("key.json", 'r') as file:
+    api_key = os.environ.get("OPENAI_API_KEY")
+    client = OpenAI(api_key)
 
-
-
-
-
-client = OpenAI(
-    api_key = ''
-)
 
 def predict_image(img_url):
     '''prompt = """Analyze the provided image and determine if it should be censored based on the following criteria:
