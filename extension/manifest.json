@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "FocusShield AI",
     "version": "1.0.0",
-    "description": "FocusShield AI uses the openai api to block unsafe content for children and enable a better browsing experience",
+    "description": "FocusShield AI uses AI to block unsafe content for children and enable a better browsing experience.",
     "options_page": "options.html",
     "permissions": ["storage"],
     "background": {

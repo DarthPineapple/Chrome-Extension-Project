@@ -121,9 +121,9 @@ chrome.runtime.onMessage,addListener(async (request) => {
                                 social: 'social-media'
                             };
 
-                            Object.entries(categories).forEach([key, value]) => {
+                            Object.entries(categories).forEach(([key, value]) => {
                                 chrome.storage.local.get([value]).then((result) => {
-                                    if(className == key && result[value] || result[value] === undefined)){
+                                    if(className == key && result[value] || result[value] === undefined){
                                         console.log("category", value);
                                         recordCategory(value);
                                         chrome.tabs.query(
@@ -140,16 +140,31 @@ chrome.runtime.onMessage,addListener(async (request) => {
                                             }
                                         )
 
-                                        
+                                    
                                     }
                                     else if (className == key && !(result[value] || result[value] === undefined)){
-                                        return;
+                                        recordCategory("background");
+                                        chrome.tabs.query(
+                                            {},
+                                            (tabs) => {
+                                                tabs.forEach((tab) => {
+                                                    chrome.tabs.sendMessage(tab.id, {
+                                                        action:"revealImage", imageLink,
+                                                    }).catch((error) => {
+                                                        console.error(`Error revealing image from URL(${imageLink}):${error}`);
+                                                    });
+                                                });
+                                            }
+                                        );
                                     }
                                 })
                             
+                            
+                        
+                            
     }else if (request.text){
         chrome.storage.local.get([value]).then((result) => {
-            if(className == key && result[value] || result[value] === undefined)){
+            if(className == key && result[value] || result[value] === undefined){
                 console.log("category", value);
                 recordCategory(value);
                 chrome.tabs.query(
@@ -170,28 +185,28 @@ chrome.runtime.onMessage,addListener(async (request) => {
             }
             else{
                 recordCategory("background");
-                chrome.tabs.query({}, (tabs => {
-                    tabs.forEach((tab => {
+                chrome.tabs.query({}, (tabs) => {
+                    tabs.forEach((tab) => {
                         chrome.tabs.sendMessage(tab.id, {
                             action: "revealImage",
                             imageLink,
-                        }).catch(error) => {
+                        }).catch((error) => {
                             console.error("Error revealing image from url", imageLink, error);
-                        })
-                    })
-                }))
+                        });
+                    });
+                });
                 categoryCount[className] = (categoryCount[className] || 0) + 1;
             }else{
-                chrome.tabs.query({}, (tabs => {
-                    tabs.forEach((tab => {
+                chrome.tabs.query({}, (tabs) => {
+                    tabs.forEach((tab) => {
                         chrome.tabs.sendMessage(tab.id, {
                             action: "revealImage",
                             imageLink,
-                        }).catch(error) => {
+                        }).catch((error) => {
                             console.error("Error revealing image from url", imageLink, error);
-                        })
+                        });
                     });
-                    categoryCount["background"] = (categoryCount["background"])
+                    categoryCount["background"] = (categoryCount["background"]);
             }catch(error){
                 console.error(error);
             }await Promise.all(predictionPromises);
