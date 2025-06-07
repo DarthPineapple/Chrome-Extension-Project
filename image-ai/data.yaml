@@ -1,0 +1,6 @@
+train: /Users/skychen/Documents/openAIproject/image-ai/dataset/train
+val: /Users/skychen/Documents/openAIproject/image-ai/dataset/validation
+test: /Users/skychen/Documents/openAIproject/image-ai/dataset/test
+
+nc: 6  # Number of classes
+names: ['none', 'drugs', 'violence', 'gambling', 'social media', 'explicit']

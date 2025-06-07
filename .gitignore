@@ -1,0 +1,11 @@
+yolov8n.pt
+text-ai/corpus.txt
+image-ai/yolov8n.pt
+image-ai/source
+venv/
+image-ai/venv/
+text-ai/venv/
+
+# Ignore All MacOS files including subdirectories
+.DS_Store
+*.DS_Store

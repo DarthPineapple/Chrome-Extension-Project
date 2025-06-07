@@ -1,0 +1,33 @@
+{
+    "drugs": [
+        "cocaine",
+        "heroin",
+        "methamphetamine",
+        "LSD",
+        "ecstasy",
+        "marijuana",
+        "crack cocaine",
+        "ketamine",
+        "fentanyl"
+    ],
+    "explicit": [
+        "fuck"
+    ],
+    "gambling": [
+        "poker",
+        "blackjack",
+        "roulette",
+        "slot machine",
+        "sports betting"
+    ],
+    "social media": [
+        "Facebook",
+        "Twitter",
+        "Instagram",
+        "Snapchat",
+        "TikTok"
+    ],
+    "violence": [
+        "murder"
+    ]
+}
