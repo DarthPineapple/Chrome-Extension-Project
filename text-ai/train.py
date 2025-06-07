@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
+from dataset import get_datasets, CATEGORIES
 import time
 
 # Hyperparameters
@@ -10,7 +11,7 @@ BATCH_SIZE = 32
 EPOCHS = 3
 LEARNING_RATE = 1e-3
 EMBEDDING_DIM = 768
-NUM_CLASSES = 2
+NUM_CLASSES = 1 + len(CATEGORIES) # background + len(categories)
 
 class CNNClassifier(nn.Module):
     def __init__(self, vocab_size, embedding_dim, num_classes, max_len):
@@ -36,14 +37,14 @@ class CNNClassifier(nn.Module):
         return logits
     
 def train_model(model, train_loader, val_loader, epochs, learning_rate, device):
-    # TODO: create the class weights variable once we have categories
+    class_weights = torch.tensor([[0.05] + [1.0] * len(CATEGORIES), device=device])
 
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.CrossEntropyLoss(weight=class_weights)
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
     current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     print(f"Training started at {current_time} on device {device}")
-
+    
     model.to(device)
 
     for epoch in range(epochs):

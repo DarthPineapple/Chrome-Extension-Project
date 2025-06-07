@@ -59,4 +59,56 @@ class TextDataset(Dataset):
                                 if i < len(labels):
                                     labels[i] = self.category_to_label[category]
             
-            # Make sure to git push!
+                    # Pad or truncate to max_len
+                    if len(char_list) < self.max_len:
+                        pad_length = self.max_len - len(char_list)
+                        char_list += ['<PAD>'] * pad_length
+                        labels.extend([0] * pad_length)
+                    else:
+                        char_list = char_list[:self.max_len]
+                        labels = labels[:self.max_len]
+                    
+                    self.data.append((char_list, labels))
+
+            print(f"Loaded {len(self.data)} lines from corpus.")
+            # Cache the dataset
+            with open(CACHE_FILENAME, 'wb') as f:
+                pickle.dump(self.data, f)
+            print(f"Dataset cached to {CACHE_FILENAME}.")
+
+        # Build or load the vocab
+        if vocab is None:
+            self.build_vocab()
+        else:
+            self.vocab = vocab
+    
+    def build_vocab(self):
+        print("Building vocabulary...")
+        chars = set()
+        for char_list, _ in self.data:
+            chars.update(char_list)
+        self.vocab = {"<PAD>": 0, "<UNK>": 1}
+        for char in sorted(chars):
+            if char not in self.vocab:
+                self.vocab[char] = len(self.vocab)
+
+    def ecode_text(self, char_list):
+        return [self.vocab.get(char, self.vocab["<UNK>"]) for char in char_list]
+    
+    def __len__(self):
+        return len(self.data)
+    
+    def __getitem__(self, index):
+        char_list, labels = self.data[index]
+        text_indices = self.ecode_text(char_list)
+        x = torch.tensor(text_indices, dtype=torch.long)
+        y = torch.tensor(labels, dtype=torch.long)
+        return x, y
+    
+def get_datasets(banned_dir, corpus_file, train_ratio=0.8, max_len=128):
+    dataset = TextDataset(banned_dir, corpus_file, max_len=max_len)
+    train_size = int(len(dataset) * train_ratio)
+    val_size = len(dataset) - train_size
+    train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
+    return train_dataset, val_dataset
+    
