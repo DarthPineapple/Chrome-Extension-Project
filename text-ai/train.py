@@ -14,7 +14,7 @@ EMBEDDING_DIM = 768
 NUM_CLASSES = 1 + len(CATEGORIES) # background + len(categories)
 
 class CNNClassifier(nn.Module):
-    def __init__(self, vocab_size, embedding_dim, num_classes, max_len):
+    def __init__(self, vocab_size, embedding_dim, max_len):
         super(CNNClassifier, self).__init__()
         self.max_len = max_len
         self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=0)
@@ -37,7 +37,7 @@ class CNNClassifier(nn.Module):
         return logits
     
 def train_model(model, train_loader, val_loader, epochs, learning_rate, device):
-    class_weights = torch.tensor([[0.05] + [1.0] * len(CATEGORIES), device=device])
+    class_weights = torch.tensor([0.05] + [1.0] * len(CATEGORIES), device=device)
 
     criterion = nn.CrossEntropyLoss(weight=class_weights)
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
@@ -70,7 +70,28 @@ def train_model(model, train_loader, val_loader, epochs, learning_rate, device):
 if __name__ == "__main__":
     banned_dir = "banned"
     corpus_file = "corpus.txt"
-    # TODO get the dataset vars
-    print(f"Training on X samples")
-    # TODO build loaders
+    train_dataset, val_dataset = get_datasets(banned_dir, corpus_file, max_len=MAX_LEN)
+    print(f"Training on {len(train_dataset)} samples, validating on {len(val_dataset)} samples")
+    vocab_size = len(train_dataset.dataset.vocab)
+    if torch.cuda.is_available():
+        print("Number of GPUs:", torch.cuda.device_count())
+        print("Current GPU:", torch.cuda.current_device())
+        print("GPU Name:", torch.cuda.get_device_name(torch.cuda.current_device()))
+        device = torch.device("cuda")
+    elif torch.backends.mps.is_available():
+        print("Using MPS (Metal Performance Shaders) for macOS.")
+        device = torch.device("mps")
+    else:
+        device = torch.device("cpu")
+    print(f"Using device: {device}")
+    model = CNNClassifier(vocab_size, EMBEDDING_DIM, MAX_LEN)
     
+    train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
+    print("Starting training...")
+    
+    trained_model = train_model(model, train_loader, val_loader, EPOCHS, LEARNING_RATE, device)
+    
+    print("Training completed.")
+    torchscript_model = torch.jit.script(trained_model)
+    torchscript_model.save("text_model.pt")

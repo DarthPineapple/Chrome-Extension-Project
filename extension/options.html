@@ -14,43 +14,119 @@
         <h4 class = "text-center fw-bold">Options</h4>
         <ul class = "nav flex-column">
             <li class = "nav-item">
-                <button class = "nave-link tablink active" data-href="#blocking">
+                <button class = "nav-link tablink active" data-href="#blocking">
                     Blocking
                 </button>
             </li>
             <li class = "nav-item">
-                <button class = "nave-link tablink active" data-href="#Management">
+                <button class = "nav-link tablink active" data-href="#Management">
                     Management
                 </button>
             </li>
             <li class = "nav-item">
-                <button class = "nave-link tablink text-danger" data-href="#logout-button">
+                <button class = "nav-link tablink text-danger" data-href="#logout-button">
                     Logout
                 </button>
             </li>
         </ul>
+        </div>
     
     <div class="container mt-4" class="tabcontent">
         <h2 class="fw-bold text-primary">Blocking Settings</h2>
         <p class="text-muted">Choose a preset to customize filters for your child's browsing experience.</p>
 
         <div class="list-group">
-            <div class="list-group-item">
-            <input type="radio" id="ages-3-to-5-radio" name = "blocking">
-        <label for="ages-3-to-5-radio">Ages 3 to 5</label>
 
-        <button class="btn btn-outline-primary btn-sm float-end expand-button" data-target="ages-3-to-5-expanded">Expand</button>
-        </div>
-        <div id="ages-3-to-5-expanded" class="blocking-preset-expanded">
-            <ul>
-                <li>Profanity</li>
-                <li>Explicit Content</li>
-                <li>Drugs</li>
-                <li>Gambling</li>
-            </ul>
-        </div>
+  <!-- Ages 3–5 -->
+  <div class="list-group-item d-flex justify-content-between align-items-center">
+    <div>
+      <input class="form-check-input me-2" type="radio"
+             name="blocking" id="ages-3-to-5-radio">
+      <label class="form-check-label" for="ages-3-to-5-radio">
+        Ages 3 to 5
+      </label>
     </div>
-    <div class="list-group-item">
+    <button class="btn btn-outline-primary btn-sm expand-button"
+            data-target="ages-3-to-5-expanded">
+      Expand
+    </button>
+  </div>
+  <div id="ages-3-to-5-expanded" class="blocking-preset-expanded collapse">
+    <ul>
+      <li>Profanity</li>
+      <li>Explicit Content</li>
+      <li>Drugs</li>
+      <li>Gambling</li>
+    </ul>
+  </div>
+
+  <!-- Ages 6–12 -->
+  <div class="list-group-item d-flex justify-content-between align-items-center">
+    <div>
+      <input class="form-check-input me-2" type="radio"
+             name="blocking" id="ages-6-to-12-radio">
+      <label class="form-check-label" for="ages-6-to-12-radio">
+        Ages 6 to 12
+      </label>
+    </div>
+    <button class="btn btn-outline-primary btn-sm expand-button"
+            data-target="ages-6-to-12-expanded">
+      Expand
+    </button>
+  </div>
+  <div id="ages-6-to-12-expanded" class="blocking-preset-expanded collapse">
+    <ul>
+      <li>Profanity</li>
+      <li>…</li>
+      <li>Violence</li>
+    </ul>
+  </div>
+
+  <!-- Ages 13–18 -->
+  <div class="list-group-item d-flex justify-content-between align-items-center">
+    <div>
+      <input class="form-check-input me-2" type="radio"
+             name="blocking" id="ages-13-to-18-radio">
+      <label class="form-check-label" for="ages-13-to-18-radio">
+        Ages 13 to 18
+      </label>
+    </div>
+    <button class="btn btn-outline-primary btn-sm expand-button"
+            data-target="ages-13-to-18-expanded">
+      Expand
+    </button>
+  </div>
+  <div id="ages-13-to-18-expanded" class="blocking-preset-expanded collapse">
+    <ul>
+      <li>Explicit Content</li>
+      <li>…</li>
+      <li>Violence</li>
+    </ul>
+  </div>
+
+  <!-- Custom -->
+  <div class="list-group-item d-flex justify-content-between align-items-center">
+    <div>
+      <input class="form-check-input me-2" type="radio"
+             name="blocking" id="custom-radio">
+      <label class="form-check-label" for="custom-radio">
+        Custom
+      </label>
+    </div>
+    <button class="btn btn-outline-primary btn-sm expand-button"
+            data-target="custom-expanded">
+      Expand
+    </button>
+  </div>
+  <div id="custom-expanded" class="blocking-preset-expanded collapse">
+    <ul class="ps-3">
+      <li><input type="checkbox" id="profanity"> <label for="profanity">Profanity</label></li>
+    </ul>
+  </div>
+
+</div>
+
+    <!-- <div class="list-group-item">
         <input type="radio" id="ages-6-to-12-radio" name = "blocking">
         <label for="ages-6-to-12-radio">Ages 3 to 5</label>
     </div>
@@ -107,7 +183,7 @@
                     <label for="violence">Violence</label></li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
     <div id="management" class="tabcontent d-none">
         <h2 class="fw=bold text-success">Management</h2>
@@ -122,7 +198,6 @@
         <h3 class="mt-4">Set Confidence Level</h3>
         <input type="number" class="form-control w-50" id="set-confidence-field" placeholfer="50" min="0" max="100">
         <button>Button</button>
-    </div>
     </div>
     </div>
     </div>

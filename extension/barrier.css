@@ -9,6 +9,10 @@ body{
     color:rgb(38, 86, 241);
 }
 
+.container {
+  min-height: 200px;
+}
+
 #password-section{
     display: none;
     justify-content: center;
@@ -49,13 +53,13 @@ h3{
     font-weight: normal;
 }
 
-#incorrect-password-message{
+#password-error{
     display: none;
     color: red;
     font-size: 16px;
     font-weight: bold;
 }
 
-#incorrect-password-message:not(.d-none){
+#password-error:not(.d-none){
     display: block;
 }

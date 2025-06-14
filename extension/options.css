@@ -5,10 +5,18 @@ body{
 }
 
 .sidebar{
-    width: 250;
+    width: 50;
     height: 100vh;
     background-color: lightpink;
     position: fixed;
+}
+
+.sidebar .nav-link {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    background-color: white;
 }
 
 .nav-link{

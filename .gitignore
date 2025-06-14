@@ -5,6 +5,10 @@ image-ai/source
 venv/
 image-ai/venv/
 text-ai/venv/
+text-ai/dataset_cache.pkl
+# Ignore Python cache files
+__pycache__/
+text-ai/__pycache__/
 
 # Ignore All MacOS files including subdirectories
 .DS_Store

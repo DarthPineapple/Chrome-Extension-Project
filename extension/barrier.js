@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-    const[passwordInput, submitPassword] = ["password-field", "submit-password-button"].map((id)=>document.getElementById(id));
+    const[passwordInput, submitBtn] = ["password-field", "submit-password-button"].map((id)=>document.getElementById(id));
 
     const [setPasswordInput, confirmPasswordInput, setPasswordButton] = ["set-password-field","confirm-password-field", "set-password-button"
     ].map((id)=>document.getElementById(id));
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
     });
 
-    submitPassword.addEventListener("click", submitPassword);
+    submitBtn.addEventListener("click", submitPassword);
     passwordInput.addEventListener("keydown", (e) => {
         e.key === "Enter" && submitPassword();
     });
@@ -46,13 +46,13 @@ function showSection(section){
 
 function submitPassword(){
     const attempedPassword = document.getElementById("password-field").value;
-    const errorMessage = document.getElementById("incorrect-password-message");
+    const errorMessage = document.getElementById("password-error");
 
     chrome.storage.local.get(["password"], (result)=>{
         switch(result.password){
             case attempedPassword:
                 chrome.storage.local.set({authenticated: true});
-                window.local.hred="options.html";
+                window.location.href="options.html";
                 break;
             default:
                 errorMessage.classList.remove("d-none");
@@ -62,21 +62,23 @@ function submitPassword(){
     })
 }
 
-function match(password){
-    return password.includes(/[A-Z]/) && password.includes(/[\.\,\?\/\\\'\;\:\=\+\-\_\!\@\#\$\%\^\&\*\*\(\)]/) && password.includes(/[\d]/);
-}
+// function match(password){
+//     return password.includes(/[A-Z]/) && password.includes(/[\.\,\?\/\\\'\;\:\=\+\-\_\!\@\#\$\%\^\&\*\*\(\)]/) && password.includes(/[\d]/);
+// }
 
 function setPassword(){
     const password = document.getElementById("set-password-field").value;
     const confirmPassword = document.getElementById("confirm-password-field").value;
     if(password && password === confirmPassword){
-        if(match(password)){
+        // if(match(password)){
+        // chrome.storage.local.set({password});
+        // showSection("password");
+        // }
+        // else{
+        //     alert("Password must include special characters and numbers");
+        // }
         chrome.storage.local.set({password});
         showSection("password");
-        }
-        else{
-            alert("Password must include special characters and numbers");
-        }
     }
     else{
         alert(password ? "Passwords do not match": "Passwords cannot be empty");
