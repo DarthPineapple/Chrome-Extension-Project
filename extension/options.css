@@ -41,17 +41,44 @@ body{
 }
 
 .blocking-preset-expanded{
-    display: none;
+    display: flex;
     max-height: 0;
-    transition: maxheight 0.3s ease-in-out;
     overflow: hidden;
-    background-color: lightpink;
-    padding: 10px;
+    transition: max-height 0.3s ease-in-out;
+    background-color: rgb(240, 240, 240);
+    /* padding: 10px; */
     border-radius: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .blocking-preset-expanded.active{
-    display:block;
+    display:flex;
     max-height: 300px;
+}
+
+#change-password-submit-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background-color: #538dd9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#save-confidence-level-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background-color: #538dd9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }

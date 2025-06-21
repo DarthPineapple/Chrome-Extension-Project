@@ -1,23 +1,22 @@
-document.addEventListener('DomContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', ()=>{
     chrome.storage.local.get(['authenticated']).then((result) =>{
         if (!result.authenticated){
             window.location.href="barrier.html";
         }
     });
 
-    document.querySelectorAll(".taclink").forEach((tablink)=>{
-        tablink.addEventListener("click", (event)=>{
-            document.querySelectorAll('.tabcontent').forEach((content) =>content.classList.add("d-none"));
-        content.classList.add('d-none');
+    document.querySelectorAll(".tablink").forEach((tablink)=>{
+        tablink.addEventListener("click", ()=>{
+            document.querySelectorAll('.tabcontent').forEach((content) => content.classList.add("d-none"));
         const href=tablink.dataset.href;
         document.querySelector(href).classList.remove('d-none');
         document.querySelectorAll('.tablink').forEach((link) => link.classList.remove('active'));
-        tablink.classList.add(active);
+        tablink.classList.add('active');
         });
         });
     
 
-    document.querySelectorAll('.expand-button")').forEach((button) => {
+    document.querySelectorAll('.expand-button').forEach((button) => {
         button.addEventListener("click", (event) => {
             const targetId = event.currentTarget.dataset.target;
             const section = document.getElementById(targetId);

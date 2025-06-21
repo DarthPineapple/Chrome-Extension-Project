@@ -19,19 +19,19 @@
                 </button>
             </li>
             <li class = "nav-item">
-                <button class = "nav-link tablink active" data-href="#Management">
+                <button class = "nav-link tablink" data-href="#management">
                     Management
                 </button>
             </li>
             <li class = "nav-item">
-                <button class = "nav-link tablink text-danger" data-href="#logout-button">
+                <button class = "nav-link tablink text-danger" id="logout-button" data-href="#logout-button">
                     Logout
                 </button>
             </li>
         </ul>
         </div>
     
-    <div class="container mt-4" class="tabcontent">
+    <div class="container mt-4 tabcontent" id="blocking">
         <h2 class="fw-bold text-primary">Blocking Settings</h2>
         <p class="text-muted">Choose a preset to customize filters for your child's browsing experience.</p>
 
@@ -51,7 +51,7 @@
       Expand
     </button>
   </div>
-  <div id="ages-3-to-5-expanded" class="blocking-preset-expanded collapse">
+  <div id="ages-3-to-5-expanded" class="blocking-preset-expanded">
     <ul>
       <li>Profanity</li>
       <li>Explicit Content</li>
@@ -74,7 +74,7 @@
       Expand
     </button>
   </div>
-  <div id="ages-6-to-12-expanded" class="blocking-preset-expanded collapse">
+  <div id="ages-6-to-12-expanded" class="blocking-preset-expanded">
     <ul>
       <li>Profanity</li>
       <li>…</li>
@@ -96,7 +96,7 @@
       Expand
     </button>
   </div>
-  <div id="ages-13-to-18-expanded" class="blocking-preset-expanded collapse">
+  <div id="ages-13-to-18-expanded" class="blocking-preset-expanded">
     <ul>
       <li>Explicit Content</li>
       <li>…</li>
@@ -118,7 +118,7 @@
       Expand
     </button>
   </div>
-  <div id="custom-expanded" class="blocking-preset-expanded collapse">
+  <div id="custom-expanded" class="blocking-preset-expanded">
     <ul class="ps-3">
       <li><input type="checkbox" id="profanity"> <label for="profanity">Profanity</label></li>
     </ul>
@@ -184,20 +184,21 @@
             </ul>
         </div>
     </div> -->
+    </div>
 
-    <div id="management" class="tabcontent d-none">
+    <div id="management" class="container mt-4 tabcontent d-none">
         <h2 class="fw=bold text-success">Management</h2>
         <p class="text-muted">Manage security settings and confidence levels.</p>
 
-        <h3>Change Password</h3>
-        <input type="password" class="ford-control w-75 mb-2" id="new-password-firld" placeholder="Enter New Password">
+        <h5>Change Password</h5>
+        <input type="password" class="ford-control w-50 mb-2" id="new-password-field" placeholder="Enter New Password">
         <button class="btn btn-primary w-50" id="change-password-submit-button">Save Password</button>
 
         <p id="password-error" class="text-danger d-none mt-2"></p>
 
-        <h3 class="mt-4">Set Confidence Level</h3>
-        <input type="number" class="form-control w-50" id="set-confidence-field" placeholfer="50" min="0" max="100">
-        <button>Button</button>
+        <h5 class="mt-4">Set Confidence Level</h5>
+        <input type="number" class="form-control w-50" id="set-confidence-field" placeholder="50" min="0" max="100">
+        <button class="btn btn-primary w-50" id="save-confidence-level-button">Save Confidence</button>
     </div>
     </div>
     </div>
