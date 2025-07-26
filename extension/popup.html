@@ -8,23 +8,49 @@
     <link rel = "stylesheet" href = "popup.css">
     <script src = "popup.js"></script>
 </head>
-<body class = "p-3 text-center">
-    <div class = "pop-container">
+<body class = "popup-card">
+    <!-- <div class = "pop-container">
         <img src="128.png" alt = "FocusShield AI Icon" class = "mb-3 rounded-circle shadow-sm" width="80">
-    </div>
+    </div> -->
 
-    <h5 class="fw-bold text-primary">FocusShield AI</h5>
-    <p class="text-muted small">Small Catchphrase</p>
-
-    <button id="options-button" class="btn btn-promary w-100"> Open Options</button>
-
+    <h1 class="popup-title">FocusShield AI</h1>
     <script src="popup.js"></script>
-    <form>
-        <h3>Enable the Extension</h3>
+    <div class="toggle-row">
+        <span class="toggle-label">Enabled</span>
         <label class="switch">
-            <input type="checkbox" checked>
+            <input type="checkbox" id="enable-toggle" checked>
             <span class="slider round"></span>
         </label>
-    </form>
+    </div>
+
+    <h2 class="section-title">Statistics</h2>
+    <div class="stats">
+        <div class="stat-line">
+            Tokens Currently Blocked - <span id="tokens-blocked">0</span>
+        </div>
+        <div class="stat-line">
+            Images Currently Blocked - <span id="images-blocked">0</span>
+        </div>
+    </div>
+
+    <h2 class="section-title">Resources Used</h2>
+    <div class="resources">
+        <div class="resource">
+            <span class="resource-label">Memory</span>
+            <span id="memory-usage" class="resource-value memory">0 MB</span>
+        </div>
+        <div class="resource">
+            <span class="resource-label">CPU</span>
+            <span id="cpu-usage" class="resource-value cpu">0%</span>
+        </div>
+        <div class="resource">
+            <span class="resource-label">Network</span>
+            <span id="network-status" class="resource-value network">Connected</span>
+        </div>
+    </div>
+
+    <button id="options-button" class="settings-link">Settings</button>
+
+    
 </body>
 </html>

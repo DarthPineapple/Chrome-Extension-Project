@@ -1,286 +1,162 @@
-baseUrl="https://hs_project-focusshield-ai-server.onrender.com"
-imageUrl = `${baseUrl}/predict_image`
-textUrl = `${baseUrl}/predict_text`
+// background.js
 
-chrome.runtime.onInstalled.addListener(({reason}) =>{
-    if(reason === "install"){
-        chrome.tabs.create({url:"barrier.html"})
-    }
-})
+const baseUrl = 'https://hs_project-focusshield-ai-server.onrender.com';
+const imageUrl = `${baseUrl}/predict_image`;
+const textUrl = `${baseUrl}/predict_text`;
 
-function dataUrlToBlob(dataUrl){
-    const [header, data] = dataUrl.split(",");
-    const mime = header.mat(/:(.*?);/)[1];
-    const binary = atob(data);
-    const array = newUint8Array(binary.length);
-    for(let i = 0; i < binary.length; i++){
-        array[i] = binary.charCodeAt(i);
-    }
+chrome.runtime.onInstalled.addListener(({ reason }) => {
+  if (reason === 'install') {
+    chrome.tabs.create({ url: 'barrier.html' });
+  }
+});
 
-    return new Blob([array], {type:mime});
+function dataUrlToBlob(dataUrl) {
+  const [header, data] = dataUrl.split(',');
+  const mimeMatch = header.match(/:(.*?);/);
+  const mime = mimeMatch ? mimeMatch[1] : '';
+  const binary = atob(data);
+  const array = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    array[i] = binary.charCodeAt(i);
+  }
+  return new Blob([array], { type: mime });
 }
 
-async function downloadImage(url){
-    if(!url) return;
-    let blob;
-
-    if(url.startsWith("data: ")){
-        blob=dataUrlToBlob(url);
-    }
-    else{
-        try{
-            const response = await fetch(url);
-            if(! response.ok){
-                console.log(`failed to fetch image from URL: "${url}`);
-                return null;
-                
-            }
-            blob = await response.blob();
-        }
-        catch(error){
-            console.error(`Error fetching image`, url, error);
-            return null;
-        }
-    }
-    if(!blob.type.startsWith("image/")){
-        console.log(`Skipping non-image url ${url}`);
+async function downloadImage(url) {
+  if (!url) return null;
+  let blob;
+  if (url.startsWith('data:')) {
+    blob = dataUrlToBlob(url);
+  } else {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        console.error(`Failed to fetch image from URL: "${url}"`);
         return null;
+      }
+      blob = await response.blob();
+    } catch (error) {
+      console.error('Error fetching image', url, error);
+      return null;
     }
-
-    if(blob.type.startsWith("image/svg")){
-        console.log(`Skipping SVG image from URL: "${url}`);
-        return null;
-    }
-
-    try{
-        const img = await createImageBitmap(blob);
-        return new File([blob], "image", {type: blob.type});
-    }catch(error){
-        console.error(`Error processing image from url${url}`);
-        return null;
-    }
+  }
+  if (!blob.type.startsWith('image/')) return null;
+  if (blob.type.startsWith('image/svg')) return null;
+  try {
+    await createImageBitmap(blob);
+    return new File([blob], 'image', { type: blob.type });
+  } catch (error) {
+    console.error(`Error processing image from url ${url}`, error);
+    return null;
+  }
 }
-function recordCategory(category){
-    chrome.storage.local.get([`${category}-log]))`]).then((result) => {
-        let currentTime = new Date.getTime();
-        let log = Array.from(result[`$category}-log`] || []).filter((time) => time > thirtyDaysAgo(),);
-        console.log(results);
-        chrome.storage.set({[`${category}-log`]:[...log, currentTime]});
-    })
+
+function thirtyDaysAgo() {
+  return Date.now() - 30 * 24 * 60 * 60 * 1000;
 }
-function thirtyDaysAgo(){
-    let currentDate = new Date().getTime();
-    let thirtyDays = 30 * 24 * 60 * 60 * 1000;
-    return currentDate = thirtyDays;
+
+function recordCategory(category) {
+  const key = `${category}-log`;
+  chrome.storage.local.get([key]).then(result => {
+    const log = (result[key] || []).filter(time => time > thirtyDaysAgo());
+    log.push(Date.now());
+    chrome.storage.local.set({ [key]: log });
+  });
 }
 
 setInterval(() => {
-    chrome.storage.local.get(['onlineLog']).then((result => {
-        log = Array.from(result.onlineLog || []);
-        console.log(log);
-        let time = new Date().getTime();
-        log.push(time);
-        chrome.storage.local.set({onlineLog: log});
-    }));
+  chrome.storage.local.get(['onlineLog']).then(result => {
+    const log = Array.from(result.onlineLog || []);
+    log.push(Date.now());
+    chrome.storage.local.set({ onlineLog: log });
+  });
 }, 60000);
 
-chrome.runtime.onMessage,addListener(async (request) => {
-    if(request.images){
-        console.log(request.images.length, "images to process");
-        const categoryCount = {};
+chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+  const categoriesMap = {
+    profanity: 'profanity',
+    explicit: 'explicit-content',
+    drugs: 'drugs',
+    gambling: 'gambling',
+    violence: 'violence',
+    social: 'social-media'
+  };
 
-        const imagePromises = request.images.map(async (imageLink) => {
-            const image = await downloadImage(imageLink);
-            return {image, imageLink};
-        });
-        const imagesWithUrls = (await Promise.all(imagePromises)).filter(({image}) => image, );
-        console.log(imagesWithUrls);
-        console.log(imagesWithUrls.length, "images downloaded");
-
-        const predictionPromises = imagesWithUrls.map(
-            async ({ images, imageLink}) => { 
-                try{
-                    const formData = new FormData();
-                    formData.append("image", image);
-                    const response = await fetch(imageUrl, {
-                        method: "POST",
-                        body: formData,
-                    });
-
-                    const {predictions: [prediction] = []} = await response.json();
-                    if(prediction){
-                        const {class: className, confidence} = prediction;
-                        if(className !== "background"){
-                            console.log(`URL: ${imageLink} | Prediction: ${className} (${(confidence*100).toFixed(2)}%)`);
-                            const categories = {
-                                profanity: "profanity",
-                                explicit: 'explicit-content',
-                                drugs: 'drugs',
-                                gambling: 'gambling',
-                                violence: 'violence',
-                                social: 'social-media'
-                            };
-
-                            Object.entries(categories).forEach(([key, value]) => {
-                                chrome.storage.local.get([value]).then((result) => {
-                                    if(className == key && result[value] || result[value] === undefined){
-                                        console.log("category", value);
-                                        recordCategory(value);
-                                        chrome.tabs.query(
-                                            {},
-                                            (tabs) => {
-                                                tabs.forEach((tab) => {
-                                                    chrome.tabs.sendMessage(tab.id, {
-                                                        action: "removeImage",
-                                                        imageLink
-                                                    }).catch((error) => {
-                                                        console.error(imageLink, error);
-                                                    })
-                                                })
-                                            }
-                                        )
-
-                                    
-                                    }
-                                    else if (className == key && !(result[value] || result[value] === undefined)){
-                                        recordCategory("background");
-                                        chrome.tabs.query(
-                                            {},
-                                            (tabs) => {
-                                                tabs.forEach((tab) => {
-                                                    chrome.tabs.sendMessage(tab.id, {
-                                                        action:"revealImage", imageLink,
-                                                    }).catch((error) => {
-                                                        console.error(`Error revealing image from URL(${imageLink}):${error}`);
-                                                    });
-                                                });
-                                            }
-                                        );
-                                    }
-                                })
-                            
-                            
-                        
-                            
-    }else if (request.text){
-        chrome.storage.local.get([value]).then((result) => {
-            if(className == key && result[value] || result[value] === undefined){
-                console.log("category", value);
-                recordCategory(value);
-                chrome.tabs.query(
-                    {},
-                    (tabs) => {
-                        tabs.forEach((tab) => {
-                            chrome.tabs.sendMessage(tab.id, {
-                                action: "removeImage",
-                                imageLink
-                            }).catch((error) => {
-                                console.error(imageLink, error);
-                            })
-                        })
-                    }
-                )
-
-                
-            }
-            else{
-                recordCategory("background");
-                chrome.tabs.query({}, (tabs) => {
-                    tabs.forEach((tab) => {
-                        chrome.tabs.sendMessage(tab.id, {
-                            action: "revealImage",
-                            imageLink,
-                        }).catch((error) => {
-                            console.error("Error revealing image from url", imageLink, error);
-                        });
-                    });
-                });
-                categoryCount[className] = (categoryCount[className] || 0) + 1;
-            }else{
-                chrome.tabs.query({}, (tabs) => {
-                    tabs.forEach((tab) => {
-                        chrome.tabs.sendMessage(tab.id, {
-                            action: "revealImage",
-                            imageLink,
-                        }).catch((error) => {
-                            console.error("Error revealing image from url", imageLink, error);
-                        });
-                    });
-                    categoryCount["background"] = (categoryCount["background"]);
-            }catch(error){
-                console.error(error);
-            }await Promise.all(predictionPromises);
-            console.log('console');
-            Object.entries(categoryCount).forEach([category, count]) => {
-                console.log(category, count);
-            }
-            else if (className == key && !(result[value] || result[value] === undefined)){
-                return;
-            }
-        }
-else if request.text{
-    console.log(request.text.length, "text to process");
+  if (Array.isArray(request.images)) {
+    console.log(request.images.length, 'images to process');
     const categoryCount = {};
-    const predictionPromises = request.text.map(async(text) => {
-        try{
-            if(text.trim().length === 0){
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append("text", text);
-
-            const response = await fetch(textUrl, {
-                moethod: "POST",
-                body: formData,
-            });
-
-            const prediction = await response.json();
-
-            if(prediction){
-                const {class:className, confidence} = prediction;
-                if(className !== "background"){
-                    console.log('TEXT', text, className, confidence);
-                }
-            }
-            const categories = {
-                profanity: "profanity",
-                explicit: 'explicit-content',
-                drugs: 'drugs',
-                gambling: 'gambling',
-                violence: 'violence',
-                social: 'social-media'
-            };Object.entries(categories).forEach([key, value]) => {
-                chrome.storage.local.get([value].then((result => {
-                    if(className === key && (result[value] === undefined && confidence > 0.5)){
-                        chrome.tabs.query({}, (tabs => {
-                            tabs.forEach((tab => {
-                                chrome.tabs.sendMessage(tab.id, {
-                                    action: "revealImage",
-                                    imageLink,
-                                }).catch(error) => {
-                                    console.error("Error revealing image from url", imageLink, error);
-                                })
-                            });
-                    }
-                })))
-                categoryCount[className] = (categoryCount[className] || 0) + 1;
-
-                else{
-                    console.log(text);
-                    categoryCount['background'] = (categoryCount['background'] || 0) + 1;
-                }
-            }
-        }catch (error){
-            return;
-        }
+    const imagePromises = request.images.map(async imageLink => {
+      const image = await downloadImage(imageLink);
+      return { image, imageLink };
     });
-
+    const imagesWithUrls = (await Promise.all(imagePromises)).filter(item => item.image);
+    console.log(imagesWithUrls.length, 'images downloaded');
+    const predictionPromises = imagesWithUrls.map(async ({ image, imageLink }) => {
+      try {
+        const formData = new FormData();
+        formData.append('image', image);
+        const response = await fetch(imageUrl, { method: 'POST', body: formData });
+        const data = await response.json();
+        const [prediction] = data.predictions || [];
+        const className = prediction?.class;
+        const confidence = prediction?.confidence || 0;
+        if (className && className !== 'background') {
+          console.log(`URL: ${imageLink} | Prediction: ${className} (${(confidence*100).toFixed(2)}%)`);
+          const storageKey = categoriesMap[className] || 'background-log';
+          chrome.storage.local.get([storageKey]).then(res => {
+            const allowed = res[storageKey] !== false;
+            if (allowed) {
+              recordCategory(storageKey.replace('-log',''));
+              chrome.tabs.query({}, tabs => {
+                tabs.forEach(tab => {
+                  chrome.tabs.sendMessage(tab.id, { action: 'removeImage', imageLink })
+                    .catch(err => console.error(err));
+                });
+              });
+              categoryCount[className] = (categoryCount[className] || 0) + 1;
+            } else {
+              recordCategory('background');
+              chrome.tabs.query({}, tabs => {
+                tabs.forEach(tab => {
+                  chrome.tabs.sendMessage(tab.id, { action: 'revealImage', imageLink })
+                    .catch(err => console.error(err));
+                });
+              });
+            }
+          });
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    });
     await Promise.all(predictionPromises);
-    console.log('categories');
-    Object.entries(categoryCount).forEach([category, count]) => {
-        console.log(category, count);
-    }
-    })
-}
-    
+    console.log('Image categories count:', categoryCount);
+  } else if (Array.isArray(request.text)) {
+    console.log(request.text.length, 'text to process');
+    const categoryCount = {};
+    const predictionPromises = request.text.map(async text => {
+      const trimmed = text.trim();
+      if (!trimmed) return;
+      try {
+        const formData = new FormData();
+        formData.append('text', trimmed);
+        const response = await fetch(textUrl, { method: 'POST', body: formData });
+        const prediction = await response.json();
+        const className = prediction?.class;
+        const confidence = prediction?.confidence || 0;
+        if (className && className !== 'background' && confidence > 0.5) {
+          console.log('TEXT', trimmed, className, confidence);
+          categoryCount[className] = (categoryCount[className] || 0) + 1;
+        } else {
+          categoryCount.background = (categoryCount.background || 0) + 1;
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    });
+    await Promise.all(predictionPromises);
+    console.log('Text categories count:', categoryCount);
+  }
+  sendResponse({ status: 'done' });
+  return true;
+});

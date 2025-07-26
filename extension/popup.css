@@ -1,10 +1,20 @@
-html {
+/* html {
     width: 200px;
     height: 300px;
     padding: 0;
     background-color: #202022;
+  } */
+
+  body {
+    margin: 0;
+    padding: 18px;
+    width: 100%;
+    background-color: #f7f7f7;
+    font-family: libre Franklin, sans-serif;
+    border:none;
   }
-.popup{
+
+/* .popup{
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -17,6 +27,37 @@ h3{
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     color: #f3f3f3;
+} */
+
+/* Note: remove border */
+.popup-card {
+  background: #F7F7F7;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+.popup-title {
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+  font-weight: semi-bold;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.toggle-label {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #333;
+  padding-right: 5px;
 }
 
 .switch {
@@ -79,3 +120,55 @@ input:checked + .slider:before {
     border-radius: 50%;
   }
 
+.section-title {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.stats .stat-line {
+  font-size: 14px;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.resources {
+  display: flex;
+  justify-content: space-around;
+  margin: 12px 0;
+}
+
+.resource-label {
+  display: block;
+  font-size: 14px;
+  text-align: center;
+}
+
+.resource-value {
+  display: block;
+  font-size: 14px;
+  text-align: center;
+}
+.resource-value.memory {
+  color: #BA4747;
+}
+.resource-value.cpu {
+  color: #DD9939;
+}
+.resource-value.network {
+  color: #57BD57;
+}
+
+/* TODO: move settings to the right */
+.settings-link {
+  display: block;
+  justify-content: right;
+  text-align: right;
+  font-size: 14px;
+  text-decoration: underline;
+  color: #79ABC4;
+  margin-top: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

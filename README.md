@@ -1,10 +1,16 @@
 # Project Checklist
 
-- [ ] **Project Name**: Choose a name for your project.
+- [ ] **Project Name**: Choose a name for your project. (FocusShield AI) <-- replace this
+- [ ] **Project Icons**: Create a logo concept
 - [ ] Train the image model
 - [ ] Train the text model
+- [ ] Popup Design
+- [ ] Blocking Settings appearance
+- [ ] Management Settings appearance
 - [ ] Add more to the whitelist and blacklist
-- [ ] 
+- [ ] Bug Fixes
+    - [ ] When creating a new setup, the entered password shows up as failed but works the second time
+    - [ ] When logging out, if the incorrect password text was shown before, it is still there
 
 # Migration Steps
 1. Install git/github desktop on the new computer
