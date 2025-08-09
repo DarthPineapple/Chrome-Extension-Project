@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     const[passwordInput, submitBtn] = ["password-field", "submit-password-button"].map((id)=>document.getElementById(id));
 
+    passwordInput.addEventListener("input", ()=>{
+        document.getElementById("password-error").classList.add("d-none");
+    });
+
     const [setPasswordInput, confirmPasswordInput, setPasswordButton] = ["set-password-field","confirm-password-field", "set-password-button"
     ].map((id)=>document.getElementById(id));
 
@@ -69,6 +73,7 @@ function submitPassword(){
 function setPassword(){
     const password = document.getElementById("set-password-field").value;
     const confirmPassword = document.getElementById("confirm-password-field").value;
+    const [valid, reason] = validatePassword(password);
     if(password && password === confirmPassword){
         // if(match(password)){
         // chrome.storage.local.set({password});
@@ -77,10 +82,38 @@ function setPassword(){
         // else{
         //     alert("Password must include special characters and numbers");
         // }
+        if(!valid){
+            console.log("Invalid password:", reason);
+            alert(reason);
+            return;
+        }
         chrome.storage.local.set({password});
         showSection("password");
     }
     else{
+        console.log("Passwords do not match or are empty");
         alert(password ? "Passwords do not match": "Passwords cannot be empty");
     }
+}
+
+function validatePassword(password) {
+    // return true if the password is sufficiently strong, reason given if not
+    var longEnough = password.length >= 6;
+    var hasUpper = /[A-Z]/.test(password);
+    var hasSpecial = /[\.\,\?\/\\\'\;\:\=\+\-\_\!\@\#\$\%\^\&\*\*\(\)]/.test(password);
+    var hasNumber = /\d/.test(password);
+    
+    if (!longEnough) {
+        return [false, "Password must be at least 6 characters long."];
+    }
+    if (!hasUpper) {
+        return [false, "Password must contain at least one uppercase letter."];
+    }
+    if (!hasSpecial) {
+        return [false, "Password must contain at least one special character."];
+    }
+    if (!hasNumber) {
+        return [false, "Password must contain at least one number."];
+    }
+    return [true, ""];
 }

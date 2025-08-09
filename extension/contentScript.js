@@ -98,9 +98,9 @@ function extractSentences(){
         if(node.nodeType == Node.TEXT_NODE){
             const parent = node.parentElement;
             if(parent && isVisible(parent) && !excludedTags.has(parent.tagName.toLowerCase())){
-                textConstnt = node.textContent.trim(0);
+                textContent = node.textContent.trim(0);
                 if(textContent != ""){
-                    sentence.push(textContent);
+                    sentences.push(textContent);
                 }
             }
             
@@ -109,7 +109,11 @@ function extractSentences(){
         }
     }
 
-    extractTextFromNode(document.body);
+    if (document.body){
+        // TODO: check back on this potential error point
+        extractTextFromNode(document.body);
+    }
+    
 
     sentences = sentences
         .map((sentence) => sentence.trim())

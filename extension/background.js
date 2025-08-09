@@ -1,5 +1,18 @@
 // background.js
 
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg.cmd === 'getResourceUsage') { // TODO investigate getProcessInfo returning nothing 
+    console.log("Sevice worker received getResourceUsage command");
+    chrome.processes.getProcessInfo([], true, procs => {
+      // procs is an object keyed by PID; convert to array before sending
+      console.log("Processes fetched:", procs);
+      const list = Object.values(procs);
+      sendResponse({ processes: list });
+    });
+    return true; // keep the message channel open for async sendResponse
+  }
+})
+
 const baseUrl = 'https://hs_project-focusshield-ai-server.onrender.com';
 const imageUrl = `${baseUrl}/predict_image`;
 const textUrl = `${baseUrl}/predict_text`;

@@ -1,3 +1,11 @@
+const CATEGORIES = ['violence', 'profanity', 'explicit', 'drugs', 'gambling']
+const PRESETS = {
+    ages_3_5: ['violence', 'profanity', 'explicit', 'drugs', 'gambling', 0.3],
+    ages_6_12: ['violence', 'profanity', 'explicit', 'drugs', 'gambling', 0.5],
+    ages_13_18: ['violence', 'explicit', 'drugs', 'gambling', 0.7],
+    custom: null
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
     chrome.storage.local.get(['authenticated']).then((result) =>{
         if (!result.authenticated){
@@ -70,5 +78,79 @@ document.addEventListener('DOMContentLoaded', ()=>{
             window.location.href="barrier.html";
         });
     });
-
+    initBlockingUI();
 });
+
+// ===== Block UI Logic =====
+function initBlockingUI() {
+    // Load saved options
+    chrome.storage.local.get(['blockingOptions']).then((result) => {
+        const options = result.blockingOptions || {};
+        console.log("Loaded options:", options);
+        const preset = options.preset || 'custom';
+        if (preset === 'custom') {
+            setCustomEnable(true);
+            CATEGORIES.forEach((cat) => {
+                const checkbox = document.getElementById(cat);
+                if (checkbox) {
+                    checkbox.checked = options[cat] || false;
+                }
+            })}
+
+        const radio = document.querySelector(`input[name="blocking"][value="${preset}"]`);
+        if (radio) {
+            radio.checked = true;
+        }
+    });
+
+    // Listen for radio changes
+    document.querySelectorAll('input[name="blocking"]').forEach((radio) => {
+        radio.addEventListener('change', (event) => {
+            const preset = event.target.value;
+            if (preset === 'custom') {
+                setCustomEnable(true);
+                const obj = {
+                    "preset": "custom"
+                };
+                document.querySelectorAll('.custom-cat').forEach((checkbox) => {
+                    const category = checkbox.id;
+                    obj[category] = checkbox.checked;
+
+                    // attach listener to each checkbox
+                    checkbox.addEventListener('change', (event) => {
+                        const category = event.target.id;
+                        const isChecked = event.target.checked;
+                        chrome.storage.local.get(['blockingOptions']).then((result) => {
+                            const options = result.blockingOptions || {};
+                            options[category] = isChecked;
+                            chrome.storage.local.set({blockingOptions: options});
+                            console.log("Updated custom:", options);
+                        });
+                    })
+                });
+                obj.confidence = parseInt(document.getElementById('set-confidence-field').value ?? 50) / 100;
+                chrome.storage.local.set({blockingOptions: obj});
+                console.log("Saved custom:", obj);
+            } else {
+                setCustomEnable(false);
+                const obj = {
+                    "preset": preset
+                };
+                CATEGORIES.forEach((cat) => {
+                    console.log("Preset: ", preset);
+                    obj[cat] = PRESETS[preset].includes(cat);
+                })
+                var preset_length = PRESETS[preset].length;
+                obj.confidence = PRESETS[preset][preset_length - 1];
+                chrome.storage.local.set({blockingOptions: obj});
+                console.log("Saved preset:", obj);
+            }
+        })
+    });
+}
+
+function setCustomEnable(enabled) {
+    document.querySelectorAll('.custom-cat').forEach((checkbox) => {
+        checkbox.disabled = !enabled;
+    })
+}
