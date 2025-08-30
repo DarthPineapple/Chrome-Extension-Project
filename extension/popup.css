@@ -41,9 +41,10 @@ h3{
 
 .popup-title {
   margin: 0;
-  font-size: 24px;
+  font-size: 36px;
   text-align: center;
   font-weight: semi-bold;
+  /* font-family: ; */
 }
 
 .toggle-row {
@@ -171,4 +172,62 @@ input:checked + .slider:before {
   border: none;
   background: none;
   cursor: pointer;
+}
+
+
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #202022;
+  color: #f3f3f3;
+}
+
+body.dark-mode .popup-card {
+  background: #2C2C2E;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .popup-title {
+  color: #f3f3f3;
+}
+
+body.dark-mode .toggle-label {
+  color: #f3f3f3;
+}
+
+body.dark-mode .section-title {
+  color: #f3f3f3;
+}
+
+body.dark-mode .stats .stat-line {
+  color: #f3f3f3;
+}
+
+body.dark-mode .resource-label {
+  color: #f3f3f3;
+}
+
+body.dark-mode .resource-value {
+  color: #ffffff;
+}
+
+body.dark-mode .resource-value.memory {
+  color: #ff6b6b;
+}
+
+body.dark-mode .resource-value.cpu {
+  color: #ffd93d;
+}
+
+body.dark-mode .resource-value.network {
+  color: #6bcf7f;
+}
+
+body.dark-mode .settings-link {
+  color: #66b3ff;
+}
+
+body.dark-mode .settings-link:hover {
+  color: #99ccff;
 }

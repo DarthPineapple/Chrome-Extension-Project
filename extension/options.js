@@ -36,25 +36,25 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
 
     document.getElementById("change-password-submit-button").addEventListener("click", ()=>{
-        const newPassword=document.getElementById("new-password-field").ariaValueMax;
-        const confirmPassword = document.getElementById("confirm-new-password-field").ariaValueMax;
+        const newPassword=document.getElementById("new-password-field");
+        // const confirmPassword = document.getElementById("confirm-new-password-field");
         const passwordError = document.getElementById('password-error');
 
-        if(!newPassword || !confirmPassword){
-            passwordError.textContent = "Password fields cannot be empty";
+        if(!newPassword){
+            passwordError.textContent = "Password field cannot be empty";
             passwordError.classList.remove('d-none');
             return;
         }
-        if(newPassword !== confirmPassword){
-            passwordError.textContent = "Passwords do not match";
-            passwordError.classList.remove('d-none');
-            return;
-        }
+        // if(newPassword !== confirmPassword){
+        //     passwordError.textContent = "Passwords do not match";
+        //     passwordError.classList.remove('d-none');
+        //     return;
+        // }
 
-        chrome.storage.local.set({password:newPassword}, ()=>{
+        chrome.storage.local.set({password:newPassword.value}, ()=>{
             alert("password changed successfully");
             document.getElementById("new-password-field").value="";
-            document.getElementById("confirm-new-password-field").value="";
+            //document.getElementById("confirm-new-password-field").value="";
             passwordError.classList.add("d-none");
         });
     })
@@ -72,6 +72,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
             setConfidenceField.value = percent;
         });
     }
+
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    chrome.storage.local.get(['darkMode']).then((result) => {
+        const darkMode = result.darkMode ?? false;
+        darkModeToggle.checked = darkMode;
+        if (darkMode) {
+            document.body.classList.add("dark-mode");
+        } else {
+            document.body.classList.remove("dark-mode");
+        }
+    });
+    darkModeToggle.addEventListener("change", (event) => {
+        const darkMode = event.target.checked;
+        chrome.storage.local.set({darkMode: darkMode});
+        if (darkMode) {
+            document.body.classList.add("dark-mode");
+        } else {
+            document.body.classList.remove("dark-mode");
+        }
+    });
 
     document.getElementById("logout-button").addEventListener("click", ()=>{
         chrome.storage.local.set({authenticate: false}, ()=>{

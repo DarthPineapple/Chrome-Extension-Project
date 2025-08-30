@@ -63,3 +63,17 @@ h3{
 #password-error:not(.d-none){
     display: block;
 } */
+
+
+body.dark-mode {
+    background-color: #1e1e1e !important;
+    color: white;
+}
+
+body.dark-mode p {
+    color: #cccccc !important;
+}
+
+body.dark-mode #password-section{
+    background-color: #2a2a2a !important;
+}

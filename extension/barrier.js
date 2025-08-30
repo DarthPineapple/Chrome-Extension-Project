@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     const[passwordInput, submitBtn] = ["password-field", "submit-password-button"].map((id)=>document.getElementById(id));
 
+    //dark mode
+    chrome.storage.local.get(['darkMode']).then((result) => {
+        const darkMode = result.darkMode ?? false;
+        if (darkMode) {
+            document.body.classList.add("dark-mode");
+        } else {
+            document.body.classList.remove("dark-mode");
+        }
+    });
+
     passwordInput.addEventListener("input", ()=>{
         document.getElementById("password-error").classList.add("d-none");
     });

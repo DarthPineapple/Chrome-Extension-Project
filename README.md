@@ -4,9 +4,9 @@
 - [ ] **Project Icons**: Create a logo concept
 - [ ] Train the image model
 - [ ] Train the text model
-- [ ] Popup Design
-- [ ] Blocking Settings appearance
-- [ ] Management Settings appearance
+- [X] Popup Design
+- [X] Blocking Settings appearance
+- [X] Management Settings appearance
 - [ ] Add more to the whitelist and blacklist
 - [ ] Bug Fixes
     - [ ] When creating a new setup, the entered password shows up as failed but works the second time
