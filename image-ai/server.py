@@ -9,9 +9,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the YOLOv8 model
-model = YOLO("yolov8n.pt")  # Load the YOLOv8 model (you can specify a different model if needed)
+# model = YOLO("yolov8n.pt")  # Load the YOLOv8 model (you can specify a different model if needed)
+model = YOLO("image_model.pt")
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict_image', methods=['POST'])
 def predict():
     if 'image' not in request.files:
         return jsonify({'error': 'No image provided'}), 400

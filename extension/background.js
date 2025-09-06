@@ -1,19 +1,20 @@
 // background.js
 
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  if (msg.cmd === 'getResourceUsage') { // TODO investigate getProcessInfo returning nothing 
-    console.log("Sevice worker received getResourceUsage command");
-    chrome.processes.getProcessInfo([], true, procs => {
-      // procs is an object keyed by PID; convert to array before sending
-      console.log("Processes fetched:", procs);
-      const list = Object.values(procs);
-      sendResponse({ processes: list });
-    });
-    return true; // keep the message channel open for async sendResponse
-  }
-})
+// chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+//   if (msg.cmd === 'getResourceUsage') { // TODO investigate getProcessInfo returning nothing 
+//     console.log("Sevice worker received getResourceUsage command");
+//     chrome.processes.getProcessInfo([], true, procs => {
+//       // procs is an object keyed by PID; convert to array before sending
+//       console.log("Processes fetched:", procs);
+//       const list = Object.values(procs);
+//       sendResponse({ processes: list });
+//     });
+//     return true; // keep the message channel open for async sendResponse
+//   }
+// })
 
-const baseUrl = 'https://hs_project-focusshield-ai-server.onrender.com';
+// const baseUrl = 'https://hs_project-focusshield-ai-server.onrender.com';
+const baseUrl = "http://localhost:5003"
 const imageUrl = `${baseUrl}/predict_image`;
 const textUrl = `${baseUrl}/predict_text`;
 
@@ -86,6 +87,18 @@ setInterval(() => {
 }, 60000);
 
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+  if (request.cmd === 'getResourceUsage') { // TODO investigate getProcessInfo returning nothing 
+    console.log("Sevice worker received getResourceUsage command");
+    chrome.processes.getProcessInfo([], true, procs => {
+      // procs is an object keyed by PID; convert to array before sending
+      console.log("Processes fetched:", procs);
+      const list = Object.values(procs);
+      sendResponse({ processes: list });
+    });
+    return true; // keep the message channel open for async sendResponse
+  }
+  
+  
   const categoriesMap = {
     profanity: 'profanity',
     explicit: 'explicit-content',
@@ -94,6 +107,8 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     violence: 'violence',
     social: 'social-media'
   };
+
+  console.log('Received request:', request);
 
   if (Array.isArray(request.images)) {
     console.log(request.images.length, 'images to process');
@@ -122,8 +137,11 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
               recordCategory(storageKey.replace('-log',''));
               chrome.tabs.query({}, tabs => {
                 tabs.forEach(tab => {
-                  chrome.tabs.sendMessage(tab.id, { action: 'removeImage', imageLink })
-                    .catch(err => console.error(err));
+                  chrome.tabs.sendMessage(tab.id, { action: 'removeImage', imageLink }, () => {
+                    if (chrome.runtime.lastError) {
+                      // No receiver in this tab; ignore
+                    }
+                  });
                 });
               });
               categoryCount[className] = (categoryCount[className] || 0) + 1;
@@ -131,8 +149,11 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
               recordCategory('background');
               chrome.tabs.query({}, tabs => {
                 tabs.forEach(tab => {
-                  chrome.tabs.sendMessage(tab.id, { action: 'revealImage', imageLink })
-                    .catch(err => console.error(err));
+                  chrome.tabs.sendMessage(tab.id, { action: 'revealImage', imageLink }, () => {
+                    if (chrome.runtime.lastError) {
+                      // No receiver in this tab; ignore
+                    }
+                  });
                 });
               });
             }

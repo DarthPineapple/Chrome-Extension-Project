@@ -3,8 +3,13 @@ const seenText = new Set();
 
 const imageUrls = new Set();
 
+function isDataImageOrUrl(url){
+    return url.toString().startsWith("data:image/") || url.toString().startsWith("blob:") || url.toString().startsWith("http") || url.toString() === "";
+}
+
 function extractImageLinks(){
     const images = document.querySelectorAll('img');
+    // console.log("images:", images)
     const newImageLinks = Array.from(images)
         .filter((img) => img.dataset.approved !== "true")
         .map((img) => {
@@ -23,6 +28,8 @@ function extractImageLinks(){
                 img.src = "";
                 img.alt = "";
 
+                // console.log("Extracted image link:", img.dataset.originalsrc);
+
                 return img.dataset.originalsrc
             }
             else{
@@ -30,7 +37,10 @@ function extractImageLinks(){
             }
         })
     .filter((src) => src !== "" && !seenImages.has(src));
-newImageLinks.forEach((src) => seenImages.add(src));
+newImageLinks.forEach((src) => {if(isDataImageOrUrl(src)) seenImages.add(src);});
+console.log("Seen images 1:", seenImages);
+
+// console.log("New image links from <img> tags:", newImageLinks);
 
 const backgroundImages = Array.from(document.querySelectorAll("*"));
 
@@ -54,13 +64,18 @@ backgroundImages.forEach((element) => {
             }
         
     
-    return newImageLinks;
+    // return newImageLinks;
     })
+    newImageLinks.forEach((src) => {if(isDataImageOrUrl(src)) seenImages.add(src);});
+    console.log("Background images:", newImageLinks);
+    console.log("Seen images:", seenImages);
+    return newImageLinks;
 }
 
 function sendImages(){
     const imageLinks = extractImageLinks();
     try{
+        console.log("Sending image links:", imageLinks);
         if(imageLinks.length > 0){
             chrome.runtime.sendMessage({images: imageLinks});
         }
@@ -141,8 +156,9 @@ function escapeRegExp(text){
 
 //Set up a mutationobserver
 const observer = new MutationObserver(() => {
+    console.log("DOM mutated");
     sendImages();
-    sendText();
+    // sendText();
 });
 
 observer.observe(document, {
@@ -170,6 +186,8 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
             element.style.backgroundImage = "none";
             element.removeAttribute("data-original-background-image");
         });
+
+        console.log(`Removed image with link: ${message.imageLink}`);
     }
     else if(message.action === "revealImage" && messages.imageLink){
         const images = document.querySelectorAll(`img[src=""][data-original-src="${message.imageLink}"]);`)
@@ -218,11 +236,13 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
 });
 
 window.addEventListener("load", () => {
+    console.log("aaaaaaa");
     sendImages();
-    sendText();
+    // sendText();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("bbbbb");
     sendImages();
-    sendText();
+    // sendText();
 });

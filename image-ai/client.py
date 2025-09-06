@@ -1,7 +1,7 @@
 import requests
 
 if __name__ == "__main__":
-    url = "http://localhost:5003/predict"
+    url = "http://localhost:5003/predict_image"
     image_path = "test.jpg"
     with open(image_path, "rb") as image_file:
         files = {"image": image_file}
