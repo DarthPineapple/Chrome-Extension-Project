@@ -29,9 +29,9 @@ def main():
     model.train(data=data_config_path, epochs=50, batch=16, imgsz=640, device=device)
 
     # Evaluate the model
-    results = model.val(data=data_config_path, imgsz=640, device=device)
-    metrics = results.metrics
-    print("Evaluation metrics:", metrics)
+    # results = model.val(data=data_config_path, imgsz=640, device=device)
+    # metrics = results.metrics
+    # print("Evaluation metrics:", metrics)
 
     # Save the trained model
     model.save(model_save_path)

@@ -13,3 +13,4 @@ text-ai/__pycache__/
 # Ignore All MacOS files including subdirectories
 .DS_Store
 *.DS_Store
+image-ai/dataset/
