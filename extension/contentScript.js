@@ -18,17 +18,35 @@ function extractImageLinks(){
                     img.dataset.originalsrc = img.src;
                 }
 
-                img.dataset.originalAlt = img.alt;
-                
-                if (img.srcset !== ""){
-                    img.dataset.originalSrcset = img.srcset;
-                    img.srcset = "";
+                // Preserve layout dimensions
+                if (!img.dataset.originalSized) {
+                    const rect = img.getBoundingClientRect();
+                    if (rect.width && rect.height) {
+                        img.style.width = `${rect.width}px`;
+                        img.style.height = `${rect.height}px`;
+                    }
+                    img.dataset.originalSized = "true";
                 }
 
-                img.src = "";
-                img.alt = "";
+                // Inject style
+                if (!document.getElementById("image-hider-style")) {
+                    const style = document.createElement("style");
+                    style.id = "image-hider-style";
+                    style.textContent = ".image-pending-placeholder{opacity:0 !important;";
+                    document.head.appendChild(style);
+                }
+                
+                // Clear srcset safely
+                // if (img.srcset){
+                //     img.dataset.originalSrcset = img.srcset;
+                //     img.srcset = "";
+                // }
 
-                // console.log("Extracted image link:", img.dataset.originalsrc);
+                // Use a transparent 1x1 pixel as a placeholder
+                const transparentPx = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+                img.src = transparentPx;
+                img.alt = "";
+                img.classList.add("image-pending-placeholder");
 
                 return img.dataset.originalsrc
             }
@@ -168,16 +186,17 @@ observer.observe(document, {
 
 chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     if(message.action === "removeImage" && message.imageLink){
-        const images = document.querySelectorAll(`img[data-original-src="${message.imageLink}"]`);
+        const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`);
         images.forEach((image) => {
-            image.src = "";
-            image.alt = "";
-            if(image.srcset === "" && image.dataset.originalSrcset){
-                image.srcset = "";
-                image.removeAttribute("data-original-srcset");
-            }
-            image.removeAttribute("data-original-src");
-            image.removeAttribute("data-original-alt");
+            img.classList.add("image-pending-placeholder");
+            // image.src = "";
+            // image.alt = "";
+            // if(image.srcset === "" && image.dataset.originalSrcset){
+            //     image.srcset = "";
+            //     image.removeAttribute("data-original-srcset");
+            // }
+            // image.removeAttribute("data-original-src");
+            // image.removeAttribute("data-original-alt");
         });
 
         const elements = document.querySelectorAll(`*[data-original-background-image="${message.imageLink}"]`);
@@ -189,19 +208,34 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
 
         console.log(`Removed image with link: ${message.imageLink}`);
     }
-    else if(message.action === "revealImage" && messages.imageLink){
-        const images = document.querySelectorAll(`img[src=""][data-original-src="${message.imageLink}"]);`)
+    else if(message.action === "revealImage" && message.imageLink){
+        console.log(`Revealing image with link: ${message.imageLink}`);
+        const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`)
+        console.log("Images to reveal:", images);
         images.forEach((image) => {
-            image,src = "";
-            image.alt = "";
-            if(image.srcset === "" && image.dataset.originalSrcset){
-                image.srcset = image.originalSrcSet;
-                image.removeAttribute("data-original-srcset");
-            }
-            image.dataset.approves = "true";
-            image.style.display = "block";
-            image.removeAttribute("data-original-src");
-            image.removeAttribute("data-original-alt");
+            // if (image.dataset.originalSrc){
+            //     console.log("Revealing image:", image);
+            //     image.src = image.dataset.originalSrc;
+            // }
+            console.log("Revealing image:", message.imageLink);
+            image.src = message.imageLink;
+            // if (image.dataset.originalSrcset) {
+            //     console.log("Restoring srcset for image:", image);
+            //     image.srcset = image.dataset.originalsrcset;
+            //     delete image.dataset.originalsrcset;
+            // }
+            image.classList.remove("image-pending-placeholder");
+            image.dataset.approved = "true";
+            // image,src = "";
+            // image.alt = "";
+            // if(image.srcset === "" && image.dataset.originalSrcset){
+            //     image.srcset = image.originalSrcSet;
+            //     image.removeAttribute("data-original-srcset");
+            // }
+            // image.dataset.approves = "true";
+            // image.style.display = "block";
+            // image.removeAttribute("data-original-src");
+            // image.removeAttribute("data-original-alt");
         });
 
         const elements = document.querySelectorAll(`*[data-original-background-image="${message.imageLink}"]`);

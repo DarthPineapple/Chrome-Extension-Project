@@ -130,21 +130,41 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         const confidence = prediction?.confidence || 0;
         if (className && className !== 'background') {
           console.log(`URL: ${imageLink} | Prediction: ${className} (${(confidence*100).toFixed(2)}%)`);
-          const storageKey = categoriesMap[className] || 'background-log';
-          chrome.storage.local.get([storageKey]).then(res => {
-            const allowed = res[storageKey] !== false;
-            if (allowed) {
-              recordCategory(storageKey.replace('-log',''));
-              chrome.tabs.query({}, tabs => {
-                tabs.forEach(tab => {
-                  chrome.tabs.sendMessage(tab.id, { action: 'removeImage', imageLink }, () => {
-                    if (chrome.runtime.lastError) {
-                      // No receiver in this tab; ignore
-                    }
+          
+          // Check the user preference for confidence threshold
+          chrome.storage.local.get(['confidence']).then(result => {
+            const threshold = result.confidence ?? 0.5;
+
+            if (confidence >= threshold) {
+              // If the received confidence is lower than the set threshold, treat it as 'background'
+              const storageKey = categoriesMap[className] || 'background-log';
+              chrome.storage.local.get([storageKey]).then(res => {
+                const allowed = res[storageKey] !== false;
+                if (allowed) {
+                  recordCategory(storageKey.replace('-log',''));
+                  chrome.tabs.query({}, tabs => {
+                    tabs.forEach(tab => {
+                      chrome.tabs.sendMessage(tab.id, { action: 'removeImage', imageLink }, () => {
+                        if (chrome.runtime.lastError) {
+                          // No receiver in this tab; ignore
+                        }
+                      });
+                    });
                   });
-                });
+                  categoryCount[className] = (categoryCount[className] || 0) + 1;
+                } else {
+                  recordCategory('background');
+                  chrome.tabs.query({}, tabs => {
+                    tabs.forEach(tab => {
+                      chrome.tabs.sendMessage(tab.id, { action: 'revealImage', imageLink }, () => {
+                        if (chrome.runtime.lastError) {
+                          // No receiver in this tab; ignore
+                        }
+                      });
+                    });
+                  });
+                }
               });
-              categoryCount[className] = (categoryCount[className] || 0) + 1;
             } else {
               recordCategory('background');
               chrome.tabs.query({}, tabs => {
@@ -158,6 +178,8 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
               });
             }
           });
+
+          
         }
       } catch (error) {
         console.error(error);

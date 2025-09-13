@@ -6,6 +6,28 @@ const PRESETS = {
     custom: null
 }
 
+function validatePassword(password) {
+    // return true if the password is sufficiently strong, reason given if not
+    var longEnough = password.length >= 6;
+    var hasUpper = /[A-Z]/.test(password);
+    var hasSpecial = /[\.\,\?\/\\\'\;\:\=\+\-\_\!\@\#\$\%\^\&\*\*\(\)]/.test(password);
+    var hasNumber = /\d/.test(password);
+    
+    if (!longEnough) {
+        return [false, "Password must be at least 6 characters long."];
+    }
+    if (!hasUpper) {
+        return [false, "Password must contain at least one uppercase letter."];
+    }
+    if (!hasSpecial) {
+        return [false, "Password must contain at least one special character."];
+    }
+    if (!hasNumber) {
+        return [false, "Password must contain at least one number."];
+    }
+    return [true, ""];
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
     chrome.storage.local.get(['authenticated']).then((result) =>{
         if (!result.authenticated){
@@ -40,36 +62,50 @@ document.addEventListener('DOMContentLoaded', ()=>{
         // const confirmPassword = document.getElementById("confirm-new-password-field");
         const passwordError = document.getElementById('password-error');
 
-        if(!newPassword){
-            passwordError.textContent = "Password field cannot be empty";
-            passwordError.classList.remove('d-none');
-            return;
-        }
+        // if(!newPassword){
+        //     passwordError.textContent = "Password field cannot be empty";
+        //     passwordError.classList.remove('d-none');
+        //     return;
+        // }
         // if(newPassword !== confirmPassword){
         //     passwordError.textContent = "Passwords do not match";
         //     passwordError.classList.remove('d-none');
         //     return;
         // }
 
-        chrome.storage.local.set({password:newPassword.value}, ()=>{
-            alert("password changed successfully");
-            document.getElementById("new-password-field").value="";
-            //document.getElementById("confirm-new-password-field").value="";
-            passwordError.classList.add("d-none");
-        });
+        // Validate password strength
+        const [isValid, reason] = validatePassword(newPassword.value);
+        if (!isValid) {
+            passwordError.textContent = reason;
+            passwordError.classList.remove('d-none');
+            // return;
+        } else {
+            chrome.storage.local.set({password:newPassword.value}, ()=>{
+                alert("password changed successfully");
+                document.getElementById("new-password-field").value="";
+                //document.getElementById("confirm-new-password-field").value="";
+                passwordError.classList.add("d-none");
+            });
+        }
     })
 
     const setConfidenceField = document.getElementById("set-confidence-field");
+    const setConfidenceButton = document.getElementById("save-confidence-level-button");
     if(setConfidenceField){
-        setConfidenceField.addEventListener("blue", (event) => {
-            let percent = parseInt(event.target.value);
+        chrome.storage.local.get(['confidence']).then((result) => {
+            const confidence = result.confidence ?? 0.5;
+            setConfidenceField.value = Math.round(confidence * 100);
+        });
+
+        setConfidenceButton.addEventListener("click", (event) => {
+            let percent = parseInt(setConfidenceField.value ?? 50);
             if(percent>100){
                 percent = 100;
             }if(percent < 0){
                 percent=0;
             }
             chrome.storage.local.set({confidence:percent/100});
-            setConfidenceField.value = percent;
+            // setConfidenceField.value = percent;
         });
     }
 
@@ -148,8 +184,9 @@ function initBlockingUI() {
                         });
                     })
                 });
-                obj.confidence = parseInt(document.getElementById('set-confidence-field').value ?? 50) / 100;
+                // obj.confidence = parseInt(document.getElementById('set-confidence-field').value ?? 50) / 100;
                 chrome.storage.local.set({blockingOptions: obj});
+                chrome.storage.local.set({confidence: parseInt(document.getElementById('set-confidence-field').value ?? 50) / 100});
                 console.log("Saved custom:", obj);
             } else {
                 setCustomEnable(false);
@@ -161,8 +198,9 @@ function initBlockingUI() {
                     obj[cat] = PRESETS[preset].includes(cat);
                 })
                 var preset_length = PRESETS[preset].length;
-                obj.confidence = PRESETS[preset][preset_length - 1];
+                // obj.confidence = PRESETS[preset][preset_length - 1];
                 chrome.storage.local.set({blockingOptions: obj});
+                chrome.storage.local.set({confidence: PRESETS[preset][preset_length - 1]});
                 console.log("Saved preset:", obj);
             }
         })
