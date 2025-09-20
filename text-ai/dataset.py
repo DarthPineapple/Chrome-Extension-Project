@@ -92,7 +92,7 @@ class TextDataset(Dataset):
             if char not in self.vocab:
                 self.vocab[char] = len(self.vocab)
 
-    def ecode_text(self, char_list):
+    def encode_text(self, char_list):
         return [self.vocab.get(char, self.vocab["<UNK>"]) for char in char_list]
     
     def __len__(self):
@@ -100,7 +100,7 @@ class TextDataset(Dataset):
     
     def __getitem__(self, index):
         char_list, labels = self.data[index]
-        text_indices = self.ecode_text(char_list)
+        text_indices = self.encode_text(char_list)
         x = torch.tensor(text_indices, dtype=torch.long)
         y = torch.tensor(labels, dtype=torch.long)
         return x, y
