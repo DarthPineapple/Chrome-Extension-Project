@@ -28,12 +28,28 @@ function dataUrlToBlob(dataUrl) {
   const [header, data] = dataUrl.split(',');
   const mimeMatch = header.match(/:(.*?);/);
   const mime = mimeMatch ? mimeMatch[1] : '';
-  const binary = atob(data);
-  const array = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i++) {
-    array[i] = binary.charCodeAt(i);
+
+  // Skip svg images
+  if (mime.startsWith('image/svg')) return null;
+
+  try {
+    let bytes;
+    if (/;base64/i.test(header)) {
+      // Base64-encoded data
+      const binary = atob(data);
+      const array = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) array[i] = binary.charCodeAt(i);
+      bytes = array;
+    } else {
+      // URI-encoded data (e.g., ;utf8,<svg ...>)
+      const decoded = decodeURIComponent(data);
+      bytes = new TextEncoder().encode(decoded);
+    }
+    return new Blob([bytes], { type: mime || 'application/octet-stream' });
+  } catch (e) {
+    console.error('Failed to decode data URL', e, { header, sample: data?.slice(0, 64) });
+    return null;
   }
-  return new Blob([array], { type: mime });
 }
 
 async function downloadImage(url) {
@@ -144,6 +160,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
                   recordCategory(storageKey.replace('-log',''));
                   chrome.tabs.query({}, tabs => {
                     tabs.forEach(tab => {
+                      console.log('Removing image in tab', tab.id, imageLink);
                       chrome.tabs.sendMessage(tab.id, { action: 'removeImage', imageLink }, () => {
                         if (chrome.runtime.lastError) {
                           // No receiver in this tab; ignore
@@ -156,6 +173,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
                   recordCategory('background');
                   chrome.tabs.query({}, tabs => {
                     tabs.forEach(tab => {
+                      console.log('Revealing image in tab', tab.id, imageLink);
                       chrome.tabs.sendMessage(tab.id, { action: 'revealImage', imageLink }, () => {
                         if (chrome.runtime.lastError) {
                           // No receiver in this tab; ignore
@@ -169,6 +187,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
               recordCategory('background');
               chrome.tabs.query({}, tabs => {
                 tabs.forEach(tab => {
+                  console.log('Revealing image in tab', tab.id, imageLink);
                   chrome.tabs.sendMessage(tab.id, { action: 'revealImage', imageLink }, () => {
                     if (chrome.runtime.lastError) {
                       // No receiver in this tab; ignore
