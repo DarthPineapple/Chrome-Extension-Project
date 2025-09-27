@@ -146,7 +146,6 @@ function extractSentences(){
         // TODO: check back on this potential error point
         extractTextFromNode(document.body);
     }
-    
 
     sentences = sentences
         .map((sentence) => sentence.trim())
@@ -154,12 +153,18 @@ function extractSentences(){
         .filter((sentence) => !sentence.includes("???"))
         .filter((sentence) => !sentence.includes("!"))
         .filter((sentence) => !seenText.has(sentence));
+
+
+    sentences.forEach((sentence) => seenText.add(sentence));
+    
+    return sentences;
 }
 
 function sendText(){
     const text = extractSentences();
     try{
         if(text.length > 0){
+            console.log("Sending text:", text);
             chrome.runtime.sendMessage({text: text});
         }
     }
@@ -176,7 +181,7 @@ function escapeRegExp(text){
 const observer = new MutationObserver(() => {
     console.log("DOM mutated");
     sendImages();
-    // sendText();
+    sendText();
 });
 
 observer.observe(document, {
@@ -248,6 +253,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         });
     }
         else if (message.action === "removeText" && message.text){
+            // command to censor with "█"
             const text = message.text.trim();
             
             function removeTextFromNode(node){
@@ -257,8 +263,8 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
                         return;
                     }
                     if(node.textContent.includes(text)){
-                        node.textContent = node.textContent.replace(new RegExp(escapeRegExp(text), "gi"), "???");
-                        ;
+                        node.textContent = node.textContent.replaceAll(new RegExp(escapeRegExp(text), "g"), "█".repeat(text.length));
+                        console.log(`Removed text: ${text}`);
                     }
                 }
                 else{

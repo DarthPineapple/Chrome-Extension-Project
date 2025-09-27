@@ -42,7 +42,7 @@ def predict():
                 'class': model.names[int(box.cls)],
                 'confidence': float(box.conf),
             })
-
+        print(response)
         return jsonify(response), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500

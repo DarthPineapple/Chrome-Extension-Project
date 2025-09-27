@@ -1,3 +1,4 @@
+import json
 from flask import Flask, request, jsonify
 import torch
 import torch.nn.functional as F
@@ -7,6 +8,17 @@ from train import CNNClassifier, MAX_LEN, EMBEDDING_DIM, NUM_CLASSES
 app = Flask(__name__)
 
 BANNED_DIR = 'banned'
+
+BLACKLIST_FILE = 'blacklist.json'
+"""
+FORMAT:
+{
+    "drugs": ["drug1", "drug2", ...],
+}
+"""
+with open(BLACKLIST_FILE, 'r') as f:
+    BLACKLIST = json.load(f)
+
 ALLOWED_WORDS = 'whitelist.txt'
 ALLOWED_WORDS_SET = set()
 
@@ -17,7 +29,7 @@ with open(ALLOWED_WORDS, 'r') as f:
             ALLOWED_WORDS_SET.add(word)
 
 CORPUS_FILE = 'corpus.txt'
-CONFIDENCE_THRESHOLD = 0.99
+CONFIDENCE_THRESHOLD = 0.50
 
 dataset_obj = TextDataset(BANNED_DIR, CORPUS_FILE, max_len=MAX_LEN)
 vocab = dataset_obj.vocab
@@ -94,6 +106,7 @@ def predict_text():
         logits = model(batch)
         probs = torch.softmax(logits, dim=-1)
         max_probs, predictions = torch.max(probs, dim=-1)
+        print(predictions, max_probs)
         predictions[max_probs < CONFIDENCE_THRESHOLD] = 0
     
     predictions = predictions.cpu().tolist()
@@ -115,8 +128,21 @@ def predict_text():
             if new_span_text and new_span_text.lower() not in ALLOWED_WORDS_SET:
                 final_spans.append(span)
 
-        results.append({'text': text, 'spans': final_spans})
+        results_dict = {"text": text, "spans": final_spans}
+
+        # Do a final filter of the text through the blacklist
+        for word in text.lower().split():
+            for category, banned_words in BLACKLIST.items():
+                if word in banned_words:
+                    results_dict["spans"].append({'start': text.lower().index(word), 'end': text.lower().index(word) + len(word), 'category': category})
+                    break
+
+        results.append(results_dict)
+    
+    
+
+    print(results)
     return jsonify(results)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5004)

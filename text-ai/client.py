@@ -1,7 +1,7 @@
 import requests
 
 def main():
-    url = "http://localhost:5000/predict_text"
+    url = "http://localhost:5004/predict_text"
     print("Enter text to analyze (type 'exit' to quit):")
     while True:
         user_input = input("> ")
