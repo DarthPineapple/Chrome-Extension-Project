@@ -159,7 +159,7 @@ function sendText(){
 }
 
 function escapeRegExp(text){
-    text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 //Set up a mutationobserver
@@ -178,7 +178,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     if(message.action === "removeImage" && message.imageLink){
         const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`);
         images.forEach((image) => {
-            img.classList.add("image-pending-placeholder");
+            image.classList.add("image-pending-placeholder");
             // image.src = "";
             // image.alt = "";
             // if(image.srcset === "" && image.dataset.originalSrcset){
@@ -218,26 +218,26 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
             element.removeAttribute("data-original-background-image");
         });
     }
-        else if (message.action === "removeText" && message.text){
-            // command to censor with "█"
-            const text = message.text.trim();
-            
-            function removeTextFromNode(node){
-                if(node.nodeType === Node.TEXT_NODE){
-                    textContent = node.textContent.trim();
-                    if(textContent === ""){
-                        return;
-                    }
-                    if(node.textContent.includes(text)){
-                        node.textContent = node.textContent.replaceAll(new RegExp(escapeRegExp(text), "g"), "█".repeat(text.length));
-                        console.log(`Removed text: ${text}`);
-                    }
+    else if (message.action === "removeText" && message.text){
+        // command to censor with "█"
+        const text = message.text.trim();
+        
+        function removeTextFromNode(node){
+            if(node.nodeType === Node.TEXT_NODE){
+                const textContent = node.textContent.trim();
+                if(textContent === ""){
+                    return;
                 }
-                else{
-                    node.childNodes.forEach((child) => removeTextFromNode(child));
+                if(node.textContent.includes(text)){
+                    node.textContent = node.textContent.replaceAll(new RegExp(escapeRegExp(text), "g"), "█".repeat(text.length));
+                    console.log(`Removed text: ${text}`);
                 }
-                removeTextFromNode(document.body);
             }
+            else{
+                node.childNodes.forEach((child) => removeTextFromNode(child));
+            }
+        }
+        removeTextFromNode(document.body);
     }
 });
 

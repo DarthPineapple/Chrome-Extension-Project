@@ -5,6 +5,11 @@ const imageUrl = `${baseUrl}/predict_image`;
 const textBaseUrl = 'http://localhost:5004';
 const textUrl = `${textBaseUrl}/predict_text`;
 
+// Server limits
+const MAX_TEXTS_PER_BATCH = 100;  // Match server limit
+const MAX_TEXT_LENGTH = 5000;     // Match server limit
+const MAX_IMAGE_BATCH = 10;       // Process images in smaller batches
+
 chrome.runtime.onInstalled.addListener(({ reason }) => {
   if (reason === 'install') {
     chrome.tabs.create({ url: 'barrier.html' });
@@ -16,8 +21,8 @@ function dataUrlToBlob(dataUrl) {
   const mimeMatch = header.match(/:(.*?);/);
   const mime = mimeMatch ? mimeMatch[1] : '';
 
-  // Skip svg images
-  if (mime.startsWith('image/svg')) return null;
+  // Allow SVG images now
+  // if (mime.startsWith('image/svg')) return null;
 
   try {
     let bytes;
@@ -44,6 +49,7 @@ async function downloadImage(url) {
   let blob;
   if (url.startsWith('data:')) {
     blob = dataUrlToBlob(url);
+    if (!blob) return null;
   } else {
     try {
       const response = await fetch(url);
@@ -58,10 +64,35 @@ async function downloadImage(url) {
     }
   }
   if (!blob.type.startsWith('image/')) return null;
-  if (blob.type.startsWith('image/svg')) return null;
+  // Allow SVG now - removed the SVG filter
+  // if (blob.type.startsWith('image/svg')) return null;
+  
+  // Validate against allowed MIME types
+  const allowedTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif', 'image/bmp', 'image/webp', 'image/svg+xml'];
+  if (!allowedTypes.includes(blob.type)) {
+    console.warn(`Unsupported image type: ${blob.type} for URL: ${url}`);
+    return null;
+  }
+  
   try {
-    await createImageBitmap(blob);
-    return new File([blob], 'image', { type: blob.type });
+    // Skip bitmap validation for SVG
+    if (blob.type !== 'image/svg+xml') {
+      await createImageBitmap(blob);
+    }
+    
+    // Generate proper filename with extension based on MIME type
+    const extensionMap = {
+      'image/png': 'png',
+      'image/jpeg': 'jpg',
+      'image/jpg': 'jpg',
+      'image/gif': 'gif',
+      'image/bmp': 'bmp',
+      'image/webp': 'webp',
+      'image/svg+xml': 'svg'
+    };
+    const extension = extensionMap[blob.type] || 'jpg';
+    const filename = `image.${extension}`;
+    return new File([blob], filename, { type: blob.type });
   } catch (error) {
     console.error(`Error processing image from url ${url}`, error);
     return null;
@@ -101,6 +132,184 @@ setInterval(() => {
   });
 }, 60000);
 
+async function checkServerHealth(url) {
+  try {
+    const response = await fetch(`${url}/health`);
+    const data = await response.json();
+    return data.status === 'healthy';
+  } catch (error) {
+    console.error('Server health check failed:', error);
+    return false;
+  }
+}
+
+async function processImagesInBatches(images, batchSize = MAX_IMAGE_BATCH) {
+  const categoryCount = {};
+  
+  for (let i = 0; i < images.length; i += batchSize) {
+    const batch = images.slice(i, i + batchSize);
+    console.log(`Processing image batch ${i / batchSize + 1} of ${Math.ceil(images.length / batchSize)}`);
+    
+    const imagePromises = batch.map(async imageLink => {
+      const image = await downloadImage(imageLink);
+      return { image, imageLink };
+    });
+    
+    const imagesWithUrls = (await Promise.all(imagePromises)).filter(item => item.image);
+    console.log(imagesWithUrls.length, 'images downloaded in this batch');
+    
+    const predictionPromises = imagesWithUrls.map(async ({ image, imageLink }) => {
+      try {
+        const formData = new FormData();
+        formData.append('image', image);
+        
+        // Log file details for debugging
+        console.log(`Sending image: ${image.name}, type: ${image.type}, size: ${image.size} bytes`);
+        
+        const response = await fetch(imageUrl, { method: 'POST', body: formData });
+        
+        if (!response.ok) {
+          const error = await response.json().catch(() => ({ error: 'Unknown error' }));
+          console.error('Image prediction error:', error);
+          // If rate limited, wait and retry
+          if (response.status === 429) {
+            console.warn('Rate limited, waiting 1 second...');
+            await new Promise(resolve => setTimeout(resolve, 1000));
+          }
+          return;
+        }
+        
+        const data = await response.json();
+        const [prediction] = data.predictions || [];
+        const className = prediction?.class;
+        const confidence = prediction?.confidence || 0;
+        console.log('Image prediction', imageLink, className, confidence);
+        
+        if (className && className !== 'background') {
+          console.log(`URL: ${imageLink} | Prediction: ${className} (${(confidence*100).toFixed(2)}%)`);
+          
+          try {
+            const result = await chrome.storage.local.get(['confidence']);
+            const threshold = result.confidence ?? 0.5;
+
+            if (confidence >= threshold) {
+              const storageKey = categoriesMap[className] || 'background-log';
+              const res = await chrome.storage.local.get([storageKey]);
+              const allowed = res[storageKey] !== false;
+              if (allowed) {
+                recordCategory(storageKey.replace('-log',''));
+                console.log('Removing image in all tabs', imageLink);
+                sendMessageToAllTabs({ action: 'removeImage', imageLink });
+                categoryCount[className] = (categoryCount[className] || 0) + 1;
+              } else {
+                recordCategory('background');
+                console.log('Revealing image in all tabs (category blocked)', imageLink);
+                sendMessageToAllTabs({ action: 'revealImage', imageLink });
+              }
+            } else {
+              recordCategory('background');
+              console.log('Revealing image in all tabs (low confidence)', imageLink);
+              sendMessageToAllTabs({ action: 'revealImage', imageLink });
+            }
+          } catch (error) {
+            console.error('Storage error:', error);
+          }
+        } else {
+          recordCategory('background');
+          console.log("No detections - revealing image in all tabs", imageLink);
+          sendMessageToAllTabs({ action: 'revealImage', imageLink });
+        }
+      } catch (error) {
+        console.error('Image processing error:', error);
+      }
+    });
+    
+    await Promise.all(predictionPromises);
+  }
+  
+  return categoryCount;
+}
+
+async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
+  const categoryCount = {};
+  
+  // Filter and truncate texts
+  const validTexts = texts
+    .filter(t => t && t.trim())
+    .map(t => t.length > MAX_TEXT_LENGTH ? t.substring(0, MAX_TEXT_LENGTH) : t);
+  
+  for (let i = 0; i < validTexts.length; i += batchSize) {
+    const batch = validTexts.slice(i, i + batchSize);
+    console.log(`Processing text batch ${i / batchSize + 1} of ${Math.ceil(validTexts.length / batchSize)}`);
+    
+    try {
+      const response = await fetch(textUrl, {
+        method: 'POST',
+        body: JSON.stringify({ text: batch }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      
+      if (!response.ok) {
+        const error = await response.json();
+        console.error('Text prediction error:', error);
+        // If rate limited, wait and retry
+        if (response.status === 429) {
+          console.warn('Rate limited, waiting 1 second...');
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          i -= batchSize; // Retry this batch
+          continue;
+        }
+        continue;
+      }
+      
+      const predictions = await response.json();
+      console.log('Text predictions received:', predictions.length);
+      
+      // Process each text's predictions
+      for (let j = 0; j < predictions.length; j++) {
+        const text = batch[j];
+        const spans = predictions[j]?.spans || [];
+        
+        if (spans.length > 0) {
+          const detectedCategories = new Set();
+          spans.forEach(span => {
+            const category = span.category;
+            detectedCategories.add(category);
+            categoryCount[category] = (categoryCount[category] || 0) + 1;
+          });
+          
+          for (const category of detectedCategories) {
+            const storageKey = categoriesMap[category] || 'background-log';
+            try {
+              const res = await chrome.storage.local.get([storageKey]);
+              const allowed = res[storageKey] !== false;
+              if (allowed) {
+                recordCategory(storageKey.replace('-log',''));
+                console.log('Censoring text in all tabs', text);
+                sendMessageToAllTabs({ action: 'removeText', text });
+              } else {
+                recordCategory('background');
+                console.log('Revealing text in all tabs (category blocked)', text);
+                sendMessageToAllTabs({ action: 'revealText', text });
+              }
+            } catch (error) {
+              console.error('Storage error:', error);
+            }
+          }
+        } else {
+          recordCategory('background');
+          console.log("No detections - revealing text in all tabs", text);
+          sendMessageToAllTabs({ action: 'revealText', text });
+        }
+      }
+    } catch (error) {
+      console.error('Text batch processing error:', error);
+    }
+  }
+  
+  return categoryCount;
+}
+
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
   const categoriesMap = {
     profanity: 'profanity',
@@ -115,108 +324,30 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
   if (Array.isArray(request.images)) {
     console.log(request.images.length, 'images to process');
-    const categoryCount = {};
-    const imagePromises = request.images.map(async imageLink => {
-      const image = await downloadImage(imageLink);
-      return { image, imageLink };
-    });
-    const imagesWithUrls = (await Promise.all(imagePromises)).filter(item => item.image);
-    console.log(imagesWithUrls.length, 'images downloaded');
-    const predictionPromises = imagesWithUrls.map(async ({ image, imageLink }) => {
-      try {
-        const formData = new FormData();
-        formData.append('image', image);
-        const response = await fetch(imageUrl, { method: 'POST', body: formData });
-        const data = await response.json();
-        const [prediction] = data.predictions || [];
-        const className = prediction?.class;
-        const confidence = prediction?.confidence || 0;
-        console.log('Image prediction', imageLink, className, confidence);
-        if (className && className !== 'background') {
-          console.log(`URL: ${imageLink} | Prediction: ${className} (${(confidence*100).toFixed(2)}%)`);
-          
-          // Check the user preference for confidence threshold
-          chrome.storage.local.get(['confidence']).then(result => {
-            const threshold = result.confidence ?? 0.5;
-
-            if (confidence >= threshold) {
-              const storageKey = categoriesMap[className] || 'background-log';
-              chrome.storage.local.get([storageKey]).then(res => {
-                const allowed = res[storageKey] !== false;
-                if (allowed) {
-                  recordCategory(storageKey.replace('-log',''));
-                  console.log('Removing image in all tabs', imageLink);
-                  sendMessageToAllTabs({ action: 'removeImage', imageLink });
-                  categoryCount[className] = (categoryCount[className] || 0) + 1;
-                } else if(!className) {
-                  recordCategory('background');
-                  console.log('Revealing image in all tabs', imageLink);
-                  sendMessageToAllTabs({ action: 'revealImage', imageLink });
-                }
-              });
-            } else {
-              recordCategory('background');
-              console.log('Revealing image in all tabs (low confidence)', imageLink);
-              sendMessageToAllTabs({ action: 'revealImage', imageLink });
-            }
-          });
-
-          
-        } else{
-          recordCategory('background');
-          console.log("No detections - revealing image in all tabs", imageLink);
-          sendMessageToAllTabs({ action: 'revealImage', imageLink });
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    });
-    await Promise.all(predictionPromises);
+    
+    // Check image server health
+    const imageServerHealthy = await checkServerHealth(baseUrl);
+    if (!imageServerHealthy) {
+      console.error('Image server is not healthy');
+      sendResponse({ status: 'error', message: 'Image server unavailable' });
+      return true;
+    }
+    
+    const categoryCount = await processImagesInBatches(request.images);
     console.log('Image categories count:', categoryCount);
   } else if (Array.isArray(request.text)) {
     console.log(request.text.length, 'text to process');
-    const categoryCount = {};
-    const sentences = request.text.filter(t => t.trim());
-
-    if (sentences.length > 0) {
-      for (const text of sentences) {
-        try {
-          const response = await fetch(textUrl, { method: 'POST', body: JSON.stringify({ text: [text] }), headers: { 'Content-Type': 'application/json' } });
-          const predictions = await response.json();
-          console.log('Text prediction', predictions);
-          const spans = predictions?.[0]?.spans || [];
-          if (spans.length > 0) {
-            const detectedCategories = new Set();
-            spans.forEach(span => {
-              const category = span.category;
-              detectedCategories.add(category);
-              categoryCount[category] = (categoryCount[category] || 0) + 1;
-            });
-            detectedCategories.forEach(category => {
-              const storageKey = categoriesMap[category] || 'background-log';
-              chrome.storage.local.get([storageKey]).then(res => {
-                const allowed = res[storageKey] !== false;
-                if (allowed) {
-                  recordCategory(storageKey.replace('-log',''));
-                  console.log('Censoring text in all tabs', text);
-                  sendMessageToAllTabs({ action: 'removeText', text });
-                } else if(!category) {
-                  recordCategory('background');
-                  console.log('Revealing text in all tabs', text);
-                  sendMessageToAllTabs({ action: 'revealText', text });
-                }
-              });
-            });
-          } else {
-            recordCategory('background');
-            console.log("No detections - revealing text in all tabs", text);
-            sendMessageToAllTabs({ action: 'revealText', text });
-          }
-        } catch (error) {
-          console.error(error);
-        }
-      }
+    
+    // Check text server health
+    const textServerHealthy = await checkServerHealth(textBaseUrl);
+    if (!textServerHealthy) {
+      console.error('Text server is not healthy');
+      sendResponse({ status: 'error', message: 'Text server unavailable' });
+      return true;
     }
+    
+    const categoryCount = await processTextsInBatches(request.text);
+    console.log('Text categories count:', categoryCount);
   }
 
   sendResponse({ status: 'done' });

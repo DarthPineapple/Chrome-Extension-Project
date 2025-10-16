@@ -1,0 +1,1358 @@
+2025-10-15 22:55:07,475 - __main__ - INFO - Model loaded successfully
+2025-10-15 22:55:07,522 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.68.105:5003
+2025-10-15 22:55:07,522 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-15 22:55:32,258 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:32,248 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:32,289 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:32] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:32,296 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:32] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:36,250 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:36,254 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:36,254 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:36,255 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:36,256 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:36,256 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:36,256 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:36,256 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:36,257 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:36,257 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:36,329 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:36,330 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:36,334 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:36,336 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:36,337 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 22:55:36,338 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,340 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 22:55:36,344 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,346 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,675 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,678 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,680 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,680 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,681 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,682 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,682 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,683 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,684 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,684 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,684 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,686 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,687 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,688 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,690 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,690 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,692 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,693 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,694 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,695 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,696 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,696 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,697 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:36,697 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,698 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,698 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,698 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,699 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:36,699 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:36,700 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:36] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:37,348 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:37,348 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:37,349 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:37,350 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:37,350 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:37,351 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:37,351 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:37,352 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:37,352 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:37,353 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:37,353 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:37,354 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,568 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,571 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,571 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,572 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,581 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,573 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,583 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,573 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,580 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,582 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,587 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,587 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,578 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,584 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,587 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,579 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,590 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,583 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,589 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,589 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,591 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,603 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,607 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,609 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,609 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,610 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,612 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,615 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,616 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,616 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,619 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,619 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,619 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,619 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,620 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,620 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,621 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,623 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,624 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,628 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,630 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,632 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,634 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,632 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,635 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,635 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,636 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,637 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,637 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,641 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,639 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,641 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,642 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,644 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,643 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,643 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,645 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,645 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,646 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,640 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,647 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,648 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,650 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,654 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,650 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,653 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,654 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,655 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,656 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,658 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,653 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,657 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,658 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,661 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,659 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,658 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,659 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,662 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,663 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,657 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,664 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,671 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,673 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,673 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,673 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,678 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,676 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,674 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,682 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,683 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,683 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,689 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,691 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,691 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,692 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,692 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,695 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,695 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,698 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,699 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,699 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,699 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,700 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,700 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,700 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,702 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,704 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,711 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,705 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,710 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,712 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,715 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,709 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,716 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,717 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,717 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,722 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,722 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,722 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,723 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,723 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,724 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,724 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,724 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,725 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,729 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,726 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,729 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,726 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,733 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,734 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,736 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,739 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,739 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,739 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,741 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,745 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,742 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,747 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,747 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,748 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,749 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,750 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,751 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,755 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,752 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,755 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,753 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,759 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,760 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,761 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,762 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,762 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,754 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,762 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,763 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,764 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,765 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,765 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,766 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,767 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,767 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,768 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,769 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,774 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,772 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,773 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,774 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,769 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,775 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,776 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,776 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,783 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,783 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,785 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,784 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,784 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,784 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,787 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,786 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,788 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,791 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,791 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,792 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,792 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,792 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,802 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,803 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,803 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,804 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,804 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,804 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,805 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,812 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,808 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,809 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,815 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,814 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,816 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,814 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,815 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,810 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,816 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,806 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,816 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,816 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,816 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,817 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,818 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,819 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,819 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,821 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,821 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,823 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,823 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,823 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,824 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 22:55:42,825 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,824 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,825 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 22:55:42,824 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 22:55:42,826 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 22:55:42] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,485 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,487 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,488 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,488 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,491 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,494 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,496 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,498 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,500 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,500 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,501 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,504 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,509 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,509 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,511 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,511 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,513 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,516 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,515 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:01:19,520 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,521 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,522 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,523 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:01:19,524 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,526 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,527 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,527 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,528 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,528 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,527 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,529 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,530 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,531 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,531 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,532 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,532 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,533 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,535 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,535 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,536 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,538 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,539 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,541 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,542 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,542 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,544 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,544 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,544 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,551 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,551 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,559 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,559 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,559 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,559 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,559 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,566 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,582 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,583 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,584 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,584 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,586 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,588 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,598 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,598 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,598 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,599 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,599 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,599 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,599 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,599 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,599 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,600 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,600 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,602 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,602 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,605 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,605 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,608 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,611 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,611 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,612 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,612 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,612 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,613 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,616 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,616 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,618 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,620 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,621 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,625 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,627 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,627 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,627 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,630 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,631 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,632 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,633 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,633 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,634 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,635 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,636 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,636 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,639 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,640 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,640 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,641 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,643 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,644 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,645 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,645 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,645 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,646 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,646 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,646 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,646 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,646 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,646 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,646 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,647 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,647 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,647 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,647 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,649 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,649 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,650 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,651 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,652 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,652 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,654 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,654 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,655 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,656 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,656 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,656 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,657 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,657 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,658 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,659 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,660 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,661 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,662 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,661 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,661 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,661 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,662 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,661 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,662 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,662 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,663 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,663 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,663 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,663 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,664 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,665 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,665 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,666 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,666 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,667 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,670 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,668 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,669 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,669 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,670 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,668 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,670 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,671 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,671 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,672 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,672 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,672 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,673 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,673 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,673 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,673 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,674 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,674 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,675 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,675 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,676 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,676 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,677 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,678 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,678 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,678 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,680 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,681 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,682 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,682 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,683 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,683 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,683 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,683 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,683 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,684 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,684 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,685 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,686 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,689 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,689 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,692 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,690 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,692 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,692 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,692 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,690 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:19,692 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,691 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,692 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,693 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:19,693 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,693 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:19,694 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:19] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:01:34,881 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:01:34,882 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:01:34,883 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:01:34] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:02,999 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,002 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,004 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:02,996 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,004 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:03,005 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,005 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:03,008 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,011 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,024 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:03,016 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:03,022 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,023 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:03,028 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,018 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,036 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:03,032 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:03,033 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:03,031 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:07:03,038 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,039 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:07:03,040 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,041 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,043 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,045 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,046 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,049 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,053 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,053 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,049 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,050 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,054 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,055 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,057 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,056 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,057 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,058 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,058 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,059 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,066 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,060 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,062 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,064 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,069 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,066 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,068 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,068 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,070 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,061 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,075 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,075 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,076 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,079 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,079 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,080 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,082 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,083 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,083 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,083 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,083 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,084 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,084 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,084 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,085 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,086 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,084 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,090 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,089 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,096 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,087 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,096 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,100 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,101 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,103 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,093 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,104 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,106 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,107 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,108 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,109 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,111 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,112 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,113 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,117 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,115 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,116 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,116 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,117 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,119 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,124 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,124 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,125 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,127 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,128 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,130 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,132 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,133 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,138 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,138 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,133 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,136 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,139 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,139 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,140 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,142 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,145 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,145 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,145 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,145 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,146 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,147 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,147 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,148 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,154 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,155 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,150 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,151 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,156 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,153 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,159 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,157 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,159 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,158 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,161 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,163 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,162 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,163 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,166 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,166 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,169 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,167 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,168 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,169 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,171 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,172 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,172 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,173 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,174 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,174 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,174 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,175 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,177 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,178 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,180 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,180 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,180 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,182 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,183 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,183 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,186 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,186 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,186 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,190 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,191 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,192 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,194 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,192 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,199 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,194 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,200 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,195 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,199 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,201 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,202 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,194 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,203 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,203 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,205 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,205 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,206 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,207 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,208 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,210 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,216 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,216 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,216 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,220 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,220 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,221 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,222 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,223 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,224 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,224 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,224 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,226 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,228 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,233 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,231 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,316 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,229 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,316 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,316 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,316 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,317 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,234 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,318 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,318 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,320 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,327 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,329 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,329 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,330 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,330 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,331 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,332 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,332 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,332 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,332 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,333 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:03,338 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:03,340 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:03,341 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:07:17,766 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:07:17,768 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:07:17,770 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:07:17] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:11:16,812 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:11:16] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:11:16,994 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:11:16,994 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:11:16] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:11:17,011 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:11:17,011 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:11:17] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:11:55,541 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:11:55] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:11:55,565 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:11:55,572 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:11:55] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:11:55,600 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:11:55,601 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:11:55] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:12:03,150 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:03] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:12:03,268 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:12:03,270 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:12:03,271 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:12:03,272 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:12:03,286 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:12:03,288 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:12:03,288 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:12:03,289 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:12:03,291 - __main__ - WARNING - Invalid image upload: Invalid file extension
+2025-10-15 23:12:03,291 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:12:03,295 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:12:03,299 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:03,300 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 400 -
+2025-10-15 23:12:03,301 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:03,313 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:03,311 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:03,313 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:03,317 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:03] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,531 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,531 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,532 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,534 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,535 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,536 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,536 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,535 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,537 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,537 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,535 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,537 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,539 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,538 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,539 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,540 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,550 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,550 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,550 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,551 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,557 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,554 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,556 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,558 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,558 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,543 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:04,559 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,559 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:04,559 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:04,561 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:04] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:05,781 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:05,781 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:05,782 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:05] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:12:13,608 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:13] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:12:13,752 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:12:13,752 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:12:13,753 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:12:13] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:13:34,864 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:34] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:13:35,341 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:13:35,346 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:13:35,346 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:13:35,385 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:13:35,385 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:13:35,450 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:13:35,567 - __main__ - ERROR - Prediction error: 'Conv' object has no attribute 'bn'
+Traceback (most recent call last):
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/image-ai/server.py", line 123, in predict
+    results = model.predict(source=img, conf=0.7, verbose=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/model.py", line 550, in predict
+    self.predictor.setup_model(model=self.model, verbose=is_cli)
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/predictor.py", line 397, in setup_model
+    self.model = AutoBackend(
+                 ^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/autobackend.py", line 203, in __init__
+    model = model.fuse(verbose=verbose)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/tasks.py", line 238, in fuse
+    delattr(m, "bn")  # remove batchnorm
+    ^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2077, in __delattr__
+    super().__delattr__(name)
+AttributeError: 'Conv' object has no attribute 'bn'
+2025-10-15 23:13:35,569 - __main__ - ERROR - Prediction error: 'Conv' object has no attribute 'bn'
+Traceback (most recent call last):
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/image-ai/server.py", line 123, in predict
+    results = model.predict(source=img, conf=0.7, verbose=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/model.py", line 550, in predict
+    self.predictor.setup_model(model=self.model, verbose=is_cli)
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/predictor.py", line 397, in setup_model
+    self.model = AutoBackend(
+                 ^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/autobackend.py", line 203, in __init__
+    model = model.fuse(verbose=verbose)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/tasks.py", line 238, in fuse
+    delattr(m, "bn")  # remove batchnorm
+    ^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2077, in __delattr__
+    super().__delattr__(name)
+AttributeError: 'Conv' object has no attribute 'bn'
+2025-10-15 23:13:35,570 - __main__ - ERROR - Prediction error: 'Conv' object has no attribute 'bn'
+Traceback (most recent call last):
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/image-ai/server.py", line 123, in predict
+    results = model.predict(source=img, conf=0.7, verbose=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/model.py", line 550, in predict
+    self.predictor.setup_model(model=self.model, verbose=is_cli)
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/predictor.py", line 397, in setup_model
+    self.model = AutoBackend(
+                 ^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/autobackend.py", line 203, in __init__
+    model = model.fuse(verbose=verbose)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/tasks.py", line 238, in fuse
+    delattr(m, "bn")  # remove batchnorm
+    ^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2077, in __delattr__
+    super().__delattr__(name)
+AttributeError: 'Conv' object has no attribute 'bn'
+2025-10-15 23:13:35,572 - __main__ - ERROR - Prediction error: 'Conv' object has no attribute 'bn'
+Traceback (most recent call last):
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/image-ai/server.py", line 123, in predict
+    results = model.predict(source=img, conf=0.7, verbose=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/model.py", line 550, in predict
+    self.predictor.setup_model(model=self.model, verbose=is_cli)
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/predictor.py", line 397, in setup_model
+    self.model = AutoBackend(
+                 ^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/autobackend.py", line 203, in __init__
+    model = model.fuse(verbose=verbose)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/tasks.py", line 238, in fuse
+    delattr(m, "bn")  # remove batchnorm
+    ^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2077, in __delattr__
+    super().__delattr__(name)
+AttributeError: 'Conv' object has no attribute 'bn'
+2025-10-15 23:13:35,581 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:35] "[35m[1mPOST /predict_image HTTP/1.1[0m" 500 -
+2025-10-15 23:13:35,583 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:35] "[35m[1mPOST /predict_image HTTP/1.1[0m" 500 -
+2025-10-15 23:13:35,593 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:35] "[35m[1mPOST /predict_image HTTP/1.1[0m" 500 -
+2025-10-15 23:13:35,595 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:35] "[35m[1mPOST /predict_image HTTP/1.1[0m" 500 -
+2025-10-15 23:13:35,623 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:13:35,632 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:13:36,549 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:13:36,553 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:36] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:13:36,565 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:13:36,567 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:36] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:13:36,776 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:13:36,778 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:36] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:13:37,038 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:13:37,039 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:37] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:13:37,685 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:13:37,691 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:13:37,699 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:13:37,700 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:13:37,701 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:13:37,707 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:13:37,707 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:13:37,707 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:13:37,708 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:13:37,708 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:13:37,709 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:13:37,713 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:13:37,713 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:13:37,714 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:13:37,730 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:13:37,731 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:13:37,733 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:13:37,735 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:13:37,735 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:13:37,739 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:13:37,745 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:13:37,745 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:13:37,740 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:13:37,742 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:13:37,748 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:13:37,749 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:37] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:13:38,038 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:13:38,039 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:38] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:13:38,302 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:13:38,303 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:38] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:13:39,199 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-10-15 23:13:39,200 - __main__ - WARNING - Rate limit exceeded: 127.0.0.1
+2025-10-15 23:13:39,200 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:13:39] "[31m[1mPOST /predict_image HTTP/1.1[0m" 429 -
+2025-10-15 23:14:44,708 - __main__ - INFO - Model loaded successfully
+2025-10-15 23:14:44,723 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.68.105:5003
+2025-10-15 23:14:44,723 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-15 23:14:54,315 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:54] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:14:54,499 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:54,505 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:14:54,511 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:14:54,525 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:14:54,526 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:14:54,556 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:14:54,600 - __main__ - ERROR - Prediction error: 'Conv' object has no attribute 'bn'
+Traceback (most recent call last):
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/image-ai/server.py", line 123, in predict
+    results = model.predict(source=img, conf=0.7, verbose=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/model.py", line 550, in predict
+    self.predictor.setup_model(model=self.model, verbose=is_cli)
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/engine/predictor.py", line 397, in setup_model
+    self.model = AutoBackend(
+                 ^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/autobackend.py", line 203, in __init__
+    model = model.fuse(verbose=verbose)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/ultralytics/nn/tasks.py", line 238, in fuse
+    delattr(m, "bn")  # remove batchnorm
+    ^^^^^^^^^^^^^^^^
+  File "/Users/skychen/Documents/AIProject/Chrome-Extension-Project/venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2077, in __delattr__
+    super().__delattr__(name)
+AttributeError: 'Conv' object has no attribute 'bn'
+2025-10-15 23:14:54,651 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:54] "[35m[1mPOST /predict_image HTTP/1.1[0m" 500 -
+2025-10-15 23:14:54,662 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:55,477 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:55,477 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:55] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:55,478 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:55,479 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:55] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:55,489 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:55,722 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:55,723 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:55] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:55,988 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:55,989 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:55] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:56,170 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:14:56,171 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:56] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:56,366 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:56,367 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:56] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:56,617 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:14:56,618 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:56] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:57,329 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:57,340 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:57,343 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:57,355 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:57,360 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:57,374 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:57,583 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:14:57,583 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:57] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:57,587 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:57,715 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:57,717 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:57] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:57,722 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:57,966 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:14:57,966 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:57] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:57,970 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:58,150 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:58,155 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:58] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:58,162 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:58,305 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:58,306 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:58] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:58,505 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:58,506 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:58] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:58,612 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:58,613 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:58] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:58,714 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:14:58,714 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:58] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:58,810 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:14:58,810 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:58] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:58,961 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:14:58,962 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:58] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:14:59,643 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:14:59,827 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:14:59,828 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:14:59] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:12,730 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:12] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:15:13,056 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:15:13,057 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:15:13,062 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:15:13,063 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:15:13,065 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:15:13,069 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:15:13,204 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:15:13,205 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:13,209 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:15:13,317 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:15:13,317 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:13,326 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:15:13,453 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:15:13,454 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:13,559 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:15:13,559 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:13,655 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:15:13,656 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:13,796 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:15:13,798 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:14,052 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:15:14,053 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:14,171 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:15:14,172 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:14,301 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:15:14,302 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:15:14,306 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:15:14,600 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:15:14,601 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:14,822 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:15:14,823 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:15:15,123 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:15:15,123 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:15:15] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:12,319 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:12] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:16:12,372 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:12,374 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:12,376 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:12,382 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:12,385 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:12,388 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:12,640 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:12,641 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:12] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:12,656 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:12,858 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:12,859 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:12] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:12,863 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:12,965 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:12,965 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:12] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:13,107 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:13,107 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:13,325 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:13,325 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:13,591 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:13,592 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:13,773 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:13,774 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:13,923 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:13,923 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:13] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:13,966 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:13,967 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:13,968 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:13,970 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:13,973 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:13,974 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:14,170 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:14,170 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:14,174 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:14,299 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:14,300 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:14,304 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:14,429 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:14,429 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:14,435 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:14,570 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:14,571 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:14,578 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:14,834 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:14,834 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:15,068 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:15,070 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:15] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:15,235 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:15,235 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:15] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:15,476 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:15,477 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:15] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:15,653 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:15,654 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:15] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:15,787 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:15,789 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:15] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:16,293 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:16,294 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:16,296 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:16,304 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:16,306 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:16,309 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:16,459 - __main__ - INFO - Prediction successful: 2 objects detected
+2025-10-15 23:16:16,460 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:16] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:16,464 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:16,571 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:16,571 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:16] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:16,576 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:16,689 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:16,689 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:16] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:16,695 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:16,760 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:16,761 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:16] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:16,766 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:16,904 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:16,905 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:16] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:17,081 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:17,082 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:17] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:17,209 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:17,209 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:17] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:17,306 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:17,306 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:17] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:17,507 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:17,508 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:17] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:17,725 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:17,725 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:17] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:18,830 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:18,834 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:18,838 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:18,840 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:18,850 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:18,854 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:19,017 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:19,019 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:19] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:19,023 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:19,278 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:19,279 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:19] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:19,284 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:19,513 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:19,514 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:19] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:19,520 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:16:19,758 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:19,758 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:19] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:19,763 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:20,090 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:20,094 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:20] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:20,242 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:20,245 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:20] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:20,373 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:20,374 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:20] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:20,479 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:20,480 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:20] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:20,588 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:20,589 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:20] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:20,713 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:20,713 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:20] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:20,755 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:20,757 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:20,759 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:20,762 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:20,764 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:20,769 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:20,906 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:20,907 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:20] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:20,913 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:21,047 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:21,047 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:21] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:21,170 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:21,171 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:21] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:21,295 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:21,296 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:21] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:21,428 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:21,429 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:21] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:21,767 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:16:21,768 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:21] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:21,932 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:21,932 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:21] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:22,017 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:22,196 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:22,197 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:22] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:22,247 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:22,419 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:22,420 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:22] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:22,529 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:22,530 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:22,787 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:22,788 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:22] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:23,015 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:23,016 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:23] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:23,053 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:23,222 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:23,223 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:23] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:23,251 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:23,440 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:23,440 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:23] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:23,474 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:23,476 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:23,479 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:23,482 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:23,491 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:23,630 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:23,630 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:23] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:23,773 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:23,774 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:23] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:23,882 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:23,882 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:23] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:24,014 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:24,015 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:24] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:24,179 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:24,179 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:24] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:24,248 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:24,365 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:24,365 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:24] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:24,411 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:24,533 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:24,534 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:24] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:24,557 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:24,748 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:24,750 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:24] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:24,920 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:25,055 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:25,055 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:25] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:25,953 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:25,954 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:26,165 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:26,169 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:26] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:26,323 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:26,323 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:26] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:26,355 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:26,356 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:26,358 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:26,485 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:26,485 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:26] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:26,639 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:26,640 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:26] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:26,784 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:26,784 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:26] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:26,812 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:26,813 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:26,945 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:26,946 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:26] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:27,082 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:27,082 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:27] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:27,119 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:27,120 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:27,121 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:27,255 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:27,255 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:27] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:27,379 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:27,380 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:27] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:27,502 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:27,503 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:27] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:27,530 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:27,704 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:27,704 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:27] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:27,766 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:27,767 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:27,910 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:27,910 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:27] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:28,124 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:28,128 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:28] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:28,207 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:28,342 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:28,343 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:28] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:42,042 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:42] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:16:42,092 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:42,246 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:42,247 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:42] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:16:42,275 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:16:42,359 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:16:42,360 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:16:42] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:20:41,411 - __main__ - INFO - Model loaded successfully
+2025-10-15 23:20:41,434 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://192.168.68.105:5003
+2025-10-15 23:20:41,434 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-15 23:21:14,280 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:14] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:21:14,631 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:21:14,963 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:21:14,964 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:14] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:21:15,059 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:21:15,209 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:21:15,209 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:15] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:21:44,783 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:44] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:21:44,828 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:21:45,067 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:21:45,068 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:45] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:21:45,114 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:21:45,214 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:21:45,215 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:45] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:21:58,634 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:58] "GET /health HTTP/1.1" 200 -
+2025-10-15 23:21:58,818 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:21:58,837 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:21:58,881 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:21:58,885 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:21:58,947 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:21:58,985 - __main__ - INFO - Processing image: image.jpg
+2025-10-15 23:21:59,228 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:21:59,229 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:59] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:21:59,233 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:21:59,387 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:21:59,389 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:59] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:21:59,394 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:21:59,581 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:21:59,582 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:59] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:21:59,762 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:21:59,762 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:59] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:21:59,915 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:21:59,915 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:21:59] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:00,022 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:22:00,023 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:00] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:00,155 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:22:00,156 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:00] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:00,522 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:22:00,522 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:00] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:00,586 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:00,589 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:00,598 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:00,600 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:00,603 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:00,615 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:00,860 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:22:00,861 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:00] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:00,865 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:01,040 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:22:01,041 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:01] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:01,045 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:01,148 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:22:01,149 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:01] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:01,153 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:01,236 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:22:01,236 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:01] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:01,240 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:01,404 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:22:01,405 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:01] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:01,544 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:22:01,544 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:01] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:01,660 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:22:01,661 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:01] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:01,742 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:22:01,742 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:01] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:01,906 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:22:01,906 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:01] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:02,338 - __main__ - INFO - Prediction successful: 0 objects detected
+2025-10-15 23:22:02,341 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:02] "POST /predict_image HTTP/1.1" 200 -
+2025-10-15 23:22:03,819 - __main__ - INFO - Processing image: image.png
+2025-10-15 23:22:04,082 - __main__ - INFO - Prediction successful: 1 objects detected
+2025-10-15 23:22:04,083 - werkzeug - INFO - 127.0.0.1 - - [15/Oct/2025 23:22:04] "POST /predict_image HTTP/1.1" 200 -

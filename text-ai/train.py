@@ -41,29 +41,91 @@ def train_model(model, train_loader, val_loader, epochs, learning_rate, device):
 
     criterion = nn.CrossEntropyLoss(weight=class_weights)
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=1, verbose=True)
 
     current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     print(f"Training started at {current_time} on device {device}")
     
     model.to(device)
+    best_val_loss = float('inf')
+    patience_counter = 0
+    patience = 3
 
     for epoch in range(epochs):
+        # Training phase
         model.train()
         total_loss = 0
-        for x_batch, y_batch in train_loader:
-            x_batch = x_batch.to(device) # a tensor of character ID sequences
-            y_batch = y_batch.to(device) # target labels for each character
+        correct = 0
+        total = 0
+        
+        for batch_idx, (x_batch, y_batch) in enumerate(train_loader):
+            x_batch = x_batch.to(device)
+            y_batch = y_batch.to(device)
             optimizer.zero_grad()
             logits = model(x_batch)
             loss = criterion(logits.reshape(-1, logits.shape[-1]), y_batch.reshape(-1))
             loss.backward()
             optimizer.step()
             total_loss += loss.item() * x_batch.size(0)
-        avg_loss = total_loss / len(train_loader.dataset)
+            
+            # Calculate accuracy
+            predictions = torch.argmax(logits, dim=-1)
+            correct += (predictions == y_batch).sum().item()
+            total += y_batch.numel()
+            
+            if (batch_idx + 1) % 50 == 0:
+                print(f"  Batch {batch_idx + 1}/{len(train_loader)}, Loss: {loss.item():.4f}")
+        
+        avg_train_loss = total_loss / len(train_loader.dataset)
+        train_accuracy = 100.0 * correct / total
+        
+        # Validation phase
+        model.eval()
+        val_loss = 0
+        val_correct = 0
+        val_total = 0
+        
+        with torch.no_grad():
+            for x_batch, y_batch in val_loader:
+                x_batch = x_batch.to(device)
+                y_batch = y_batch.to(device)
+                logits = model(x_batch)
+                loss = criterion(logits.reshape(-1, logits.shape[-1]), y_batch.reshape(-1))
+                val_loss += loss.item() * x_batch.size(0)
+                
+                predictions = torch.argmax(logits, dim=-1)
+                val_correct += (predictions == y_batch).sum().item()
+                val_total += y_batch.numel()
+        
+        avg_val_loss = val_loss / len(val_loader.dataset)
+        val_accuracy = 100.0 * val_correct / val_total
+        
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        print(f"{current_time} Epoch {epoch + 1}/{epochs}, Loss: {avg_loss:.4f}")
-
-        # TODO: add validation elements later
+        print(f"{current_time} Epoch {epoch + 1}/{epochs}")
+        print(f"  Train Loss: {avg_train_loss:.4f}, Train Acc: {train_accuracy:.2f}%")
+        print(f"  Val Loss: {avg_val_loss:.4f}, Val Acc: {val_accuracy:.2f}%")
+        
+        # Learning rate scheduling
+        scheduler.step(avg_val_loss)
+        
+        # Model checkpointing
+        if avg_val_loss < best_val_loss:
+            best_val_loss = avg_val_loss
+            patience_counter = 0
+            torch.save(model.state_dict(), "best_model.pth")
+            print(f"  → Best model saved (val_loss: {best_val_loss:.4f})")
+        else:
+            patience_counter += 1
+            print(f"  → No improvement ({patience_counter}/{patience})")
+        
+        # Early stopping
+        if patience_counter >= patience:
+            print(f"Early stopping triggered after {epoch + 1} epochs")
+            break
+    
+    # Load best model
+    model.load_state_dict(torch.load("best_model.pth"))
+    print(f"\nLoaded best model with validation loss: {best_val_loss:.4f}")
 
     return model
 
