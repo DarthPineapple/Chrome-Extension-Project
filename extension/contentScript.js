@@ -159,7 +159,7 @@ function sendText(){
 }
 
 function escapeRegExp(text){
-    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 //Set up a mutationobserver
@@ -178,7 +178,15 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     if(message.action === "removeImage" && message.imageLink){
         const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`);
         images.forEach((image) => {
-            image.classList.add("image-pending-placeholder");
+            img.classList.add("image-pending-placeholder");
+            // image.src = "";
+            // image.alt = "";
+            // if(image.srcset === "" && image.dataset.originalSrcset){
+            //     image.srcset = "";
+            //     image.removeAttribute("data-original-srcset");
+            // }
+            // image.removeAttribute("data-original-src");
+            // image.removeAttribute("data-original-alt");
         });
 
         const elements = document.querySelectorAll(`*[data-original-background-image="${message.imageLink}"]`);
@@ -210,26 +218,26 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
             element.removeAttribute("data-original-background-image");
         });
     }
-    else if (message.action === "removeText" && message.text){
-        // command to censor with "█"
-        const text = message.text.trim();
-        
-        function removeTextFromNode(node){
-            if(node.nodeType === Node.TEXT_NODE){
-                const textContent = node.textContent.trim();
-                if(textContent === ""){
-                    return;
+        else if (message.action === "removeText" && message.text){
+            // command to censor with "█"
+            const text = message.text.trim();
+            
+            function removeTextFromNode(node){
+                if(node.nodeType === Node.TEXT_NODE){
+                    textContent = node.textContent.trim();
+                    if(textContent === ""){
+                        return;
+                    }
+                    if(node.textContent.includes(text)){
+                        node.textContent = node.textContent.replaceAll(new RegExp(escapeRegExp(text), "g"), "█".repeat(text.length));
+                        console.log(`Removed text: ${text}`);
+                    }
                 }
-                if(node.textContent.includes(text)){
-                    node.textContent = node.textContent.replaceAll(new RegExp(escapeRegExp(text), "g"), "█".repeat(text.length));
-                    console.log(`Removed text: ${text}`);
+                else{
+                    node.childNodes.forEach((child) => removeTextFromNode(child));
                 }
+                removeTextFromNode(document.body);
             }
-            else{
-                node.childNodes.forEach((child) => removeTextFromNode(child));
-            }
-        }
-        removeTextFromNode(document.body);
     }
 });
 
