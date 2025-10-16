@@ -1,19 +1,5 @@
 // background.js
 
-// chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-//   if (msg.cmd === 'getResourceUsage') { // TODO investigate getProcessInfo returning nothing 
-//     console.log("Sevice worker received getResourceUsage command");
-//     chrome.processes.getProcessInfo([], true, procs => {
-//       // procs is an object keyed by PID; convert to array before sending
-//       console.log("Processes fetched:", procs);
-//       const list = Object.values(procs);
-//       sendResponse({ processes: list });
-//     });
-//     return true; // keep the message channel open for async sendResponse
-//   }
-// })
-
-// const baseUrl = 'https://hs_project-focusshield-ai-server.onrender.com';
 const baseUrl = "http://localhost:5003"
 const imageUrl = `${baseUrl}/predict_image`;
 const textBaseUrl = 'http://localhost:5004';
@@ -95,6 +81,18 @@ function recordCategory(category) {
   });
 }
 
+function sendMessageToAllTabs(message) {
+  chrome.tabs.query({}, tabs => {
+    tabs.forEach(tab => {
+      chrome.tabs.sendMessage(tab.id, message, () => {
+        if (chrome.runtime.lastError) {
+          // No receiver in this tab; ignore
+        }
+      });
+    });
+  });
+}
+
 setInterval(() => {
   chrome.storage.local.get(['onlineLog']).then(result => {
     const log = Array.from(result.onlineLog || []);
@@ -104,18 +102,6 @@ setInterval(() => {
 }, 60000);
 
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-  if (request.cmd === 'getResourceUsage') { // TODO investigate getProcessInfo returning nothing 
-    console.log("Sevice worker received getResourceUsage command");
-    chrome.processes.getProcessInfo([], true, procs => {
-      // procs is an object keyed by PID; convert to array before sending
-      console.log("Processes fetched:", procs);
-      const list = Object.values(procs);
-      sendResponse({ processes: list });
-    });
-    return true; // keep the message channel open for async sendResponse
-  }
-  
-  
   const categoriesMap = {
     profanity: 'profanity',
     explicit: 'explicit-content',
@@ -154,66 +140,32 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
             const threshold = result.confidence ?? 0.5;
 
             if (confidence >= threshold) {
-              // If the received confidence is lower than the set threshold, treat it as 'background'
               const storageKey = categoriesMap[className] || 'background-log';
               chrome.storage.local.get([storageKey]).then(res => {
                 const allowed = res[storageKey] !== false;
                 if (allowed) {
                   recordCategory(storageKey.replace('-log',''));
-                  chrome.tabs.query({}, tabs => {
-                    tabs.forEach(tab => {
-                      console.log('Removing image in tab', tab.id, imageLink);
-                      chrome.tabs.sendMessage(tab.id, { action: 'removeImage', imageLink }, () => {
-                        if (chrome.runtime.lastError) {
-                          // No receiver in this tab; ignore
-                        }
-                      });
-                    });
-                  });
+                  console.log('Removing image in all tabs', imageLink);
+                  sendMessageToAllTabs({ action: 'removeImage', imageLink });
                   categoryCount[className] = (categoryCount[className] || 0) + 1;
                 } else if(!className) {
                   recordCategory('background');
-                  chrome.tabs.query({}, tabs => {
-                    tabs.forEach(tab => {
-                      console.log('Revealing image in tab', tab.id, imageLink);
-                      chrome.tabs.sendMessage(tab.id, { action: 'revealImage', imageLink }, () => {
-                        if (chrome.runtime.lastError) {
-                          // No receiver in this tab; ignore
-                        }
-                      });
-                    });
-                  });
+                  console.log('Revealing image in all tabs', imageLink);
+                  sendMessageToAllTabs({ action: 'revealImage', imageLink });
                 }
               });
             } else {
               recordCategory('background');
-              chrome.tabs.query({}, tabs => {
-                tabs.forEach(tab => {
-                  console.log('Revealing image in tab', tab.id, imageLink);
-                  chrome.tabs.sendMessage(tab.id, { action: 'revealImage', imageLink }, () => {
-                    if (chrome.runtime.lastError) {
-                      // No receiver in this tab; ignore
-                    }
-                  });
-                });
-              });
+              console.log('Revealing image in all tabs (low confidence)', imageLink);
+              sendMessageToAllTabs({ action: 'revealImage', imageLink });
             }
           });
 
           
         } else{
           recordCategory('background');
-          chrome.tabs.query({}, tabs => {
-            tabs.forEach(tab => {
-              console.log("No detections!!!");
-              console.log('Revealing image in tab', tab.id, imageLink);
-              chrome.tabs.sendMessage(tab.id, { action: 'revealImage', imageLink }, () => {
-                if (chrome.runtime.lastError) {
-                  // No receiver in this tab; ignore
-                }
-              });
-            });
-          });
+          console.log("No detections - revealing image in all tabs", imageLink);
+          sendMessageToAllTabs({ action: 'revealImage', imageLink });
         }
       } catch (error) {
         console.error(error);
@@ -227,8 +179,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     const sentences = request.text.filter(t => t.trim());
 
     if (sentences.length > 0) {
-      for (var i = 0; i < sentences.length; i ++) {
-        const text = sentences[i];
+      for (const text of sentences) {
         try {
           const response = await fetch(textUrl, { method: 'POST', body: JSON.stringify({ text: [text] }), headers: { 'Content-Type': 'application/json' } });
           const predictions = await response.json();
@@ -247,44 +198,19 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
                 const allowed = res[storageKey] !== false;
                 if (allowed) {
                   recordCategory(storageKey.replace('-log',''));
-                  chrome.tabs.query({}, tabs => {
-                    tabs.forEach(tab => {
-                      console.log('Censoring text in tab', tab.id, text);
-                      chrome.tabs.sendMessage(tab.id, { action: 'removeText', text }, () => {
-                        if (chrome.runtime.lastError) {
-                          // No receiver in this tab; ignore
-                        }
-                      });
-                    });
-                  });
+                  console.log('Censoring text in all tabs', text);
+                  sendMessageToAllTabs({ action: 'removeText', text });
                 } else if(!category) {
                   recordCategory('background');
-                  chrome.tabs.query({}, tabs => {
-                    tabs.forEach(tab => {
-                      console.log('Revealing text in tab', tab.id, text);
-                      chrome.tabs.sendMessage(tab.id, { action: 'revealText', text }, () => {
-                        if (chrome.runtime.lastError) {
-                          // No receiver in this tab; ignore
-                        }
-                      });
-                    });
-                  });
+                  console.log('Revealing text in all tabs', text);
+                  sendMessageToAllTabs({ action: 'revealText', text });
                 }
               });
             });
           } else {
             recordCategory('background');
-            chrome.tabs.query({}, tabs => {
-              tabs.forEach(tab => {
-                console.log("No detections!!!");
-                console.log('Revealing text in tab', tab.id, text);
-                chrome.tabs.sendMessage(tab.id, { action: 'revealText', text }, () => {
-                  if (chrome.runtime.lastError) {
-                    // No receiver in this tab; ignore
-                  }
-                });
-              });
-            });
+            console.log("No detections - revealing text in all tabs", text);
+            sendMessageToAllTabs({ action: 'revealText', text });
           }
         } catch (error) {
           console.error(error);
@@ -293,34 +219,6 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     }
   }
 
-  //   const predictionPromises = request.text.map(async text => {
-  //     const trimmed = text.trim();
-  //     if (!trimmed) return;
-  //     try {
-  //       // list of all the sentences
-
-  //       const response = await fetch(textUrl, { method: 'POST', body:  });
-  //       const prediction = await response.json();
-  //       const className = prediction?.class;
-  //       const confidence = prediction?.confidence || 0;
-  //       /* Example response:
-  //       [{'spans': [{'category': 'drugs', 'end': 7, 'start': 0}, {'category': 'drugs', 'end': 7, 'start': 0}, {'category': 'drugs', 'end': 25, 'start': 16}, {'category': 'drugs', 'end': 32, 'start': 26}], 'text': 'Cocaine cocaine marijuana heroin'}]
-  //       */
-  //       console.log('Text prediction', prediction);
-  //       // TODO: send out command to censor with "█"
-  //       // if (className && className !== 'background' && confidence > 0.5) {
-  //       //   console.log('TEXT', trimmed, className, confidence);
-  //       //   categoryCount[className] = (categoryCount[className] || 0) + 1;
-  //       // } else {
-  //       //   categoryCount.background = (categoryCount.background || 0) + 1;
-  //       // }
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   });
-  //   await Promise.all(predictionPromises);
-  //   console.log('Text categories count:', categoryCount);
-  // }
   sendResponse({ status: 'done' });
   return true;
 });
