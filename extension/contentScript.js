@@ -66,7 +66,7 @@ backgroundImages.forEach((element) => {
             }
         }
         catch(error){
-            ;
+            // Silently ignore errors from invalid background image URLs
         }
     }
 })
@@ -85,7 +85,7 @@ function sendImages(){
         }
     }
     catch(error){
-        ;
+        console.error("Error sending images:", error);
     }
 }
 function extractSentences(){
@@ -154,7 +154,7 @@ function sendText(){
         }
     }
     catch(error){
-        ;
+        console.error("Error sending text:", error);
     }
 }
 

@@ -179,7 +179,7 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     const sentences = request.text.filter(t => t.trim());
 
     if (sentences.length > 0) {
-      for (var i = 0; i < sentences.length; i ++) {
+      for (let i = 0; i < sentences.length; i++) {
         const text = sentences[i];
         try {
           const response = await fetch(textUrl, { method: 'POST', body: JSON.stringify({ text: [text] }), headers: { 'Content-Type': 'application/json' } });
