@@ -57,7 +57,7 @@ backgroundImages.forEach((element) => {
     const backgroundImage = window.getComputedStyle(element).backgroundImage;
     if (backgroundImage && backgroundImage != "none"){
         try{
-            url = backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1];
+            const url = backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1];
             if(element.dataset.approved !== "true"){
                 newImageLinks.push(url);
 
@@ -89,7 +89,7 @@ function sendImages(){
     }
 }
 function extractSentences(){
-    sentences = [];
+    let sentences = [];
 
     const excludedTags = new Set([
         "script",
@@ -117,7 +117,7 @@ function extractSentences(){
         if(node.nodeType == Node.TEXT_NODE){
             const parent = node.parentElement;
             if(parent && isVisible(parent) && !excludedTags.has(parent.tagName.toLowerCase())){
-                textContent = node.textContent.trim(0);
+                const textContent = node.textContent.trim();
                 if(textContent != ""){
                     sentences.push(textContent);
                 }
