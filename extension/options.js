@@ -59,31 +59,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     document.getElementById("change-password-submit-button").addEventListener("click", ()=>{
         const newPassword=document.getElementById("new-password-field");
-        // const confirmPassword = document.getElementById("confirm-new-password-field");
         const passwordError = document.getElementById('password-error');
-
-        // if(!newPassword){
-        //     passwordError.textContent = "Password field cannot be empty";
-        //     passwordError.classList.remove('d-none');
-        //     return;
-        // }
-        // if(newPassword !== confirmPassword){
-        //     passwordError.textContent = "Passwords do not match";
-        //     passwordError.classList.remove('d-none');
-        //     return;
-        // }
 
         // Validate password strength
         const [isValid, reason] = validatePassword(newPassword.value);
         if (!isValid) {
             passwordError.textContent = reason;
             passwordError.classList.remove('d-none');
-            // return;
         } else {
             chrome.storage.local.set({password:newPassword.value}, ()=>{
                 alert("password changed successfully");
                 document.getElementById("new-password-field").value="";
-                //document.getElementById("confirm-new-password-field").value="";
                 passwordError.classList.add("d-none");
             });
         }
@@ -130,7 +116,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
 
     document.getElementById("logout-button").addEventListener("click", ()=>{
-        chrome.storage.local.set({authenticate: false}, ()=>{
+        chrome.storage.local.set({authenticated: false}, ()=>{
             window.location.href="barrier.html";
         });
     });

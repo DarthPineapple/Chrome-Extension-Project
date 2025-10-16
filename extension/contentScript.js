@@ -9,7 +9,6 @@ function isDataImageOrUrl(url){
 
 function extractImageLinks(){
     const images = document.querySelectorAll('img');
-    // console.log("images:", images)
     const newImageLinks = Array.from(images)
         .filter((img) => img.dataset.approved !== "true")
         .map((img) => {
@@ -35,12 +34,6 @@ function extractImageLinks(){
                     style.textContent = ".image-pending-placeholder{opacity:0 !important;";
                     document.head.appendChild(style);
                 }
-                
-                // Clear srcset safely
-                // if (img.srcset){
-                //     img.dataset.originalSrcset = img.srcset;
-                //     img.srcset = "";
-                // }
 
                 // Use a transparent 1x1 pixel as a placeholder
                 const transparentPx = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
@@ -58,8 +51,6 @@ function extractImageLinks(){
 newImageLinks.forEach((src) => {if(isDataImageOrUrl(src)) seenImages.add(src);});
 console.log("Seen images 1:", seenImages);
 
-// console.log("New image links from <img> tags:", newImageLinks);
-
 const backgroundImages = Array.from(document.querySelectorAll("*"));
 
 backgroundImages.forEach((element) => {
@@ -70,24 +61,19 @@ backgroundImages.forEach((element) => {
             if(element.dataset.approved !== "true"){
                 newImageLinks.push(url);
 
-                element.dataset.originalBackgroundImage = url.
+                element.dataset.originalBackgroundImage = url;
                 element.style.backgroundImage = "none";
             }
         }
         catch(error){
             ;
         }
-
-        
-            }
-        
-    
-    // return newImageLinks;
-    })
-    newImageLinks.forEach((src) => {if(isDataImageOrUrl(src)) seenImages.add(src);});
-    console.log("Background images:", newImageLinks);
-    console.log("Seen images:", seenImages);
-    return newImageLinks;
+    }
+})
+newImageLinks.forEach((src) => {if(isDataImageOrUrl(src)) seenImages.add(src);});
+console.log("Background images:", newImageLinks);
+console.log("Seen images:", seenImages);
+return newImageLinks;
 }
 
 function sendImages(){
@@ -143,7 +129,6 @@ function extractSentences(){
     }
 
     if (document.body){
-        // TODO: check back on this potential error point
         extractTextFromNode(document.body);
     }
 
@@ -174,7 +159,7 @@ function sendText(){
 }
 
 function escapeRegExp(text){
-    text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 //Set up a mutationobserver
@@ -193,15 +178,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     if(message.action === "removeImage" && message.imageLink){
         const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`);
         images.forEach((image) => {
-            img.classList.add("image-pending-placeholder");
-            // image.src = "";
-            // image.alt = "";
-            // if(image.srcset === "" && image.dataset.originalSrcset){
-            //     image.srcset = "";
-            //     image.removeAttribute("data-original-srcset");
-            // }
-            // image.removeAttribute("data-original-src");
-            // image.removeAttribute("data-original-alt");
+            image.classList.add("image-pending-placeholder");
         });
 
         const elements = document.querySelectorAll(`*[data-original-background-image="${message.imageLink}"]`);
@@ -218,71 +195,50 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`)
         console.log("Images to reveal:", images);
         images.forEach((image) => {
-            // if (image.dataset.originalSrc){
-            //     console.log("Revealing image:", image);
-            //     image.src = image.dataset.originalSrc;
-            // }
             console.log("Revealing image:", message.imageLink);
             image.src = message.imageLink;
-            // if (image.dataset.originalSrcset) {
-            //     console.log("Restoring srcset for image:", image);
-            //     image.srcset = image.dataset.originalsrcset;
-            //     delete image.dataset.originalsrcset;
-            // }
             image.classList.remove("image-pending-placeholder");
             image.dataset.approved = "true";
-            // image,src = "";
-            // image.alt = "";
-            // if(image.srcset === "" && image.dataset.originalSrcset){
-            //     image.srcset = image.originalSrcSet;
-            //     image.removeAttribute("data-original-srcset");
-            // }
-            // image.dataset.approves = "true";
-            // image.style.display = "block";
-            // image.removeAttribute("data-original-src");
-            // image.removeAttribute("data-original-alt");
         });
 
         const elements = document.querySelectorAll(`*[data-original-background-image="${message.imageLink}"]`);
 
         elements.forEach((element) => {
-            element.style.backgroundImage = `url(${element.style.originalBackgroundImage})`;
+            element.style.backgroundImage = `url(${element.dataset.originalBackgroundImage})`;
             element.dataset.approved = "true";
-            element.style.display = "clock";
-            element.removeAttribute("data-original-backgruond-image);")
+            element.style.display = "block";
+            element.removeAttribute("data-original-background-image");
         });
     }
-        else if (message.action === "removeText" && message.text){
-            // command to censor with "█"
-            const text = message.text.trim();
-            
-            function removeTextFromNode(node){
-                if(node.nodeType === Node.TEXT_NODE){
-                    textContent = node.textContent.trim();
-                    if(textContent === ""){
-                        return;
-                    }
-                    if(node.textContent.includes(text)){
-                        node.textContent = node.textContent.replaceAll(new RegExp(escapeRegExp(text), "g"), "█".repeat(text.length));
-                        console.log(`Removed text: ${text}`);
-                    }
+    else if (message.action === "removeText" && message.text){
+        // command to censor with "█"
+        const text = message.text.trim();
+        
+        function removeTextFromNode(node){
+            if(node.nodeType === Node.TEXT_NODE){
+                const textContent = node.textContent.trim();
+                if(textContent === ""){
+                    return;
                 }
-                else{
-                    node.childNodes.forEach((child) => removeTextFromNode(child));
+                if(node.textContent.includes(text)){
+                    node.textContent = node.textContent.replaceAll(new RegExp(escapeRegExp(text), "g"), "█".repeat(text.length));
+                    console.log(`Removed text: ${text}`);
                 }
-                removeTextFromNode(document.body);
             }
+            else{
+                node.childNodes.forEach((child) => removeTextFromNode(child));
+            }
+        }
+        removeTextFromNode(document.body);
     }
 });
 
 window.addEventListener("load", () => {
-    console.log("aaaaaaa");
+    console.log("Page loaded - scanning for images");
     sendImages();
-    // sendText();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("bbbbb");
+    console.log("DOM loaded - scanning for images");
     sendImages();
-    // sendText();
 });
