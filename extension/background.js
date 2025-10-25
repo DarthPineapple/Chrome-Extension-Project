@@ -9,6 +9,14 @@ const textUrl = `${textBaseUrl}/predict_text`;
 const MAX_TEXTS_PER_BATCH = 100;  // Match server limit
 const MAX_TEXT_LENGTH = 5000;     // Match server limit
 const MAX_IMAGE_BATCH = 10;       // Process images in smaller batches
+const categoriesMap = {
+  profanity: 'profanity',
+  explicit: 'explicit-content',
+  drugs: 'drugs',
+  gambling: 'gambling',
+  violence: 'violence',
+  social: 'social-media'
+};
 
 chrome.runtime.onInstalled.addListener(({ reason }) => {
   if (reason === 'install') {
@@ -311,15 +319,6 @@ async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
 }
 
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-  const categoriesMap = {
-    profanity: 'profanity',
-    explicit: 'explicit-content',
-    drugs: 'drugs',
-    gambling: 'gambling',
-    violence: 'violence',
-    social: 'social-media'
-  };
-
   console.log('Received request:', request);
 
   if (Array.isArray(request.images)) {

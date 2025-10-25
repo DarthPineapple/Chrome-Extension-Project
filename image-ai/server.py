@@ -42,10 +42,11 @@ limiter = Limiter(
 
 # Security configurations
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp'}  # Remove 'svg'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp', 'svg'}
 ALLOWED_MIME_TYPES = {
     'image/png', 'image/jpeg', 'image/jpg', 
-    'image/gif', 'image/bmp', 'image/webp'  # Remove 'image/svg+xml'
+    'image/gif', 'image/bmp', 'image/webp',  # Remove 'image/svg+xml'
+    'image/svg'
 }
 
 # Load the YOLOv8 model
@@ -65,7 +66,7 @@ def validate_image(file):
     """Validate image file type and content"""
     # Check MIME type
     if file.content_type not in ALLOWED_MIME_TYPES:
-        return False, "Invalid file type"
+        return False, f"Invalid file type. {file.content_type} is not supported."
     
     # Check file extension
     if not allowed_file(file.filename):
