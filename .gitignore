@@ -6,6 +6,7 @@ venv/
 image-ai/venv/
 text-ai/venv/
 text-ai/dataset_cache.pkl
+
 # Ignore Python cache files
 __pycache__/
 text-ai/__pycache__/
@@ -14,3 +15,48 @@ text-ai/__pycache__/
 .DS_Store
 *.DS_Store
 image-ai/dataset/
+
+# Ignore all log files
+*.log
+**/*.log
+text-ai/*.log
+image-ai/*.log
+extension/*.log
+
+# Ignore model files
+*.pt
+*.pth
+*.onnx
+*.torchscript
+best_model.pth
+
+# Ignore training outputs and plots
+runs/
+yolo_training/
+*.png
+*.jpg
+*.jpeg
+confusion_matrix.png
+results.png
+
+# Ignore data files
+*.txt
+!requirements.txt
+!README.txt
+corpus.txt
+whitelist.txt
+blacklist.json
+
+# Ignore cache and temporary files
+*.pkl
+*.pickle
+dataset_cache.pkl
+*.pyc
+*.pyo
+*.swp
+*.swo
+*~
+
+# Ignore YOLO specific outputs
+labels.cache
+labels/
