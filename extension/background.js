@@ -9,6 +9,8 @@ const textUrl = `${textBaseUrl}/predict_text`;
 const MAX_TEXTS_PER_BATCH = 100;  // Match server limit
 const MAX_TEXT_LENGTH = 5000;     // Match server limit
 const MAX_IMAGE_BATCH = 10;       // Process images in smaller batches
+const MAX_CONCURRENT_REQUESTS = 5; // Maximum concurrent requests per type
+
 const categoriesMap = {
   profanity: 'profanity',
   explicit: 'explicit-content',
@@ -17,6 +19,10 @@ const categoriesMap = {
   violence: 'violence',
   social: 'social-media'
 };
+
+// Track active requests
+let activeImageRequests = 0;
+let activeTextRequests = 0;
 
 chrome.runtime.onInstalled.addListener(({ reason }) => {
   if (reason === 'install') {
@@ -153,87 +159,96 @@ async function checkServerHealth(url) {
 
 async function processImagesInBatches(images, batchSize = MAX_IMAGE_BATCH) {
   const categoryCount = {};
+  const batches = [];
   
+  // Split into batches
   for (let i = 0; i < images.length; i += batchSize) {
-    const batch = images.slice(i, i + batchSize);
-    console.log(`Processing image batch ${i / batchSize + 1} of ${Math.ceil(images.length / batchSize)}`);
+    batches.push(images.slice(i, i + batchSize));
+  }
+  
+  console.log(`Processing ${images.length} images in ${batches.length} batches`);
+  
+  // Process batches with concurrency limit
+  const processBatch = async (batch, batchIndex) => {
+    // Wait if we're at the concurrency limit
+    while (activeImageRequests >= MAX_CONCURRENT_REQUESTS) {
+      await new Promise(resolve => setTimeout(resolve, 50));
+    }
     
-    const imagePromises = batch.map(async imageLink => {
-      const image = await downloadImage(imageLink);
-      return { image, imageLink };
-    });
+    activeImageRequests++;
+    console.log(`Processing image batch ${batchIndex + 1}/${batches.length} (${activeImageRequests} active)`);
     
-    const imagesWithUrls = (await Promise.all(imagePromises)).filter(item => item.image);
-    console.log(imagesWithUrls.length, 'images downloaded in this batch');
-    
-    const predictionPromises = imagesWithUrls.map(async ({ image, imageLink }) => {
-      try {
-        const formData = new FormData();
-        formData.append('image', image);
-        
-        // Log file details for debugging
-        console.log(`Sending image: ${image.name}, type: ${image.type}, size: ${image.size} bytes`);
-        
-        const response = await fetch(imageUrl, { method: 'POST', body: formData });
-        
-        if (!response.ok) {
-          const error = await response.json().catch(() => ({ error: 'Unknown error' }));
-          console.error('Image prediction error:', error);
-          // If rate limited, wait and retry
-          if (response.status === 429) {
-            console.warn('Rate limited, waiting 1 second...');
-            await new Promise(resolve => setTimeout(resolve, 1000));
-          }
-          return;
-        }
-        
-        const data = await response.json();
-        const [prediction] = data.predictions || [];
-        const className = prediction?.class;
-        const confidence = prediction?.confidence || 0;
-        console.log('Image prediction', imageLink, className, confidence);
-        
-        if (className && className !== 'background') {
-          console.log(`URL: ${imageLink} | Prediction: ${className} (${(confidence*100).toFixed(2)}%)`);
+    try {
+      const imagePromises = batch.map(async imageLink => {
+        const image = await downloadImage(imageLink);
+        return { image, imageLink };
+      });
+      
+      const imagesWithUrls = (await Promise.all(imagePromises)).filter(item => item.image);
+      
+      const predictionPromises = imagesWithUrls.map(async ({ image, imageLink }) => {
+        try {
+          const formData = new FormData();
+          formData.append('image', image);
           
-          try {
-            const result = await chrome.storage.local.get(['confidence']);
-            const threshold = result.confidence ?? 0.5;
+          const response = await fetch(imageUrl, { method: 'POST', body: formData });
+          
+          if (!response.ok) {
+            const error = await response.json().catch(() => ({ error: 'Unknown error' }));
+            console.error('Image prediction error:', error);
+            if (response.status === 429) {
+              console.warn('Rate limited, waiting 500ms...');
+              await new Promise(resolve => setTimeout(resolve, 500));
+            }
+            return;
+          }
+          
+          const data = await response.json();
+          const [prediction] = data.predictions || [];
+          const className = prediction?.class;
+          const confidence = prediction?.confidence || 0;
+          
+          if (className && className !== 'background') {
+            try {
+              const result = await chrome.storage.local.get(['confidence']);
+              const threshold = result.confidence ?? 0.5;
 
-            if (confidence >= threshold) {
-              const storageKey = categoriesMap[className] || 'background-log';
-              const res = await chrome.storage.local.get([storageKey]);
-              const allowed = res[storageKey] !== false;
-              if (allowed) {
-                recordCategory(storageKey.replace('-log',''));
-                console.log('Removing image in all tabs', imageLink);
-                sendMessageToAllTabs({ action: 'removeImage', imageLink });
-                categoryCount[className] = (categoryCount[className] || 0) + 1;
+              if (confidence >= threshold) {
+                const storageKey = categoriesMap[className] || 'background-log';
+                const res = await chrome.storage.local.get([storageKey]);
+                const allowed = res[storageKey] !== false;
+                if (allowed) {
+                  recordCategory(storageKey.replace('-log',''));
+                  sendMessageToAllTabs({ action: 'removeImage', imageLink });
+                  categoryCount[className] = (categoryCount[className] || 0) + 1;
+                } else {
+                  recordCategory('background');
+                  sendMessageToAllTabs({ action: 'revealImage', imageLink });
+                }
               } else {
                 recordCategory('background');
-                console.log('Revealing image in all tabs (category blocked)', imageLink);
                 sendMessageToAllTabs({ action: 'revealImage', imageLink });
               }
-            } else {
-              recordCategory('background');
-              console.log('Revealing image in all tabs (low confidence)', imageLink);
-              sendMessageToAllTabs({ action: 'revealImage', imageLink });
+            } catch (error) {
+              console.error('Storage error:', error);
             }
-          } catch (error) {
-            console.error('Storage error:', error);
+          } else {
+            recordCategory('background');
+            sendMessageToAllTabs({ action: 'revealImage', imageLink });
           }
-        } else {
-          recordCategory('background');
-          console.log("No detections - revealing image in all tabs", imageLink);
-          sendMessageToAllTabs({ action: 'revealImage', imageLink });
+        } catch (error) {
+          console.error('Image processing error:', error);
         }
-      } catch (error) {
-        console.error('Image processing error:', error);
-      }
-    });
-    
-    await Promise.all(predictionPromises);
-  }
+      });
+      
+      await Promise.all(predictionPromises);
+    } finally {
+      activeImageRequests--;
+    }
+  };
+  
+  // Process all batches concurrently (up to limit)
+  await Promise.all(batches.map((batch, index) => processBatch(batch, index)));
   
   return categoryCount;
 }
@@ -246,9 +261,21 @@ async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
     .filter(t => t && t.trim())
     .map(t => t.length > MAX_TEXT_LENGTH ? t.substring(0, MAX_TEXT_LENGTH) : t);
   
+  const batches = [];
   for (let i = 0; i < validTexts.length; i += batchSize) {
-    const batch = validTexts.slice(i, i + batchSize);
-    console.log(`Processing text batch ${i / batchSize + 1} of ${Math.ceil(validTexts.length / batchSize)}`);
+    batches.push(validTexts.slice(i, i + batchSize));
+  }
+  
+  console.log(`Processing ${validTexts.length} texts in ${batches.length} batches`);
+  
+  const processBatch = async (batch, batchIndex) => {
+    // Wait if we're at the concurrency limit
+    while (activeTextRequests >= MAX_CONCURRENT_REQUESTS) {
+      await new Promise(resolve => setTimeout(resolve, 50));
+    }
+    
+    activeTextRequests++;
+    console.log(`Processing text batch ${batchIndex + 1}/${batches.length} (${activeTextRequests} active)`);
     
     try {
       const response = await fetch(textUrl, {
@@ -260,18 +287,14 @@ async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
       if (!response.ok) {
         const error = await response.json();
         console.error('Text prediction error:', error);
-        // If rate limited, wait and retry
         if (response.status === 429) {
-          console.warn('Rate limited, waiting 1 second...');
-          await new Promise(resolve => setTimeout(resolve, 1000));
-          i -= batchSize; // Retry this batch
-          continue;
+          console.warn('Rate limited, waiting 500ms...');
+          await new Promise(resolve => setTimeout(resolve, 500));
         }
-        continue;
+        return;
       }
       
       const predictions = await response.json();
-      console.log('Text predictions received:', predictions.length);
       
       // Process each text's predictions
       for (let j = 0; j < predictions.length; j++) {
@@ -293,11 +316,9 @@ async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
               const allowed = res[storageKey] !== false;
               if (allowed) {
                 recordCategory(storageKey.replace('-log',''));
-                console.log('Censoring text in all tabs', text);
                 sendMessageToAllTabs({ action: 'removeText', text });
               } else {
                 recordCategory('background');
-                console.log('Revealing text in all tabs (category blocked)', text);
                 sendMessageToAllTabs({ action: 'revealText', text });
               }
             } catch (error) {
@@ -306,14 +327,18 @@ async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
           }
         } else {
           recordCategory('background');
-          console.log("No detections - revealing text in all tabs", text);
           sendMessageToAllTabs({ action: 'revealText', text });
         }
       }
     } catch (error) {
       console.error('Text batch processing error:', error);
+    } finally {
+      activeTextRequests--;
     }
-  }
+  };
+  
+  // Process all batches concurrently (up to limit)
+  await Promise.all(batches.map((batch, index) => processBatch(batch, index)));
   
   return categoryCount;
 }
@@ -324,31 +349,26 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
   if (Array.isArray(request.images)) {
     console.log(request.images.length, 'images to process');
     
-    // Check image server health
-    const imageServerHealthy = await checkServerHealth(baseUrl);
-    if (!imageServerHealthy) {
-      console.error('Image server is not healthy');
-      sendResponse({ status: 'error', message: 'Image server unavailable' });
-      return true;
-    }
+    // Process immediately without health check delay
+    processImagesInBatches(request.images).then(categoryCount => {
+      console.log('Image categories count:', categoryCount);
+    }).catch(error => {
+      console.error('Image processing error:', error);
+    });
     
-    const categoryCount = await processImagesInBatches(request.images);
-    console.log('Image categories count:', categoryCount);
+    sendResponse({ status: 'processing' });
   } else if (Array.isArray(request.text)) {
     console.log(request.text.length, 'text to process');
     
-    // Check text server health
-    const textServerHealthy = await checkServerHealth(textBaseUrl);
-    if (!textServerHealthy) {
-      console.error('Text server is not healthy');
-      sendResponse({ status: 'error', message: 'Text server unavailable' });
-      return true;
-    }
+    // Process immediately without health check delay
+    processTextsInBatches(request.text).then(categoryCount => {
+      console.log('Text categories count:', categoryCount);
+    }).catch(error => {
+      console.error('Text processing error:', error);
+    });
     
-    const categoryCount = await processTextsInBatches(request.text);
-    console.log('Text categories count:', categoryCount);
+    sendResponse({ status: 'processing' });
   }
 
-  sendResponse({ status: 'done' });
   return true;
 });

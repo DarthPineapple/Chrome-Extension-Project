@@ -13192,3 +13192,1150 @@
 2025-10-25 13:33:29,947 - __main__ - INFO - Processing 17 texts
 2025-10-25 13:33:30,374 - __main__ - INFO - Prediction successful: 17 texts processed
 2025-10-25 13:33:30,375 - werkzeug - INFO - 127.0.0.1 - - [25/Oct/2025 13:33:30] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 22:53:29,363 - __main__ - INFO - Blacklist loaded successfully
+2025-10-30 22:53:29,364 - __main__ - INFO - Loaded 269 allowed words
+2025-10-30 22:54:01,080 - __main__ - INFO - Dataset loaded successfully
+2025-10-30 22:54:01,188 - __main__ - INFO - Model loaded successfully
+2025-10-30 22:54:01,231 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5004
+ * Running on http://192.168.68.105:5004
+2025-10-30 22:54:01,233 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-30 22:57:55,957 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:57:55] "OPTIONS /predict_text HTTP/1.1" 200 -
+2025-10-30 22:57:55,957 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:57:55] "OPTIONS /predict_text HTTP/1.1" 200 -
+2025-10-30 22:57:55,976 - __main__ - INFO - Processing 100 texts
+2025-10-30 22:57:55,976 - __main__ - INFO - Processing 56 texts
+2025-10-30 22:57:57,798 - __main__ - INFO - Prediction successful: 56 texts processed
+2025-10-30 22:57:57,802 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:57:57] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 22:57:57,803 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 22:57:57,804 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:57:57] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 22:58:32,720 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:58:32] "OPTIONS /predict_text HTTP/1.1" 200 -
+2025-10-30 22:58:32,722 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:58:32] "OPTIONS /predict_text HTTP/1.1" 200 -
+2025-10-30 22:58:32,726 - __main__ - INFO - Processing 56 texts
+2025-10-30 22:58:32,728 - __main__ - INFO - Processing 100 texts
+2025-10-30 22:58:34,294 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 22:58:34,294 - __main__ - INFO - Prediction successful: 56 texts processed
+2025-10-30 22:58:34,294 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:58:34] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 22:58:34,294 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:58:34] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 22:58:37,965 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:58:37] "OPTIONS /predict_text HTTP/1.1" 200 -
+2025-10-30 22:58:37,968 - __main__ - INFO - Processing 16 texts
+2025-10-30 22:58:38,198 - __main__ - INFO - Prediction successful: 16 texts processed
+2025-10-30 22:58:38,199 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:58:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 22:58:39,949 - __main__ - INFO - Processing 16 texts
+2025-10-30 22:58:40,150 - __main__ - INFO - Processing 13 texts
+2025-10-30 22:58:40,173 - __main__ - INFO - Prediction successful: 13 texts processed
+2025-10-30 22:58:40,174 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:58:40] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 22:58:40,201 - __main__ - INFO - Prediction successful: 16 texts processed
+2025-10-30 22:58:40,202 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:58:40] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 22:58:40,421 - __main__ - INFO - Processing 14 texts
+2025-10-30 22:58:40,434 - __main__ - INFO - Prediction successful: 14 texts processed
+2025-10-30 22:58:40,434 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 22:58:40] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:01,710 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:01,857 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:02,304 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:02,446 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:02,455 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:08,003 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:08,006 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:08] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:08,198 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:08,199 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:08] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:08,299 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:08,302 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:08,307 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:08] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:08,310 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:08,314 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:08] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:08,317 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:08,317 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:08] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:08,357 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:09,035 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:09,094 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:09,487 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:15,837 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:15,843 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:15] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:15,845 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:15,846 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:15] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:15,862 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:16,179 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:16,180 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:16] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:16,200 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:16,215 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:16,228 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:16] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:16,415 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:16,416 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:16] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:16,987 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:17,025 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:17,079 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:21,371 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:21,374 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:21,424 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:21,665 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:21,665 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:21,902 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:22,027 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:22,028 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:22] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:22,040 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:22,045 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:22] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:22,051 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:22,052 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:22] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:22,060 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:22,236 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:22,487 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:26,357 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:26,360 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:26,508 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:26,726 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:26,727 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:26,835 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:26,836 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:26,902 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:26,903 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:26,969 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:26,969 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:27,049 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:27,224 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:27,302 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:27,380 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:30,980 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:30,983 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:30] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:31,191 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:31,880 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:31,880 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:31] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:31,983 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:31,985 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:31] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:32,029 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:32,055 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:32,058 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:32] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:32,087 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:32,087 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:32] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:32,428 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:32,650 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:32,860 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:37,592 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:37,594 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:37] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:37,845 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:38,659 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:38,660 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:38,862 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:38,863 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:38,941 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:38,951 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:38,958 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:38,981 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:38,983 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:39,317 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:39,584 - __main__ - INFO - Processing 82 texts
+2025-10-30 23:00:39,589 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:42,813 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:42,815 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:42] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:43,089 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:44,143 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:44,143 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:44] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:44,374 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:44,376 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:44] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:44,399 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:44,487 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:44,489 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:44] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:44,498 - __main__ - INFO - Prediction successful: 82 texts processed
+2025-10-30 23:00:44,506 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:44] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:44,549 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:44,895 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:45,001 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:47,723 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:47,725 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:47] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:48,659 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:48,659 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:48] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:48,667 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:48,667 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:48] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:48,676 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:48,676 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:48] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:48,677 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:00:48,677 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:00:48] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:00:53,672 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:54,075 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:54,372 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:54,401 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:00:54,769 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:00,130 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:00,139 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:00] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:00,425 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:01,003 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:01,004 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:01] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:01,223 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:01,504 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:01,507 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:01] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:01,512 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:01,513 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:01] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:01,527 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:01,726 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:01,729 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:01] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:02,157 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:02,531 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:09,022 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:09,029 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:09] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:09,212 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:09,975 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:09,975 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:09] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:09,990 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:10,237 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:10,239 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:10] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:10,272 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:10,753 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:10,753 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:10] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:10,832 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:10,833 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:10] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:10,849 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:11,214 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:15,208 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:15,219 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:15] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:15,585 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:16,058 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:16,060 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:16] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:16,182 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:16,183 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:16] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:16,214 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:16,320 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:16,574 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:16,575 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:16] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:16,747 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:16,781 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:16,787 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:16] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:16,873 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:20,922 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:20,923 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:20] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:21,144 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:21,413 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:21,414 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:21,473 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:21,476 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:21,518 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:21,757 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:21,839 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:21,840 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:21,925 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:21,929 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:22,253 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:22,307 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:26,411 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:26,415 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:26,700 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:26,861 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:26,862 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:26,951 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:26,953 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:27,250 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:27,425 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:27,428 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:27,440 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:27,442 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:27,502 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:27,846 - __main__ - INFO - Processing 66 texts
+2025-10-30 23:01:28,084 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:31,499 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:31,500 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:31] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:31,664 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:31,870 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:31,871 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:31] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:31,939 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:31,940 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:31] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:31,971 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:32,077 - __main__ - INFO - Prediction successful: 66 texts processed
+2025-10-30 23:01:32,078 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:32] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:32,196 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:32,196 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:32] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:32,365 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:32,492 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:32,679 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:37,464 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:37,467 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:37] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:37,604 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:37,888 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:37,889 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:37] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:38,003 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:38,071 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:38,072 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:38,156 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:38,157 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:38,188 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:38,227 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:38,228 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:38,421 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:38,582 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:42,279 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:42,281 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:42] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:42,364 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:42,746 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:42,747 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:42] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:42,846 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:42,847 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:42] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:42,874 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:42,927 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:43,007 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:43,008 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:43] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:43,093 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:43,095 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:43] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:43,348 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:43,453 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:46,869 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:46,870 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:46] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:47,075 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:47,467 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:47,468 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:47] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:47,490 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:47,491 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:47] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:47,661 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:47,663 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:47] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:47,693 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:47,695 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:47] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:47,727 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:47,897 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:48,081 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:48,131 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:52,101 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:52,104 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:52] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:52,185 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:53,228 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:53,229 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:53] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:53,334 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:53,403 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:53,404 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:53] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:53,530 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:53,540 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:53,540 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:53] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:53,569 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:53,570 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:53] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:53,618 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:53,940 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:57,488 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:57,492 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:57] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:57,649 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:58,510 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:58,511 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:58] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:58,594 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:58,650 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:58,651 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:58] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:58,697 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:58,698 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:58] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:58,750 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:58,920 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:01:58,921 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:01:58] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:01:59,030 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:01:59,310 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:02,468 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:02,472 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:02] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:02,536 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:03,742 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:03,743 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:03] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:03,850 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:03,851 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:03] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:03,940 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:03,941 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:03] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:04,036 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:04,040 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:04] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:04,123 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:04,249 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:04,481 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:04,688 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:07,328 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:07,329 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:07] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:07,383 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:09,551 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:09,553 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:09] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:09,612 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:09,615 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:09] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:09,718 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:09,720 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:09] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:09,770 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:09,771 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:09] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:09,853 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:10,315 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:10,371 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:10,530 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:12,033 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:12,034 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:12] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:12,231 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:15,299 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:15,302 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:15] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:15,607 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:15,800 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:15,801 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:15] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:15,832 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:15,834 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:15] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:15,890 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:15,891 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:15] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:15,931 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:16,043 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:16,399 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:17,878 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:17,888 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:17] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:18,009 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:21,451 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:21,461 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:21,674 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:21,674 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:21,692 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:21,693 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:21,729 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:21,806 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:21,807 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:21,989 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:22,190 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:22,528 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:22,978 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:22,984 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:22] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:23,214 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:27,206 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:27,210 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:27,366 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:27,367 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:27,391 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:27,393 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:27,450 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:27,451 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:27,466 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:27,468 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:27,475 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:27,857 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:28,058 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:28,241 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:28,419 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:32,775 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:32,779 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:32] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:33,045 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:33,347 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:33,348 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:33] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:33,441 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:33,442 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:33] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:33,493 - __main__ - INFO - Processing 92 texts
+2025-10-30 23:02:33,539 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:33,542 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:33] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:33,637 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:33,639 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:33] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:34,000 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:34,187 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:34,219 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:38,334 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:38,337 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:38,718 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:39,125 - __main__ - INFO - Prediction successful: 92 texts processed
+2025-10-30 23:02:39,126 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:39] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:39,165 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:39,562 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:39,563 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:39] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:39,685 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:39,686 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:39] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:39,706 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:39,708 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:39] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:39,900 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:39,958 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:40,384 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:44,228 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:44,231 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:44] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:44,492 - __main__ - INFO - Processing 56 texts
+2025-10-30 23:02:44,679 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:44,679 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:44] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:44,908 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:45,231 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:45,232 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:45] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:45,240 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:45,241 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:45] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:45,372 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:45,374 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:45] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:45,483 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:45,711 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:45,798 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:50,626 - __main__ - INFO - Prediction successful: 56 texts processed
+2025-10-30 23:02:50,629 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:50] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:50,680 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:51,396 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:51,397 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:51] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:51,795 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:52,454 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:52,456 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:52] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:52,685 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:52,689 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:52] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:52,706 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:52,743 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:52,744 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:52] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:52,774 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:53,337 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:57,336 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:57,346 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:57] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:57,390 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:58,429 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:58,430 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:58] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:58,696 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:59,353 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:59,354 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:59] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:59,392 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:59,393 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:59] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:02:59,517 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:59,648 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:02:59,833 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:02:59,834 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:02:59] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:00,322 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:04,836 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:04,841 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:04] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:05,287 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:06,361 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:06,363 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:06] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:06,483 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:07,170 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:07,170 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:07] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:07,197 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:07,313 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:07,314 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:07] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:07,796 - __main__ - INFO - Processing 10 texts
+2025-10-30 23:03:07,821 - __main__ - INFO - Prediction successful: 10 texts processed
+2025-10-30 23:03:07,822 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:07] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:07,849 - __main__ - INFO - Processing 4 texts
+2025-10-30 23:03:07,867 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:07,868 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:07] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:07,888 - __main__ - INFO - Prediction successful: 4 texts processed
+2025-10-30 23:03:07,889 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:07] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:07,953 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:08,026 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:11,312 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:11,315 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:11] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:11,600 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:12,583 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:12,585 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:12] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:13,037 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:13,731 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:13,733 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:13] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:14,130 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:14,431 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:14,432 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:14] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:14,516 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:14,549 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:14,552 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:14] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:15,136 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:19,039 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:19,042 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:19] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:19,403 - __main__ - INFO - Processing 21 texts
+2025-10-30 23:03:20,084 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:20,084 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:20] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:20,258 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:20,763 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:20,765 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:20] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:20,929 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:20,930 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:20] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:21,001 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:21,181 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:21,182 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:21] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:21,741 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:21,857 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:24,553 - __main__ - INFO - Prediction successful: 21 texts processed
+2025-10-30 23:03:24,574 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:24] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:24,629 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:25,748 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:25,749 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:25] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:26,163 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:27,049 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:27,050 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:27,233 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:27,601 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:27,603 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:27,622 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:27,625 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:27] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:27,962 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:28,030 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:31,168 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:31,171 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:31] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:31,239 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:32,420 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:32,421 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:32] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:32,836 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:33,662 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:33,673 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:33] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:33,864 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:34,204 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:34,205 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:34] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:34,208 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:34,209 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:34] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:34,338 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:34,708 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:37,251 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:37,254 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:37] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:37,510 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:38,750 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:38,758 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:38] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:38,795 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:39,759 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:39,759 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:39] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:39,894 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:40,263 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:40,263 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:40] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:40,407 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:40,408 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:40] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:40,466 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:40,826 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:43,364 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:43,365 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:43] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:43,631 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:44,482 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:44,484 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:44] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:44,543 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:45,488 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:45,488 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:45] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:45,608 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:45,919 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:45,921 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:45] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:46,063 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:46,068 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:46] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:46,258 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:46,416 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:50,070 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:50,073 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:50] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:50,432 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:51,297 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:51,299 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:51] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:51,376 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:52,908 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:52,909 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:52] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:53,312 - __main__ - INFO - Processing 14 texts
+2025-10-30 23:03:53,380 - __main__ - INFO - Prediction successful: 14 texts processed
+2025-10-30 23:03:53,382 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:53] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:53,416 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:53,731 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:53,734 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:53] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:53,888 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:53,889 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:53] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:54,180 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:54,289 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:56,779 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:56,782 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:56] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:57,104 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:03:58,069 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:58,070 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:58] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:58,101 - __main__ - INFO - Processing 16 texts
+2025-10-30 23:03:59,264 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:59,265 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:59] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:59,454 - __main__ - INFO - Processing 14 texts
+2025-10-30 23:03:59,491 - __main__ - INFO - Prediction successful: 14 texts processed
+2025-10-30 23:03:59,491 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:59] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:59,610 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:59,611 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:59] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:59,615 - __main__ - INFO - Processing 35 texts
+2025-10-30 23:03:59,650 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:03:59,650 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:03:59] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:03:59,891 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:00,226 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:02,153 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:02,161 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:02] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:02,471 - __main__ - INFO - Processing 12 texts
+2025-10-30 23:04:02,594 - __main__ - INFO - Prediction successful: 12 texts processed
+2025-10-30 23:04:02,610 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:02] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:02,663 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:03,191 - __main__ - INFO - Prediction successful: 16 texts processed
+2025-10-30 23:04:03,191 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:03] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:03,241 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:05,100 - __main__ - INFO - Prediction successful: 35 texts processed
+2025-10-30 23:04:05,103 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:05] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:05,228 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:05,505 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:05,506 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:05] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:05,617 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:05,801 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:05,803 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:05] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:06,114 - __main__ - INFO - Processing 6 texts
+2025-10-30 23:04:06,143 - __main__ - INFO - Prediction successful: 6 texts processed
+2025-10-30 23:04:06,144 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:06] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:06,173 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:08,325 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:08,331 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:08] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:08,380 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:08,969 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:08,969 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:08] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:09,194 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:11,116 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:11,117 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:11] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:11,300 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:11,434 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:11,435 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:11] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:11,541 - __main__ - INFO - Processing 5 texts
+2025-10-30 23:04:11,585 - __main__ - INFO - Prediction successful: 5 texts processed
+2025-10-30 23:04:11,586 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:11] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:11,627 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:11,795 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:11,797 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:11] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:11,843 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:13,910 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:13,912 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:13] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:14,014 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:14,620 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:14,621 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:14] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:14,917 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:16,797 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:16,797 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:16] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:16,960 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:17,107 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:17,109 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:17] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:17,363 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:17,369 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:17] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:17,482 - __main__ - INFO - Processing 9 texts
+2025-10-30 23:04:17,500 - __main__ - INFO - Prediction successful: 9 texts processed
+2025-10-30 23:04:17,501 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:17] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:17,707 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:17,842 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:19,733 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:19,735 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:19] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:20,058 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:20,611 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:20,611 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:20] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:20,943 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:22,925 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:22,927 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:22] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:22,944 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:23,418 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:23,418 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:23] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:23,593 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:23,593 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:23] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:23,849 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:24,010 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:26,123 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:26,126 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:26,432 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:26,961 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:26,962 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:26] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:27,242 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:29,364 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:29,367 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:29] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:29,488 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:29,892 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:29,893 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:29] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:29,941 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:30,030 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:30,031 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:30] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:30,440 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:32,131 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:32,132 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:32] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:32,249 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:32,861 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:32,861 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:32] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:33,179 - __main__ - INFO - Processing 100 texts
+2025-10-30 23:04:34,977 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:34,982 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:34] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:35,361 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:35,362 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:35] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:35,509 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:35,510 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:35] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:35,929 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:35,930 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:35] "POST /predict_text HTTP/1.1" 200 -
+2025-10-30 23:04:35,943 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-10-30 23:04:35,943 - werkzeug - INFO - 127.0.0.1 - - [30/Oct/2025 23:04:35] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:11:50,104 - __main__ - INFO - Blacklist loaded successfully
+2025-11-01 13:11:50,105 - __main__ - INFO - Loaded 269 allowed words
+2025-11-01 13:12:24,209 - __main__ - INFO - Dataset loaded successfully
+2025-11-01 13:12:24,315 - __main__ - INFO - Model loaded successfully
+2025-11-01 13:12:24,364 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5004
+ * Running on http://192.168.68.105:5004
+2025-11-01 13:12:24,370 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-01 13:12:52,559 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:12:52,561 - __main__ - INFO - Processing 56 texts
+2025-11-01 13:12:53,753 - __main__ - INFO - Prediction successful: 56 texts processed
+2025-11-01 13:12:53,762 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:12:53] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:12:55,645 - __main__ - INFO - Processing 16 texts
+2025-11-01 13:12:55,971 - __main__ - INFO - Processing 14 texts
+2025-11-01 13:12:56,005 - __main__ - INFO - Prediction successful: 14 texts processed
+2025-11-01 13:12:56,007 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:12:56] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:12:56,095 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:12:56,096 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:12:56] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:12:56,152 - __main__ - INFO - Prediction successful: 16 texts processed
+2025-11-01 13:12:56,152 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:12:56] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:12:56,293 - __main__ - INFO - Processing 16 texts
+2025-11-01 13:12:56,462 - __main__ - INFO - Processing 18 texts
+2025-11-01 13:12:56,606 - __main__ - INFO - Processing 10 texts
+2025-11-01 13:12:56,622 - __main__ - INFO - Prediction successful: 10 texts processed
+2025-11-01 13:12:56,625 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:12:56] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:12:56,648 - __main__ - INFO - Prediction successful: 16 texts processed
+2025-11-01 13:12:56,650 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:12:56] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:12:56,792 - __main__ - INFO - Prediction successful: 18 texts processed
+2025-11-01 13:12:56,793 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:12:56] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:12:56,826 - __main__ - INFO - Processing 9 texts
+2025-11-01 13:12:56,838 - __main__ - INFO - Prediction successful: 9 texts processed
+2025-11-01 13:12:56,839 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:12:56] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:12:58,278 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:12:58,279 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:12:58,748 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:12:59,100 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:12:59,106 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:04,604 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:04,606 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:04,609 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:04] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:04,610 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:04] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:04,679 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:04,684 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:04] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:04,707 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:04,745 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:04,751 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:04] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:04,771 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:04,772 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:04] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:05,392 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:05,621 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:05,670 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:05,961 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:09,860 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:09,863 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:09] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:10,087 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:10,792 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:10,793 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:10] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:10,916 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:10,917 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:10] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:10,927 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:10,931 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:10] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:10,973 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:10,983 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:10,984 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:10] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:11,034 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:11,060 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:11,987 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:15,781 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:15,789 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:15] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:15,856 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:16,848 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:16,849 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:16] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:16,860 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:16,861 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:16] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:16,865 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:16,868 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:16] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:17,091 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:17,097 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:17] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:17,118 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:17,140 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:17,877 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:17,914 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:21,006 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:21,009 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:21] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:21,275 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:22,847 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:22,849 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:22,851 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:22] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:22,852 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:22] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:23,076 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:23,168 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:23,173 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:23] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:23,178 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:23,180 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:23] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:23,334 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:23,419 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:23,835 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:26,453 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:26,455 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:26] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:26,699 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:28,909 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:28,912 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:28] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:28,975 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:29,185 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:29,187 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:29] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:29,221 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:29,223 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:29] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:29,484 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:29,485 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:29] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:29,684 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:29,819 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:30,039 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:32,857 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:32,861 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:32] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:33,174 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:35,298 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:35,302 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:35] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:35,535 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:35,772 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:35,772 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:35] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:35,839 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:35,841 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:35] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:35,927 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:35,929 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:35] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:36,042 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:36,373 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:36,538 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:38,526 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:38,532 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:38] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:38,713 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:41,275 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:41,281 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:41] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:41,519 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:41,851 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:41,853 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:41] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:41,867 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:42,207 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:42,208 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:42] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:42,332 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:42,334 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:42] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:42,769 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:42,814 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:44,525 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:44,527 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:44] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:44,830 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:47,515 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:47,521 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:47] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:47,681 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:48,032 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:48,033 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:48] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:48,271 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:48,574 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:48,574 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:48] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:48,582 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:48,583 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:48] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:48,835 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:49,083 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:50,512 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:50,513 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:50] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:50,566 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:53,370 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:53,381 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:53] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:53,638 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:53,948 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:53,950 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:53] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:54,258 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:54,474 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:54,474 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:54] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:54,622 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:54,623 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:54] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:54,758 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:55,008 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:56,270 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:56,271 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:56] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:56,513 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:13:59,453 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:13:59,456 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:13:59] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:13:59,769 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:00,075 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:00,077 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:00] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:00,371 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:00,525 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:00,526 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:00] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:00,639 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:00,640 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:00] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:00,788 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:00,999 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:02,155 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:02,156 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:02] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:02,223 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:05,708 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:05,716 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:05] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:06,068 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:06,543 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:06,544 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:06] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:06,570 - __main__ - INFO - Processing 74 texts
+2025-11-01 13:14:06,988 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:06,989 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:06] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:07,177 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:07,182 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:07] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:07,285 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:07,452 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:08,381 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:08,384 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:08] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:08,624 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:11,715 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:11,717 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:11] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:12,087 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:12,159 - __main__ - INFO - Prediction successful: 74 texts processed
+2025-11-01 13:14:12,160 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:12] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:12,264 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:12,700 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:12,701 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:12] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:12,752 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:12,882 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:12,883 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:12] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:12,925 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:14,362 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:14,364 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:14] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:14,567 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:18,037 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:18,041 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:18] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:18,189 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:18,190 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:18] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:18,231 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:18,502 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:18,503 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:18] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:18,612 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:18,661 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:18,666 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:18] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:18,861 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:18,979 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:20,054 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:20,061 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:20] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:20,246 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:23,951 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:23,954 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:23] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:24,095 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:24,184 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:24,185 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:24] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:24,289 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:24,291 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:24] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:24,356 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:24,358 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:24] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:24,922 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:24,963 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:25,070 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:25,153 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:25,154 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:25] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:25,429 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:30,235 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:30,252 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:30] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:30,528 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:31,212 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:31,214 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:31] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:31,218 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:31,219 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:31] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:31,241 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:31,242 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:31] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:31,303 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:31,384 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:31,392 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:31] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:31,952 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:32,013 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:32,508 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:36,719 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:36,721 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:36] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:36,987 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:37,848 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:37,849 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:37] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:38,182 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:38,449 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:38,450 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:38] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:38,452 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:38,453 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:38] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:38,500 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:38,683 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:38,684 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:38] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:38,870 - __main__ - INFO - Processing 11 texts
+2025-11-01 13:14:38,939 - __main__ - INFO - Prediction successful: 11 texts processed
+2025-11-01 13:14:38,940 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:38] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:39,081 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:39,236 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:43,555 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:43,587 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:43] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:43,637 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:45,894 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:45,896 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:45] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:46,204 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:46,324 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:46,324 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:46] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:46,541 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:46,851 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:46,852 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:46] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:46,971 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:46,973 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:46] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:47,165 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:47,414 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:52,567 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:52,576 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:52] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:52,880 - __main__ - INFO - Processing 87 texts
+2025-11-01 13:14:54,178 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:54,194 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:54] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:54,383 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:54,388 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:54] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:54,449 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:54,822 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:54,823 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:54] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:54,857 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:54,978 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:14:54,979 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:54] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:55,060 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:55,376 - __main__ - INFO - Processing 2 texts
+2025-11-01 13:14:55,448 - __main__ - INFO - Prediction successful: 2 texts processed
+2025-11-01 13:14:55,450 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:55] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:55,569 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:14:59,454 - __main__ - INFO - Prediction successful: 87 texts processed
+2025-11-01 13:14:59,458 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:14:59] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:14:59,707 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:01,401 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:01,403 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:01] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:01,692 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:01,695 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:01] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:01,753 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:01,758 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:01] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:01,809 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:01,810 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:01] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:01,868 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:02,128 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:02,237 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:02,287 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:05,899 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:05,935 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:05] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:06,143 - __main__ - INFO - Processing 3 texts
+2025-11-01 13:15:06,197 - __main__ - INFO - Prediction successful: 3 texts processed
+2025-11-01 13:15:06,198 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:06] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:06,351 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:08,756 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:08,760 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:08] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:08,899 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:08,900 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:08] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:08,956 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:08,957 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:08] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:08,958 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:08,959 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:08] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:09,119 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:09,500 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:09,739 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:09,964 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:12,322 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:12,328 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:12] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:12,632 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:15,281 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:15,285 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:15] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:15,344 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:15,532 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:15,534 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:15] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:15,606 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:15,608 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:15] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:15,662 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:15,663 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:15] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:15,761 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:15,776 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:16,487 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:18,785 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:18,788 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:18] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:18,861 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:22,011 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:22,015 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:22] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:22,082 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:22,398 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:22,398 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:22] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:22,411 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:22,414 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:22] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:22,758 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:22,759 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:22] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:23,111 - __main__ - INFO - Processing 8 texts
+2025-11-01 13:15:23,165 - __main__ - INFO - Prediction successful: 8 texts processed
+2025-11-01 13:15:23,165 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:23] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:23,275 - __main__ - INFO - Processing 2 texts
+2025-11-01 13:15:23,297 - __main__ - INFO - Prediction successful: 2 texts processed
+2025-11-01 13:15:23,299 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:23] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:23,321 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:23,357 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:23,366 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:24,615 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:24,618 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:24] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:24,937 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:28,854 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:28,857 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:28] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:29,210 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:30,127 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:30,131 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:30] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:30,133 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:30,133 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:30] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:30,136 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:30,136 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:30] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:30,439 - __main__ - INFO - Processing 100 texts
+2025-11-01 13:15:31,149 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:31,150 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:31] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:32,441 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:32,446 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:32] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 13:15:32,720 - __main__ - INFO - Prediction successful: 100 texts processed
+2025-11-01 13:15:32,722 - werkzeug - INFO - 127.0.0.1 - - [01/Nov/2025 13:15:32] "POST /predict_text HTTP/1.1" 200 -
+2025-11-01 14:12:24,124 - __main__ - INFO - Blacklist loaded successfully
+2025-11-01 14:12:24,125 - __main__ - INFO - Loaded 269 allowed words
+2025-11-01 14:12:59,165 - __main__ - INFO - Dataset loaded successfully
+2025-11-01 14:12:59,257 - __main__ - ERROR - Failed to load model: Error(s) in loading state_dict for CNNClassifier:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([2485, 100]) from checkpoint, the shape in current model is torch.Size([2543, 768]).
+	size mismatch for conv1.weight: copying a param with shape torch.Size([128, 100, 5]) from checkpoint, the shape in current model is torch.Size([128, 768, 5]).
+2025-11-01 14:12:59,316 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5004
+ * Running on http://192.168.68.105:5004
+2025-11-01 14:12:59,316 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

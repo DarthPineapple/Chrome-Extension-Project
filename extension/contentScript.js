@@ -1,7 +1,136 @@
+let buildAutomaton, findAll;
+
+// Load the Aho-Corasick implementation
+(async () => {
+    console.log("Loading Aho-Corasick module");
+    const module = await import(chrome.runtime.getURL('ac.js'));
+    buildAutomaton = module.buildAutomaton;
+    findAll = module.findAll;
+    console.log(buildAutomaton, findAll)
+    loadDictionary();
+})();
+
+let AC = null;
+let acReady = false;
+
+// const BLACKLIST_ENTRIES = [
+//     { term: "cocaine", payload: "drug" },
+//     { term: "heroin", payload: "drug" },
+// ];
+
+async function loadDictionary() {
+const dictUrl = chrome.runtime.getURL('blacklist.json');
+
+    let response;
+    try {
+        response = await fetch(dictUrl);
+    } catch (error) {
+        console.error("Error fetching dictionary:", error);
+        return;
+    }
+
+    if (!response.ok) {
+        console.error("Failed to load dictionary:", response.statusText);
+        return;
+    }
+
+    let BLACKLIST_ENTRIES = await response.json();
+
+    console.log(buildAutomaton)
+    AC = buildAutomaton(BLACKLIST_ENTRIES, { caseInsensitive: true, wholeWord: true });
+    acReady = true;
+
+    // Initial scan
+    acCensorDocument();
+}
+
+function censorWithHits(text, hits) {
+    if (hits.length == 0) return text;
+
+    const sorted = hits.sort((a, b) => b.start - a.start);
+    let output = text;
+    for (const hit of sorted) {
+        const len = hit.end - hit.start;
+        output = output.slice(0, hit.start) + "█".repeat(len) + output.slice(hit.end);
+    }; 
+    return output;
+}
+
+function* textNodeWalker(root) {
+    const walker = document.createTreeWalker(
+        root,
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode(node) {
+                const text = node.textContent;
+
+                if (!text || text.trim() === "") {
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                const parent = node.parentElement;
+                if (!parent) return NodeFilter.FILTER_REJECT;
+
+                const tag = parent.tagName.toLowerCase();
+
+                if (["script", "style", "noscript", "iframe", "code", "pre", "svg", "object", "embed"].includes(tag)) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                const style = parent.ownerDocument.defaultView.getComputedStyle(parent);
+                if (!style || style.display === "none" || style.visibility === "hidden" || parseFloat(style.opacity) === 0) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                return NodeFilter.FILTER_ACCEPT;           }
+        }
+    );
+    let node;
+    while ((node = walker.nextNode())) {
+        yield node;
+    }
+}
+
+function acCensorNode(node) {
+    const raw = node.textContent;
+    if (!raw || !acReady || ! AC) return false;
+    const hits = findAll(AC, raw);
+    if (hits.length === 0) return false;
+    node.textContent = censorWithHits(raw, hits);
+    return true;
+}
+
+function acCensorDocument() {
+    if (!acReady || !AC || !document.body) return;
+    for (const node of textNodeWalker(document.body)) {
+        acCensorNode(node);
+    }
+}
+
+function acCensorSubtree(root) {
+    if (!acReady || !AC) return;
+    for (const node of textNodeWalker(root)) {
+        acCensorNode(node);
+    }
+}
+
 const seenImages = new Set();
 const seenText = new Set();
 
 const imageUrls = new Set();
+
+// Debounce timers
+let imageDebounceTimer = null;
+let textDebounceTimer = null;
+
+// Pending batches
+let pendingImages = [];
+let pendingTexts = [];
+
+// Configuration
+const IMAGE_BATCH_SIZE = 10;  // Send images in batches of 10
+const TEXT_BATCH_SIZE = 100;  // Send text in batches of 100
+const DEBOUNCE_DELAY = 100;   // Wait 100ms before sending
 
 function isDataImageOrUrl(url){
     return url.toString().startsWith("data:image/") || url.toString().startsWith("blob:") || url.toString().startsWith("http") || url.toString() === "";
@@ -49,7 +178,6 @@ function extractImageLinks(){
         })
     .filter((src) => src !== "" && !seenImages.has(src));
 newImageLinks.forEach((src) => {if(isDataImageOrUrl(src)) seenImages.add(src);});
-console.log("Seen images 1:", seenImages);
 
 const backgroundImages = Array.from(document.querySelectorAll("*"));
 
@@ -71,23 +199,63 @@ backgroundImages.forEach((element) => {
     }
 })
 newImageLinks.forEach((src) => {if(isDataImageOrUrl(src)) seenImages.add(src);});
-console.log("Background images:", newImageLinks);
-console.log("Seen images:", seenImages);
 return newImageLinks;
+}
+
+function flushImages() {
+    if (pendingImages.length === 0) return;
+    
+    const batch = pendingImages.splice(0, IMAGE_BATCH_SIZE);
+    console.log(`Sending ${batch.length} images immediately`);
+    
+    try {
+        chrome.runtime.sendMessage({images: batch});
+    } catch(error) {
+        console.error("Error sending images:", error);
+    }
+    
+    // If there are more images, schedule next batch immediately
+    if (pendingImages.length > 0) {
+        setTimeout(flushImages, 0);
+    }
+}
+
+function flushTexts() {
+    if (pendingTexts.length === 0) return;
+    
+    const batch = pendingTexts.splice(0, TEXT_BATCH_SIZE);
+    console.log(`Sending ${batch.length} texts immediately`);
+    
+    try {
+        chrome.runtime.sendMessage({text: batch});
+    } catch(error) {
+        console.error("Error sending text:", error);
+    }
+    
+    // If there are more texts, schedule next batch immediately
+    if (pendingTexts.length > 0) {
+        setTimeout(flushTexts, 0);
+    }
 }
 
 function sendImages(){
     const imageLinks = extractImageLinks();
-    try{
-        console.log("Sending image links:", imageLinks);
-        if(imageLinks.length > 0){
-            chrome.runtime.sendMessage({images: imageLinks});
-        }
+    if (imageLinks.length === 0) return;
+    
+    pendingImages.push(...imageLinks);
+    
+    // Clear existing timer
+    if (imageDebounceTimer) {
+        clearTimeout(imageDebounceTimer);
     }
-    catch(error){
-        console.error("Error sending images:", error);
-    }
+    
+    // Debounce: wait for DEBOUNCE_DELAY ms of inactivity before sending
+    imageDebounceTimer = setTimeout(() => {
+        flushImages();
+        imageDebounceTimer = null;
+    }, DEBOUNCE_DELAY);
 }
+
 function extractSentences(){
     let sentences = [];
 
@@ -146,16 +314,37 @@ function extractSentences(){
 }
 
 function sendText(){
-    const text = extractSentences();
-    try{
-        if(text.length > 0){
-            console.log("Sending text:", text);
-            chrome.runtime.sendMessage({text: text});
+    const texts = extractSentences();
+    if (texts.length === 0) return;
+    
+    const filtered = [];
+    for (const text of texts) {
+        if (acReady && AC) {
+            const hits = findAll(AC, text);
+            if (hits.length == text.split(" ").length) {
+                continue; // Skip texts that are entirely blacklisted
+            } else {
+                filtered.push(text);
+            }
+        } else {
+            filtered.push(text);
         }
     }
-    catch(error){
-        console.error("Error sending text:", error);
+
+    if (filtered.length === 0) return;
+
+    pendingTexts.push(...filtered);
+    
+    // Clear existing timer
+    if (textDebounceTimer) {
+        clearTimeout(textDebounceTimer);
     }
+    
+    // Debounce: wait for DEBOUNCE_DELAY ms of inactivity before sending
+    textDebounceTimer = setTimeout(() => {
+        flushTexts();
+        textDebounceTimer = null;
+    }, DEBOUNCE_DELAY);
 }
 
 function escapeRegExp(text){
@@ -163,10 +352,16 @@ function escapeRegExp(text){
 }
 
 //Set up a mutationobserver
-const observer = new MutationObserver(() => {
-    console.log("DOM mutated");
+const observer = new MutationObserver((mutations) => {
     sendImages();
     sendText();
+
+    mutations.forEach((mutation) => {
+        const target = mutation.addedNodes?.length > 0 ? mutation.target : null;
+        if (target) {
+            acCensorSubtree(target);
+        };
+    });
 });
 
 observer.observe(document, {
@@ -244,9 +439,13 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
 window.addEventListener("load", () => {
     console.log("Page loaded - scanning for images");
     sendImages();
+
+    acCensorDocument();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded - scanning for images");
     sendImages();
+
+   acCensorDocument();
 });
