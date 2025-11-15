@@ -393,6 +393,13 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
 
         console.log(`Removed image with link: ${message.imageLink}`);
     }
+    else if (message.action === "log"){
+        const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`);
+        //console.log(`Image classified: ${message.imageLink} as ${message.className} with confidence ${message.confidence}`);
+        images.forEach((image) => {
+            image.alt = JSON.stringify(message.data);
+        });
+    }
     else if(message.action === "revealImage" && message.imageLink){
         console.log(`Revealing image with link: ${message.imageLink}`);
         const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`)

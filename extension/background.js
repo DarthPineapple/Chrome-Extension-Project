@@ -208,13 +208,17 @@ async function processImagesInBatches(images, batchSize = MAX_IMAGE_BATCH) {
           const className = prediction?.class;
           const confidence = prediction?.confidence || 0;
           
-          if (className && className !== 'background') {
+          //log the results
+          sendMessageToAllTabs({ action: 'log', imageLink, data: data.predictions });
+          //console.log(prediction, data, className, confidence, imageLink);
+
+          if (className && className !== 'none') {
             try {
               const result = await chrome.storage.local.get(['confidence']);
               const threshold = result.confidence ?? 0.5;
 
               if (confidence >= threshold) {
-                const storageKey = categoriesMap[className] || 'background-log';
+                const storageKey = categoriesMap[className] || 'none-log';
                 const res = await chrome.storage.local.get([storageKey]);
                 const allowed = res[storageKey] !== false;
                 if (allowed) {
@@ -222,18 +226,18 @@ async function processImagesInBatches(images, batchSize = MAX_IMAGE_BATCH) {
                   sendMessageToAllTabs({ action: 'removeImage', imageLink });
                   categoryCount[className] = (categoryCount[className] || 0) + 1;
                 } else {
-                  recordCategory('background');
+                  recordCategory('none');
                   sendMessageToAllTabs({ action: 'revealImage', imageLink });
                 }
               } else {
-                recordCategory('background');
+                recordCategory('none');
                 sendMessageToAllTabs({ action: 'revealImage', imageLink });
               }
             } catch (error) {
               console.error('Storage error:', error);
             }
           } else {
-            recordCategory('background');
+            recordCategory('none');
             sendMessageToAllTabs({ action: 'revealImage', imageLink });
           }
         } catch (error) {
@@ -310,7 +314,7 @@ async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
           });
           
           for (const category of detectedCategories) {
-            const storageKey = categoriesMap[category] || 'background-log';
+            const storageKey = categoriesMap[category] || 'none-log';
             try {
               const res = await chrome.storage.local.get([storageKey]);
               const allowed = res[storageKey] !== false;
@@ -318,7 +322,7 @@ async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
                 recordCategory(storageKey.replace('-log',''));
                 sendMessageToAllTabs({ action: 'removeText', text });
               } else {
-                recordCategory('background');
+                recordCategory('none');
                 sendMessageToAllTabs({ action: 'revealText', text });
               }
             } catch (error) {
@@ -326,7 +330,7 @@ async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
             }
           }
         } else {
-          recordCategory('background');
+          recordCategory('none');
           sendMessageToAllTabs({ action: 'revealText', text });
         }
       }

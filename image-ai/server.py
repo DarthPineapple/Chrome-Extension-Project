@@ -103,7 +103,7 @@ def predict():
     # Validate image file
     is_valid, error_msg = validate_image(image)
     if not is_valid:
-        logger.warning(f"Invalid image upload: {error_msg}")
+        #logger.warning(f"Invalid image upload: {error_msg}")
         return jsonify({'error': error_msg}), 400
     
     try:
@@ -137,7 +137,7 @@ def predict():
                 'confidence': float(box.conf),
             })
         
-        logger.info(f"Prediction successful: {len(predictions)} objects detected")
+        logger.info(f"Prediction successful: {len(predictions)} objects detected confidence: {list(zip([float(box.conf) for box in predictions], [model.names[int(box.cls)] for box in predictions]))}")
         return jsonify(response), 200
         
     except Exception as e:
