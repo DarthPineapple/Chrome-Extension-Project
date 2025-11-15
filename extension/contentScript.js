@@ -18,6 +18,36 @@ let acReady = false;
 //     { term: "heroin", payload: "drug" },
 // ];
 
+var enabled = true;
+
+chrome.storage.local.get(['enabled'], (result) => {
+    if (result.enabled === undefined) {
+        enabled = true;
+        chrome.storage.local.set({ enabled: true });
+        sendImages();
+        sendText();
+        acCensorDocument();
+    } else {
+        enabled = result.enabled;
+    }
+    console.log("Content script enabled status:", enabled);
+
+    
+});
+
+chrome.storage.onChanged.addListener((changes, area) => {
+    if (area === 'local' && changes.enabled) {
+        enabled = changes.enabled.newValue;
+    }
+    console.log("Content script enabled status changed to:", enabled);
+
+    if (enabled) {
+        sendImages();
+        sendText();
+        acCensorDocument();
+    }
+});
+
 async function loadDictionary() {
 const dictUrl = chrome.runtime.getURL('blacklist.json');
 
@@ -41,7 +71,7 @@ const dictUrl = chrome.runtime.getURL('blacklist.json');
     acReady = true;
 
     // Initial scan
-    acCensorDocument();
+    //acCensorDocument();
 }
 
 function censorWithHits(text, hits) {
@@ -353,6 +383,9 @@ function escapeRegExp(text){
 
 //Set up a mutationobserver
 const observer = new MutationObserver((mutations) => {
+    if(enabled === false){
+        return;
+    }
     sendImages();
     sendText();
 
@@ -443,16 +476,24 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     }
 });
 
-window.addEventListener("load", () => {
-    console.log("Page loaded - scanning for images");
-    sendImages();
+// window.addEventListener("load", () => {
+//     if (enabled) {
+//         console.log("Page loaded - scanning for images");
+//         sendImages();
 
-    acCensorDocument();
-});
+//         acCensorDocument();
+//     }
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded - scanning for images");
-    sendImages();
+    
+// });
 
-   acCensorDocument();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+
+//     if (enabled) {
+//         console.log("DOM loaded - scanning for images");
+//         sendImages();
+
+//         acCensorDocument();
+//     }
+    
+// });

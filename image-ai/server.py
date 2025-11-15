@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from ultralytics import YOLO
+import torch
 from PIL import Image
 from io import BytesIO
 import logging
@@ -121,7 +122,7 @@ def predict():
             return jsonify({'error': 'Image dimensions too large (max 4096px)'}), 400
 
         # Perform inference
-        results = model.predict(source=img, conf=0.7, verbose=False)
+        results = model.predict(source=img, conf=0.7, verbose=False, device=0 if torch.cuda.is_available() else 'cpu')
 
         # Process results
         predictions = results[0].boxes
