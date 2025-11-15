@@ -60,3 +60,6 @@ dataset_cache.pkl
 # Ignore YOLO specific outputs
 labels.cache
 labels/
+
+#ignore server logs
+*.log
