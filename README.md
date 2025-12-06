@@ -32,3 +32,21 @@
     - NOTE: if the CUDA version you have doesn't show in the site, just substitute the number at the end of the command to the right one (e.g. '...whl/cu126' is to 12.6 as '...whl/cu121' would be to 12.1)
     - uninstall the old torch and torchvision via pip uninstall, and then enter the command from the site (you can delete the torchaudio part if you want in your case)
 6. Continue data collection and run dataset.py --> train.py for the image AI, just train.py for the text AI
+
+
+
+
+
+PyInstaller Compilation Steps
+
+IMAGE AI:
+pyinstaller --onefile server.py
+
+TEXT AI:
+WINDOWS: pyinstaller --onefile --add-data "banned;banned" server.py
+MAC/LINUX: pyinstaller --onefile --add-data "banned:banned" server.py
+
+
+
+
+
