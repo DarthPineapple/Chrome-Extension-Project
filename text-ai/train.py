@@ -41,7 +41,7 @@ def train_model(model, train_loader, val_loader, epochs, learning_rate, device):
 
     criterion = nn.CrossEntropyLoss(weight=class_weights)
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=1, verbose=True)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=1)#, verbose=True)
 
     current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     print(f"Training started at {current_time} on device {device}")

@@ -90,7 +90,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 try:
     model = CNNClassifier(vocab_size, EMBEDDING_DIM, MAX_LEN)
     #model currently not loading weights for testing
-    model.load_state_dict(torch.load("cnn_model.pt", map_location=device, weights_only=True))
+    model.load_state_dict(torch.load("best_model.pth", map_location=device, weights_only=True))
     model.to(device)
     model.eval()
     logger.info("Model loaded successfully")
@@ -217,6 +217,7 @@ def predict_text():
         
         predictions = predictions.cpu().tolist()
         results = []
+        print(predictions)
         
         for text, pred_seq in zip(texts, predictions):
             effective_length = min(len(text), MAX_LEN)
