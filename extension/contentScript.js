@@ -404,6 +404,7 @@ observer.observe(document, {
 
 chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     if(message.action === "removeImage" && message.imageLink){
+        // TODO: record images blocked count
         const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`);
         images.forEach((image) => {
             image.classList.add("image-pending-placeholder");
@@ -454,6 +455,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         });
     }
     else if (message.action === "removeText" && message.text){
+        // TODO: record texts blocked count
         // command to censor with "█"
         const text = message.text.trim();
         

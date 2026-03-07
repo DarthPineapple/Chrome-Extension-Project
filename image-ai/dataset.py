@@ -14,7 +14,7 @@ def generate_label_file(image_path, class_id, label_dest_dir):
     with open(label_file_path, 'w') as label_file:
         label_file.write(f"{class_id} 0.5 0.5 1.0 1.0\n")
 
-def _convert_png_to_jpg(src_png_path: str, dest_jpg_path: str):
+def _convert_img_to_jpg(src_png_path: str, dest_jpg_path: str):
     if Image is None:
         raise RuntimeError("Pillow not installed. Run: pip install pillow")
     with Image.open(src_png_path) as im:
@@ -41,7 +41,7 @@ def split_dataset(
 
         all_images = [
             f for f in os.listdir(class_path)
-            if f.lower().endswith(('.jpg', '.jpeg', '.png'))
+            if f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp', '.avif'))
         ]
         random.shuffle(all_images)
 
@@ -64,10 +64,10 @@ def split_dataset(
                 src_image_path = os.path.join(class_path, image)
                 ext = os.path.splitext(image)[1].lower()
 
-                if ext == '.png' and convert_png:
+                if (ext != '.jpg' and ext != 'jpeg') and convert_png:
                     dest_image_filename = os.path.splitext(image)[0] + '.jpg'
                     dest_image_path = os.path.join(split_dir, dest_image_filename)
-                    _convert_png_to_jpg(src_image_path, dest_image_path)
+                    _convert_img_to_jpg(src_image_path, dest_image_path)
                 else:
                     dest_image_path = os.path.join(split_dir, image)
                     shutil.copy(src_image_path, dest_image_path)

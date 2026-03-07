@@ -13,6 +13,12 @@ LEARNING_RATE = 1e-3
 EMBEDDING_DIM = 768
 NUM_CLASSES = 1 + len(CATEGORIES) # background + len(categories)
 
+"""
+Experiment Ideas:
+- Explore alternate architectures like RNNs or Transformers for better context understanding.
+- Spirit of the experiment: We chose CNN because it should be the best for finding problematic words regardless of context. We need to test if that assumption holds true.
+"""
+
 class CNNClassifier(nn.Module):
     def __init__(self, vocab_size, embedding_dim, max_len):
         super(CNNClassifier, self).__init__()
@@ -35,6 +41,40 @@ class CNNClassifier(nn.Module):
         logits = self.conv_out(out)
         logits = logits.permute(0, 2, 1) # [batch, max_len, num_classes]
         return logits
+
+# Alternate Models (RNN, Transformer) - not used in final version but worth exploring
+class RNNClassifier(nn.Module):
+    def __init__(self, vocab_size, embedding_dim, max_len):
+        super(RNNClassifier, self).__init__()
+        self.max_len = max_len
+        self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=0)
+        self.rnn = nn.LSTM(embedding_dim, 128, batch_first=True, bidirectional=True)
+        self.fc = nn.Linear(256, NUM_CLASSES)
+
+    def forward(self, x):
+        embedding = self.embedding(x)
+        rnn_out, _ = self.rnn(embedding)
+        logits = self.fc(rnn_out)
+        return logits
+
+
+class TransformerClassifier(nn.Module):
+    def __init__(self, vocab_size, embedding_dim, max_len):
+        super(TransformerClassifier, self).__init__()
+        self.max_len = max_len
+        self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=0)
+        encoder_layer = nn.TransformerEncoderLayer(d_model=embedding_dim, nhead=8)
+        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=2)
+        self.fc = nn.Linear(embedding_dim, NUM_CLASSES)
+
+    def forward(self, x):
+        embedding = self.embedding(x)
+        embedding = embedding * torch.sqrt(torch.tensor(EMBEDDING_DIM, dtype=torch.float32))
+        transformer_out = self.transformer_encoder(embedding.permute(1, 0, 2)) # [max_len, batch, embedding_dim]
+        transformer_out = transformer_out.permute(1, 0, 2) # [batch, max_len, embedding_dim]
+        logits = self.fc(transformer_out)
+        return logits
+
     
 def train_model(model, train_loader, val_loader, epochs, learning_rate, device):
     class_weights = torch.tensor([0.05] + [1.0] * len(CATEGORIES), device=device)
@@ -146,7 +186,9 @@ if __name__ == "__main__":
     else:
         device = torch.device("cpu")
     print(f"Using device: {device}")
-    model = CNNClassifier(vocab_size, EMBEDDING_DIM, MAX_LEN)
+    #model = CNNClassifier(vocab_size, EMBEDDING_DIM, MAX_LEN)
+    #model = RNNClassifier(vocab_size, EMBEDDING_DIM, MAX_LEN)
+    model = TransformerClassifier(vocab_size, EMBEDDING_DIM, MAX_LEN)
     
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
