@@ -1,8 +1,6 @@
 import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
 import torch
 import torch.nn.functional as F
 from dataset import TextDataset, CATEGORIES
@@ -33,13 +31,6 @@ CORS(app, resources={
     }
 })
 
-# Rate limiting - Increased by 100x for large dataset testing
-limiter = Limiter(
-    app=app,
-    key_func=get_remote_address,
-    default_limits=["1000000 per day", "100000 per hour"],  # 100x increase
-    storage_uri="memory://"
-)
 
 # Security configurations - Adjusted for smaller packet testing
 MAX_TEXT_LENGTH = 5000  # Decreased from 50,000
@@ -180,7 +171,6 @@ def safe_find_word_in_text(text_lower, word):
         return None, None
 
 @app.route('/predict_text', methods=['POST'])
-@limiter.limit("10000 per minute")  # 100x increase from 100 per minute
 def predict_text():
     # Check if model and vocab are loaded
     if model is None or vocab is None or label_to_category is None:
@@ -277,12 +267,6 @@ def request_entity_too_large(error):
     """Handle request too large error"""
     logger.warning("Request too large")
     return jsonify({'error': 'Request too large (max 1MB)'}), 413
-
-@app.errorhandler(429)
-def ratelimit_handler(e):
-    """Handle rate limit exceeded"""
-    logger.warning(f"Rate limit exceeded: {get_remote_address()}")
-    return jsonify({'error': 'Rate limit exceeded. Please try again later.'}), 429
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5004, debug=False)

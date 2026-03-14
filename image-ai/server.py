@@ -1,7 +1,5 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
 from ultralytics import YOLO
 import torch
 from PIL import Image
@@ -33,13 +31,6 @@ CORS(app, resources={
     }
 })
 
-# Rate limiting - Increased by 100x for high-volume testing
-limiter = Limiter(
-    app=app,
-    key_func=get_remote_address,
-    default_limits=["20000 per day", "5000 per hour"],  # 100x increase
-    storage_uri="memory://"
-)
 
 # Security configurations
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
@@ -83,7 +74,6 @@ def validate_image(file):
         return False, f"Invalid image file: {str(e)}"
 
 @app.route('/predict_image', methods=['POST'])
-@limiter.limit("1000 per minute")  # 100x increase from 10 per minute
 def predict():
     # Check if model is loaded
     if model is None:
@@ -158,12 +148,6 @@ def request_entity_too_large(error):
     """Handle file too large error"""
     logger.warning("File too large uploaded")
     return jsonify({'error': 'File too large (max 16MB)'}), 413
-
-@app.errorhandler(429)
-def ratelimit_handler(e):
-    """Handle rate limit exceeded"""
-    logger.warning(f"Rate limit exceeded: {get_remote_address()}")
-    return jsonify({'error': 'Rate limit exceeded. Please try again later.'}), 429
 
 if __name__ == '__main__':
     # Production settings - use a production WSGI server like gunicorn
