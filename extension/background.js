@@ -13,16 +13,33 @@ const MAX_CONCURRENT_REQUESTS = 5; // Maximum concurrent requests per type
 
 const categoriesMap = {
   profanity: 'profanity',
-  explicit: 'explicit-content',
+  explicit: 'explicit',
   drugs: 'drugs',
   gambling: 'gambling',
   violence: 'violence',
-  social: 'social-media'
+  social: 'social'
 };
 
 // Track active requests
 let activeImageRequests = 0;
 let activeTextRequests = 0;
+let confidenceThreshold = 0.5;
+let blockingOptions = {};
+
+chrome.storage.local.get(['confidence', 'blockingOptions']).then((result) => {
+  confidenceThreshold = result.confidence ?? 0.5;
+  blockingOptions = result.blockingOptions || {};
+});
+
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area !== 'local') return;
+  if (changes.confidence) {
+    confidenceThreshold = changes.confidence.newValue ?? 0.5;
+  }
+  if (changes.blockingOptions) {
+    blockingOptions = changes.blockingOptions.newValue || {};
+  }
+});
 
 chrome.runtime.onInstalled.addListener(({ reason }) => {
   if (reason === 'install') {
@@ -78,19 +95,16 @@ async function downloadImage(url) {
     }
   }
   if (!blob.type.startsWith('image/')) return null;
-  // Allow SVG now - removed the SVG filter
-  // if (blob.type.startsWith('image/svg')) return null;
   
   // Validate against allowed MIME types
-  const allowedTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif', 'image/bmp', 'image/webp', 'image/svg+xml'];
+  const allowedTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif', 'image/bmp', 'image/webp', 'image/svg+xml', 'image/svg'];
   if (!allowedTypes.includes(blob.type)) {
     console.warn(`Unsupported image type: ${blob.type} for URL: ${url}`);
     return null;
   }
   
   try {
-    // Skip bitmap validation for SVG
-    if (blob.type !== 'image/svg+xml') {
+    if (!blob.type.startsWith('image/svg')) {
       await createImageBitmap(blob);
     }
     
@@ -102,7 +116,8 @@ async function downloadImage(url) {
       'image/gif': 'gif',
       'image/bmp': 'bmp',
       'image/webp': 'webp',
-      'image/svg+xml': 'svg'
+      'image/svg+xml': 'svg',
+      'image/svg': 'svg'
     };
     const extension = extensionMap[blob.type] || 'jpg';
     const filename = `image.${extension}`;
@@ -115,6 +130,12 @@ async function downloadImage(url) {
 
 function thirtyDaysAgo() {
   return Date.now() - 30 * 24 * 60 * 60 * 1000;
+}
+
+function isCategoryEnabled(category) {
+  const optionKey = categoriesMap[category];
+  if (!optionKey) return true;
+  return blockingOptions[optionKey] !== false;
 }
 
 function recordCategory(category) {
@@ -140,7 +161,7 @@ function sendMessageToAllTabs(message) {
 
 setInterval(() => {
   chrome.storage.local.get(['onlineLog']).then(result => {
-    const log = Array.from(result.onlineLog || []);
+    const log = Array.from(result.onlineLog || []).filter(time => time > thirtyDaysAgo());
     log.push(Date.now());
     chrome.storage.local.set({ onlineLog: log });
   });
@@ -214,15 +235,9 @@ async function processImagesInBatches(images, batchSize = MAX_IMAGE_BATCH) {
 
           if (className && className !== 'none') {
             try {
-              const result = await chrome.storage.local.get(['confidence']);
-              const threshold = result.confidence ?? 0.5;
-
-              if (confidence >= threshold) {
-                const storageKey = categoriesMap[className] || 'none-log';
-                const res = await chrome.storage.local.get([storageKey]);
-                const allowed = res[storageKey] !== false;
-                if (allowed) {
-                  recordCategory(storageKey.replace('-log',''));
+              if (confidence >= confidenceThreshold) {
+                if (isCategoryEnabled(className)) {
+                  recordCategory(categoriesMap[className] || 'none');
                   sendMessageToAllTabs({ action: 'removeImage', imageLink });
                   categoryCount[className] = (categoryCount[className] || 0) + 1;
                 } else {
@@ -314,12 +329,9 @@ async function processTextsInBatches(texts, batchSize = MAX_TEXTS_PER_BATCH) {
           });
           
           for (const category of detectedCategories) {
-            const storageKey = categoriesMap[category] || 'none-log';
             try {
-              const res = await chrome.storage.local.get([storageKey]);
-              const allowed = res[storageKey] !== false;
-              if (allowed) {
-                recordCategory(storageKey.replace('-log',''));
+              if (isCategoryEnabled(category)) {
+                recordCategory(categoriesMap[category] || 'none');
                 sendMessageToAllTabs({ action: 'removeText', text });
               } else {
                 recordCategory('none');
