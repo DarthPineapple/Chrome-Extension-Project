@@ -6,6 +6,12 @@ venv/
 image-ai/venv/
 text-ai/venv/
 text-ai/dataset_cache.pkl
+text-ai/build/
+image-ai/build/
+text-ai/dist/
+image-ai/dist/
+
+*.spec
 
 # Ignore Python cache files
 __pycache__/
@@ -60,3 +66,9 @@ dataset_cache.pkl
 # Ignore YOLO specific outputs
 labels.cache
 labels/
+
+#ignore server logs
+*.log
+
+#ignore built binaries
+*.exe

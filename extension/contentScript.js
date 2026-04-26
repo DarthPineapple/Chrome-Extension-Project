@@ -12,11 +12,38 @@ let buildAutomaton, findAll;
 
 let AC = null;
 let acReady = false;
+let initialScanComplete = false;
 
 // const BLACKLIST_ENTRIES = [
 //     { term: "cocaine", payload: "drug" },
 //     { term: "heroin", payload: "drug" },
 // ];
+
+var enabled = true;
+
+chrome.storage.local.get(['enabled'], (result) => {
+    if (result.enabled === undefined) {
+        enabled = true;
+        chrome.storage.local.set({ enabled: true });
+    } else {
+        enabled = result.enabled;
+    }
+    console.log("Content script enabled status:", enabled);
+    if (enabled) {
+        runInitialScan();
+    }
+});
+
+chrome.storage.onChanged.addListener((changes, area) => {
+    if (area === 'local' && changes.enabled) {
+        enabled = changes.enabled.newValue;
+    }
+    console.log("Content script enabled status changed to:", enabled);
+
+    if (enabled) {
+        runInitialScan(true);
+    }
+});
 
 async function loadDictionary() {
 const dictUrl = chrome.runtime.getURL('blacklist.json');
@@ -39,8 +66,21 @@ const dictUrl = chrome.runtime.getURL('blacklist.json');
     console.log(buildAutomaton)
     AC = buildAutomaton(BLACKLIST_ENTRIES, { caseInsensitive: true, wholeWord: true });
     acReady = true;
+    if (enabled) {
+        runInitialScan(true);
+    }
+}
 
-    // Initial scan
+function runInitialScan(force = false) {
+    if (!enabled) return;
+    if (initialScanComplete && !force) return;
+    if (document.readyState === "loading") {
+        return;
+    }
+
+    initialScanComplete = true;
+    sendImages();
+    sendText();
     acCensorDocument();
 }
 
@@ -131,13 +171,28 @@ let pendingTexts = [];
 const IMAGE_BATCH_SIZE = 10;  // Send images in batches of 10
 const TEXT_BATCH_SIZE = 100;  // Send text in batches of 100
 const DEBOUNCE_DELAY = 100;   // Wait 100ms before sending
+let scanScheduled = false;
+const pendingScanRoots = new Set();
 
 function isDataImageOrUrl(url){
     return url.toString().startsWith("data:image/") || url.toString().startsWith("blob:") || url.toString().startsWith("http") || url.toString() === "";
 }
 
-function extractImageLinks(){
-    const images = document.querySelectorAll('img');
+function getElementRoots(root, selector) {
+    if (!root) return [];
+    if (root.nodeType === Node.DOCUMENT_NODE) {
+        return Array.from(root.querySelectorAll(selector));
+    }
+    if (root.nodeType !== Node.ELEMENT_NODE) {
+        return [];
+    }
+
+    const matches = root.matches(selector) ? [root] : [];
+    return matches.concat(Array.from(root.querySelectorAll(selector)));
+}
+
+function extractImageLinks(root = document){
+    const images = getElementRoots(root, 'img');
     const newImageLinks = Array.from(images)
         .filter((img) => img.dataset.approved !== "true")
         .map((img) => {
@@ -160,7 +215,7 @@ function extractImageLinks(){
                 if (!document.getElementById("image-hider-style")) {
                     const style = document.createElement("style");
                     style.id = "image-hider-style";
-                    style.textContent = ".image-pending-placeholder{opacity:0 !important;";
+                    style.textContent = ".image-pending-placeholder{opacity:0 !important;}";
                     document.head.appendChild(style);
                 }
 
@@ -179,7 +234,7 @@ function extractImageLinks(){
     .filter((src) => src !== "" && !seenImages.has(src));
 newImageLinks.forEach((src) => {if(isDataImageOrUrl(src)) seenImages.add(src);});
 
-const backgroundImages = Array.from(document.querySelectorAll("*"));
+const backgroundImages = getElementRoots(root, "*");
 
 backgroundImages.forEach((element) => {
     const backgroundImage = window.getComputedStyle(element).backgroundImage;
@@ -256,7 +311,25 @@ function sendImages(){
     }, DEBOUNCE_DELAY);
 }
 
-function extractSentences(){
+function sendImagesFromRoot(root){
+    const imageLinks = extractImageLinks(root);
+    if (imageLinks.length === 0) return;
+    
+    pendingImages.push(...imageLinks);
+    
+    // Clear existing timer
+    if (imageDebounceTimer) {
+        clearTimeout(imageDebounceTimer);
+    }
+    
+    // Debounce: wait for DEBOUNCE_DELAY ms of inactivity before sending
+    imageDebounceTimer = setTimeout(() => {
+        flushImages();
+        imageDebounceTimer = null;
+    }, DEBOUNCE_DELAY);
+}
+
+function extractSentences(root = document.body){
     let sentences = [];
 
     const excludedTags = new Set([
@@ -296,8 +369,8 @@ function extractSentences(){
         }
     }
 
-    if (document.body){
-        extractTextFromNode(document.body);
+    if (root){
+        extractTextFromNode(root);
     }
 
     sentences = sentences
@@ -347,30 +420,107 @@ function sendText(){
     }, DEBOUNCE_DELAY);
 }
 
+function sendTextFromRoot(root){
+    const texts = extractSentences(root);
+    if (texts.length === 0) return;
+    
+    const filtered = [];
+    for (const text of texts) {
+        if (acReady && AC) {
+            const hits = findAll(AC, text);
+            if (hits.length == text.split(" ").length) {
+                continue; // Skip texts that are entirely blacklisted
+            } else {
+                filtered.push(text);
+            }
+        } else {
+            filtered.push(text);
+        }
+    }
+
+    if (filtered.length === 0) return;
+
+    pendingTexts.push(...filtered);
+    
+    // Clear existing timer
+    if (textDebounceTimer) {
+        clearTimeout(textDebounceTimer);
+    }
+    
+    // Debounce: wait for DEBOUNCE_DELAY ms of inactivity before sending
+    textDebounceTimer = setTimeout(() => {
+        flushTexts();
+        textDebounceTimer = null;
+    }, DEBOUNCE_DELAY);
+}
+
 function escapeRegExp(text){
     return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 //Set up a mutationobserver
 const observer = new MutationObserver((mutations) => {
-    sendImages();
-    sendText();
+    if(enabled === false){
+        return;
+    }
 
     mutations.forEach((mutation) => {
-        const target = mutation.addedNodes?.length > 0 ? mutation.target : null;
-        if (target) {
-            acCensorSubtree(target);
-        };
+        if (mutation.type === "characterData") {
+            const textNode = mutation.target;
+            if (textNode?.parentElement) {
+                pendingScanRoots.add(textNode.parentElement);
+            }
+            return;
+        }
+
+        mutation.addedNodes.forEach((node) => {
+            if (node.nodeType === Node.TEXT_NODE && node.parentElement) {
+                pendingScanRoots.add(node.parentElement);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                pendingScanRoots.add(node);
+            }
+        });
     });
+
+    if (!scanScheduled && pendingScanRoots.size > 0) {
+        scanScheduled = true;
+        setTimeout(() => {
+            scanScheduled = false;
+            const roots = Array.from(pendingScanRoots);
+            pendingScanRoots.clear();
+            roots.forEach((root) => {
+                sendImagesFromRoot(root);
+                sendTextFromRoot(root);
+                acCensorSubtree(root);
+            });
+        }, DEBOUNCE_DELAY);
+    }
 });
 
 observer.observe(document, {
     childList: true,
-    subtree: true
+    subtree: true,
+    characterData: true
+});
+
+function incrementBlockedCount(key, delta) {
+    chrome.storage.local.get([key], (result) => {
+        const currentValue = Number(result[key] || 0);
+        chrome.storage.local.set({ [key]: currentValue + delta });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    runInitialScan();
+});
+
+window.addEventListener("load", () => {
+    runInitialScan(true);
 });
 
 chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     if(message.action === "removeImage" && message.imageLink){
+        incrementBlockedCount("imagesBlocked", 1);
         const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`);
         images.forEach((image) => {
             image.classList.add("image-pending-placeholder");
@@ -393,6 +543,13 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
 
         console.log(`Removed image with link: ${message.imageLink}`);
     }
+    else if (message.action === "log"){
+        const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`);
+        //console.log(`Image classified: ${message.imageLink} as ${message.className} with confidence ${message.confidence}`);
+        images.forEach((image) => {
+            image.alt = JSON.stringify(message.data);
+        });
+    }
     else if(message.action === "revealImage" && message.imageLink){
         console.log(`Revealing image with link: ${message.imageLink}`);
         const images = document.querySelectorAll(`img[data-originalsrc="${message.imageLink}"]`)
@@ -414,6 +571,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         });
     }
     else if (message.action === "removeText" && message.text){
+        incrementBlockedCount("tokensBlocked", message.text.trim().split(/\s+/).filter(Boolean).length);
         // command to censor with "█"
         const text = message.text.trim();
         
@@ -436,16 +594,24 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     }
 });
 
-window.addEventListener("load", () => {
-    console.log("Page loaded - scanning for images");
-    sendImages();
+// window.addEventListener("load", () => {
+//     if (enabled) {
+//         console.log("Page loaded - scanning for images");
+//         sendImages();
 
-    acCensorDocument();
-});
+//         acCensorDocument();
+//     }
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded - scanning for images");
-    sendImages();
+    
+// });
 
-   acCensorDocument();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+
+//     if (enabled) {
+//         console.log("DOM loaded - scanning for images");
+//         sendImages();
+
+//         acCensorDocument();
+//     }
+    
+// });

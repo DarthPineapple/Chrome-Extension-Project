@@ -1,10 +1,7 @@
 import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
 import torch
-import torch.nn.functional as F
 from dataset import TextDataset, CATEGORIES
 from train import CNNClassifier, MAX_LEN, EMBEDDING_DIM, NUM_CLASSES
 import logging
@@ -33,13 +30,6 @@ CORS(app, resources={
     }
 })
 
-# Rate limiting - Increased by 100x for large dataset testing
-limiter = Limiter(
-    app=app,
-    key_func=get_remote_address,
-    default_limits=["1000000 per day", "100000 per hour"],  # 100x increase
-    storage_uri="memory://"
-)
 
 # Security configurations - Adjusted for smaller packet testing
 MAX_TEXT_LENGTH = 5000  # Decreased from 50,000
@@ -57,6 +47,19 @@ try:
 except Exception as e:
     logger.error(f"Failed to load blacklist: {e}")
     BLACKLIST = {}
+
+BLACKLIST_PATTERNS = {}
+for category, banned_words in BLACKLIST.items():
+    normalized_words = sorted(
+        {word.strip().lower() for word in banned_words if word and word.strip()},
+        key=len,
+        reverse=True
+    )
+    if normalized_words:
+        BLACKLIST_PATTERNS[category] = re.compile(
+            r'\b(?:' + '|'.join(re.escape(word) for word in normalized_words) + r')\b',
+            re.IGNORECASE
+        )
 
 ALLOWED_WORDS = 'whitelist.txt'
 ALLOWED_WORDS_SET = set()
@@ -86,11 +89,12 @@ except Exception as e:
     label_to_category = None
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(f"Using device: {device}")
 
 try:
     model = CNNClassifier(vocab_size, EMBEDDING_DIM, MAX_LEN)
     #model currently not loading weights for testing
-    model.load_state_dict(torch.load("cnn_model.pt", map_location=device, weights_only=True))
+    model.load_state_dict(torch.load("best_model.pth", map_location=device, weights_only=True))
     model.to(device)
     model.eval()
     logger.info("Model loaded successfully")
@@ -166,21 +170,20 @@ def expand_to_word_boundaries(text, start, end):
         end += 1
     return start, end
 
-def safe_find_word_in_text(text_lower, word):
-    """Safely find word in text, avoiding ReDoS and errors"""
-    try:
-        # Use regex with word boundaries for exact matches
-        pattern = r'\b' + re.escape(word) + r'\b'
-        match = re.search(pattern, text_lower)
-        if match:
-            return match.start(), match.end()
-        return None, None
-    except Exception as e:
-        logger.error(f"Error finding word '{word}': {e}")
-        return None, None
+def append_span(spans, seen_spans, start, end, category):
+    if start is None or end is None or start >= end:
+        return
+    span_key = (start, end, category)
+    if span_key in seen_spans:
+        return
+    seen_spans.add(span_key)
+    spans.append({
+        'start': start,
+        'end': end,
+        'category': category
+    })
 
 @app.route('/predict_text', methods=['POST'])
-@limiter.limit("10000 per minute")  # 100x increase from 100 per minute
 def predict_text():
     # Check if model and vocab are loaded
     if model is None or vocab is None or label_to_category is None:
@@ -209,7 +212,7 @@ def predict_text():
             batch.append(encoded)
         batch = torch.stack(batch).to(device)
 
-        with torch.no_grad():
+        with torch.inference_mode():
             logits = model(batch)
             probs = torch.softmax(logits, dim=-1)
             max_probs, predictions = torch.max(probs, dim=-1)
@@ -227,31 +230,25 @@ def predict_text():
             filtered_spans = [span for span in spans if text[span["start"]:span["end"]+1].strip().lower() not in ALLOWED_WORDS_SET]
 
             final_spans = []
+            seen_spans = set()
             for span in filtered_spans:
                 start, end = expand_to_word_boundaries(text, span["start"], span["end"])
-                span["start"] = start
-                span["end"] = end
                 new_span_text = text[start:end].strip()
                 if new_span_text and new_span_text.lower() not in ALLOWED_WORDS_SET:
-                    final_spans.append(span)
+                    append_span(final_spans, seen_spans, start, end, span["category"])
 
             results_dict = {"text": text, "spans": final_spans}
 
-            # Final filter through blacklist (optimized)
+            # Final filter through blacklist with precompiled patterns.
             text_lower = text.lower()
-            words_in_text = set(text_lower.split())
-            
-            for category, banned_words in BLACKLIST.items():
-                # Check intersection for efficiency
-                matching_words = words_in_text.intersection(set(banned_words))
-                for word in matching_words:
-                    start_pos, end_pos = safe_find_word_in_text(text_lower, word)
-                    if start_pos is not None:
-                        results_dict["spans"].append({
-                            'start': start_pos,
-                            'end': end_pos,
-                            'category': category
-                        })
+            for category, pattern in BLACKLIST_PATTERNS.items():
+                for match in pattern.finditer(text_lower):
+                    matched_text = match.group(0).strip().lower()
+                    if matched_text in ALLOWED_WORDS_SET:
+                        continue
+                    append_span(results_dict["spans"], seen_spans, match.start(), match.end(), category)
+
+            results_dict["spans"].sort(key=lambda span: (span["start"], span["end"], span["category"]))
 
             results.append(results_dict)
         
@@ -276,12 +273,6 @@ def request_entity_too_large(error):
     """Handle request too large error"""
     logger.warning("Request too large")
     return jsonify({'error': 'Request too large (max 1MB)'}), 413
-
-@app.errorhandler(429)
-def ratelimit_handler(e):
-    """Handle rate limit exceeded"""
-    logger.warning(f"Rate limit exceeded: {get_remote_address()}")
-    return jsonify({'error': 'Rate limit exceeded. Please try again later.'}), 429
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5004, debug=False)

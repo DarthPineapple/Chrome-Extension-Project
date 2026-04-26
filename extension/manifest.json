@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "description": "FocusShield AI uses AI to block unsafe content for children and enable a better browsing experience.",
     "options_page": "options.html",
-    "permissions": ["storage", "activeTab", "scripting"],
+    "permissions": ["storage", "activeTab", "scripting", "system.memory", "system.cpu"],
     "background": {
         "service_worker": "background.js"
     },

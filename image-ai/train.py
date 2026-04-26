@@ -25,7 +25,21 @@ def main():
     model_save_path = "image_model.pt"
 
     # Load the YOLO model
-    model = YOLO("yolov8n.pt")  # Load a pre-trained YOLOv8 model
+    model = YOLO("yolo26n.pt")  # Load a pre-trained YOLOv8 model
+    
+    """
+    Experiment Ideas:
+    - Explore other checkpoints from YOLOv10, 11, 26
+        - yolo10n, yolo10s
+        - yolo11n, yolo11s
+        - yolo26n, yolo26s, yolo26m
+        - goal: train on the same dataset and hyperparameters as control
+    - Run the following on the winner (Speed vs Accuracy):
+        - Different data quantity and distributions (30/label --> 50/label)
+        - Epochs: 10, 20, 50, 70, 100
+        - Optimizers: AdamW, SGD with momentum, Ranger
+    """
+    
     
     # Train with comprehensive settings
     results = model.train(
@@ -34,6 +48,9 @@ def main():
         batch=16,
         imgsz=640,
         device=device,
+        
+        
+        
         patience=10,  # Early stopping patience
         save=True,  # Save checkpoints
         save_period=5,  # Save checkpoint every 5 epochs

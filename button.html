@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Model Download</title>
+</head>
+<body>
+<a
+    target="_blank"
+    rel="noopener noreferrer"
+    style="width:400px;height:40px;font-size:20;border-radius:10px;background-color:eeeeff;border-color:#9999ff;font-family:times-new-roman;color:#2222ee"
+    onmouseover="this.style.backgroundColor='#aaaaff'" onmouseout="this.style.backgroundColor='#eeeeff'" id="uaButton"
+    onclick="">Download
+    Stuff</a>
+<script>
+            function detectOS() {
+            const ua = navigator.userAgent;
+            const platform = navigator.platform;
+            let os = 'Unknown';
+
+            // Detect OS
+            if (ua.indexOf('Win') !== -1) {
+                os = 'Windows';
+                if (ua.indexOf('Windows NT 10.0') !== -1) os += ' 10/11';
+                else if (ua.indexOf('Windows NT 6.3') !== -1) os += ' 8.1';
+                else if (ua.indexOf('Windows NT 6.2') !== -1) os += ' 8';
+                else if (ua.indexOf('Windows NT 6.1') !== -1) os += ' 7';
+            } else if (ua.indexOf('Mac') !== -1) {
+                os = 'macOS';
+            }
+
+            return { os, icon, ua, platform };
+        }
+
+        windowsLink = "https://drive.google.com/file/d/1ehgl7bpnMwA2ZzRpfmXVqOm4SeqlrUNN/view?usp=drive_link";
+        macosLink = "https://drive.google.com/file/d/1TFNBHXBUlc8ekC4-o0hRYb-djwec7pdW/view?usp=drive_link";
+
+        function openInNewTab(url) {
+            const win = window.open(url, '_blank', 'noopener,noreferrer');
+            if (!win) window.location.href = url;
+        }
+
+        const info = detectOS();
+        console.log(info);
+        if (info.os.startsWith('Windows')) {
+            document.getElementById('uaButton').innerText = "Download for Windows";
+            document.getElementById('uaButton').addEventListener('click', function() {
+                openInNewTab(windowsLink);
+            });
+        } else if (info.os === 'macOS') {
+            document.getElementById('uaButton').addEventListener('click', function() {
+                openInNewTab(macosLink);
+            });
+        }
+        </script>
+</body>
+</html>
